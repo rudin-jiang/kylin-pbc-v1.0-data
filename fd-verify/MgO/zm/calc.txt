@@ -1,0 +1,13 @@
+SCF.xcfun          = HSE06
+SCF.basis          = dzvp-sr
+SCF.kmesh          = 1 1 1
+SCF.gmesh          = 0.6
+SCF.max_cycle      = 200
+SCF.coul_method    = FTDF
+SCF.xchg_method    = LSDF
+SCF.xchg_robust    = TILE
+SCF.lsdf_cparam    = 30
+SCF.hks_mix_method = BROY
+SCF.hks_mix_alpha  = 0.3
+
+OPT.max_cycle      = 0

@@ -1,0 +1,16 @@
+SYSTEM = rutile TiO2 (PBE band gap)
+
+PREC      = Accurate
+ENCUT     = 500
+EDIFF     = 1E-6
+NELM      = 200
+NELMIN    = 6
+
+ISMEAR    = 0
+SIGMA     = 0.05
+
+NSW       = 0
+ALGO      = Normal
+
+LWAVE     = .FALSE.
+LCHARG    = .FALSE.

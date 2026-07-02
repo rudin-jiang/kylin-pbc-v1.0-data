@@ -1,0 +1,27 @@
+SCF.xcfun   = HSE06
+SCF.basis   = dzvp-sr
+
+SCF.kmesh   = 4 4 6
+SCF.gmesh   = 0.5
+
+SCF.max_cycle = 200
+
+SCF.coul_method = MGDF
+SCF.xchg_method = LSDF
+
+SCF.xchg_exxace = NONE
+SCF.xchg_exxocc = OFF
+SCF.xchg_robust = FULL
+
+SCF.lsdf_cparam = 60
+
+SCF.mgdf_cutoff = 300
+SCF.mgdf_relcut = 30
+
+SCF.hks_mix_space = 16
+SCF.hks_mix_alpha = 0.2
+
+SCF.smear_method = FERMI
+SCF.smear_sigma  = 300 [K]
+
+SCF.print_bandgap = ON

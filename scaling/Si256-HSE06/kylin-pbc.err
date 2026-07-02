@@ -1,0 +1,8 @@
+[MGDF_DIAG] gmesh = 323 323 163  (ngrid=17005627)
+[MGDF_DIAG] level 0  mesh=63 63 33  ngrid=130977  tasks=173568
+[MGDF_DIAG] level 1  mesh=109 109 55  ngrid=653455  tasks=118272
+[MGDF_DIAG] level 2  mesh=187 187 95  ngrid=3322055  tasks=63744
+[MGDF_DIAG] level 3  mesh=323 323 163  ngrid=17005627  tasks=0
+[MGDF_DIAG] atom_pairs_kept=355584  rejected: atom=1389696 set=0 pgf=1079040 radius=15360
+[MGDF_DIAG] max_pair_radius=15.7373  max_pgf_rcut=14.1991  total_pairs=355584  precision_colloc=1e-14  precision_screen=1e-07
+OMP: Warning #226: KMP_AFFINITY must be set prior to first parallel region or certain API calls; ignored.

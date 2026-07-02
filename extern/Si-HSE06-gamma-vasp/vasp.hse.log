@@ -1,0 +1,46 @@
+ running on   32 total cores
+ distrk:  each k-point on   32 cores,    1 groups
+ distr:  one band on    4 cores,    8 groups
+ using from now: INCAR     
+ vasp.5.4.4.18Apr17-6-g9f103f2a35 (build Mar 10 2026 18:18:58) gamma-only       
+  
+ POSCAR found type information on POSCAR  Si
+ POSCAR found :  1 types and       2 ions
+ scaLAPACK will be used
+ LDA part: xc-table for Pade appr. of Perdew
+ found WAVECAR, reading the header
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ FFT: planning ...
+ reading WAVECAR
+ the WAVECAR file was read successfully
+ initial charge from wavefunction
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          ort
+ gam= 0.000 g(H,U,f)=  0.492E-01 0.650E-14 0.613E-21 ort(H,U,f) = 0.000E+00 0.000E+00 0.000E+00
+SDA:   1     0.309437854843E+01    0.30944E+01   -0.19689E-01     8   0.492E-01 0.000E+00
+ gam= 0.382 g(H,U,f)=  0.187E-01 0.100E-14 0.875E-13 ort(H,U,f) = 0.290E-01 0.221E-14 0.102E-12
+DMP:   2     0.307873341772E+01   -0.15645E-01   -0.11928E-01     8   0.187E-01 0.290E-01
+ gam= 0.382 g(H,U,f)=  0.456E-02 0.574E-16 0.276E-22 ort(H,U,f) = 0.131E-01-0.229E-15 0.485E-22
+DMP:   3     0.307015487999E+01   -0.85785E-02   -0.38222E-02     8   0.456E-02 0.131E-01
+ gam= 0.382 g(H,U,f)=  0.937E-03 0.384E-15 0.872E-21 ort(H,U,f) = 0.312E-02-0.240E-15 0.215E-20
+DMP:   4     0.306761660909E+01   -0.25383E-02   -0.85143E-03     8   0.937E-03 0.312E-02
+ gam= 0.382 g(H,U,f)=  0.312E-03 0.685E-15 0.659E-12 ort(H,U,f) = 0.348E-03 0.336E-15 0.179E-11
+DMP:   5     0.306711820857E+01   -0.49840E-03   -0.17779E-03     8   0.312E-03 0.348E-03
+ gam= 0.382 g(H,U,f)=  0.198E-03 0.752E-15 0.794E-22 ort(H,U,f) = 0.598E-04 0.169E-15 0.249E-21
+DMP:   6     0.306701559662E+01   -0.10261E-03   -0.88472E-04     8   0.198E-03 0.598E-04
+ gam= 0.382 g(H,U,f)=  0.877E-04 0.400E-15 0.145E-14 ort(H,U,f) = 0.899E-04 0.462E-16 0.480E-14
+DMP:   7     0.306695274108E+01   -0.62856E-04   -0.48795E-04     8   0.877E-04 0.899E-04
+ gam= 0.382 g(H,U,f)=  0.458E-04 0.107E-15 0.438E-22 ort(H,U,f) = 0.525E-04 0.168E-15 0.118E-21
+DMP:   8     0.306691785100E+01   -0.34890E-04   -0.26348E-04     8   0.458E-04 0.525E-04
+ gam= 0.382 g(H,U,f)=  0.269E-04 0.145E-15 0.476E-15 ort(H,U,f) = 0.392E-04 0.108E-15 0.181E-14
+DMP:   9     0.306689700588E+01   -0.20845E-04   -0.16763E-04     8   0.269E-04 0.392E-04
+ gam= 0.382 g(H,U,f)=  0.114E-04 0.253E-15 0.948E-24 ort(H,U,f) = 0.246E-04 0.130E-15 0.279E-23
+DMP:  10     0.306688390629E+01   -0.13100E-04   -0.83298E-05     8   0.114E-04 0.246E-04
+ gam= 0.382 g(H,U,f)=  0.404E-05 0.151E-15 0.112E-14 ort(H,U,f) = 0.107E-04 0.245E-16 0.487E-14
+DMP:  11     0.306687787436E+01   -0.60319E-05   -0.32440E-05     8   0.404E-05 0.107E-04
+ gam= 0.382 g(H,U,f)=  0.109E-05 0.256E-15 0.211E-16 ort(H,U,f) = 0.340E-05-0.308E-16 0.974E-16
+DMP:  12     0.306687582900E+01   -0.20454E-05   -0.95623E-06     8   0.109E-05 0.340E-05
+ gam= 0.382 g(H,U,f)=  0.181E-06 0.213E-14 0.112E-17 ort(H,U,f) = 0.576E-06-0.275E-15 0.546E-17
+DMP:  13     0.306687543129E+01   -0.39770E-06   -0.16046E-06     8   0.181E-06 0.576E-06
+ final diagonalization
+   1 F= 0.30668754E+01 E0= 0.30668754E+01  d E =-.116410E-10

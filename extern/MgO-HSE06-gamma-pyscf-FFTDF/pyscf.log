@@ -1,0 +1,147 @@
+#INFO: **** input file is /home/rudin/code/kylin-pbc/art/example/extern/MgO-HSE06-gamma-pyscf-FFTDF/run-pyscf.py ****
+#!/usr/bin/env python3
+# PySCF input for MgO-HSE06-gamma (external benchmark)
+# Engine: FFTDF (default with_df); basis/pseudo match kylin & CP2K.
+import time, os
+import pyscf.pbc.gto as pbcgto
+import pyscf.pbc.dft as pbcdft
+
+tic = time.time()
+
+cell = pbcgto.Cell()
+cell.a = """
+        0.0000000000     2.1085000000     2.1085000000
+        2.1085000000     0.0000000000     2.1085000000
+        2.1085000000     2.1085000000     0.0000000000
+"""
+cell.atom = """
+    Mg      0.0000000000     0.0000000000     0.0000000000
+    O       2.1085000000     2.1085000000     2.1085000000
+"""
+cell.basis = "gth-dzvp-molopt-sr"
+cell.pseudo = "gth-pbe"
+cell.unit = "A"
+cell.precision = 1e-10
+cell.verbose = 4
+cell.build()
+
+kpts = cell.make_kpts([1, 1, 1])
+kmf = pbcdft.KRKS(cell, kpts)
+kmf.xc = "HSE06"
+kmf.max_cycle = 200
+kmf.conv_tol = 1e-7
+etot = kmf.kernel()
+print("E_tot (Ha) =", etot)
+
+# approximate band gap from k-point eigenvalues
+try:
+    homo = max(kmf.mo_energy[i][kmf.mo_occ[i] > 0].max() for i in range(len(kpts)))
+    lumo = min(kmf.mo_energy[i][kmf.mo_occ[i] == 0].min() for i in range(len(kpts)))
+    print("Band gap (eV) =", (lumo - homo) * 27.211386245988)
+except Exception as ex:
+    print("gap calc skipped:", ex)
+
+print("wall time (s):", time.time() - tic)
+print("OMP_NUM_THREADS:", os.getenv("OMP_NUM_THREADS", "not set"))
+#INFO: ******************** input file end ********************
+
+
+System: uname_result(system='Linux', node='cu01', release='5.15.0-139-generic', version='#149-Ubuntu SMP Fri Apr 11 22:06:13 UTC 2025', machine='x86_64')  Threads 32
+Python 3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:27:36) [GCC 11.2.0]
+numpy 2.4.2  scipy 1.17.0  h5py 3.15.1
+Date: Tue Jun 23 17:49:37 2026
+PySCF version 2.12.0
+PySCF path  /software/Applications/pyscf/pyscf-2.12.0/pyscf
+
+[CONFIG] conf_file None
+[INPUT] verbose = 4
+[INPUT] num. atoms = 2
+[INPUT] num. electrons = 16
+[INPUT] charge = 0
+[INPUT] spin (= nelec alpha-beta = 2S) = 0
+[INPUT] symmetry False subgroup None
+[INPUT] Mole.unit = A
+[INPUT] Symbol           X                Y                Z      unit          X                Y                Z       unit  Magmom
+[INPUT]  1 Mg     0.000000000000   0.000000000000   0.000000000000 AA    0.000000000000   0.000000000000   0.000000000000 Bohr   0.0
+[INPUT]  2 O      2.108500000000   2.108500000000   2.108500000000 AA    3.984487533645   3.984487533645   3.984487533645 Bohr   0.0
+
+nuclear repulsion = -47.3278672534236
+number of shells = 5
+number of NR pGTOs = 73
+number of NR cGTOs = 22
+basis = gth-dzvp-molopt-sr
+ecp = {}
+CPU time:         8.24
+lattice vectors  a1 [0.000000000, 3.984487534, 3.984487534]
+                 a2 [3.984487534, 0.000000000, 3.984487534]
+                 a3 [3.984487534, 3.984487534, 0.000000000]
+dimension = 3
+low_dim_ft_type = None
+Cell volume = 126.517
+rcut = 32.60353106766146 (nimgs = [8 8 8])
+precision = 1e-10
+pseudo = gth-pbe
+ke_cutoff = 3488.5606466918002
+    = [151 151 151] mesh (3442951 PWs)
+
+
+******** <class 'pyscf.pbc.dft.krks.KRKS'> ********
+method = KRKS
+initial guess = minao
+damping factor = 0
+level_shift factor = 0
+DIIS = <class 'pyscf.scf.diis.CDIIS'>
+diis_start_cycle = 1
+diis_space = 8
+diis_damp = 0
+SCF conv_tol = 1e-07
+SCF conv_tol_grad = None
+SCF max_cycles = 200
+direct_scf = True
+direct_scf_tol = 1e-13
+chkfile to save SCF result = /tmp/tmpkdti137y
+max_memory 4000 MB (current use 130 MB)
+
+
+******** PBC SCF flags ********
+N kpts = 1
+Exchange divergence treatment (exxdiv) = ewald
+    madelung (= occupied orbital energy shift) = 0.5753389909491177
+    Total energy shift due to Ewald probe charge = -1/2 * Nelec*madelung = -4.60271192759
+DF object = <pyscf.pbc.df.fft.FFTDF object at 0x7f00750e3680>
+XC functionals = HSE06
+small_rho_cutoff = 1e-07
+Uniform grid, mesh = [151 151 151]
+Set gradient conv threshold to 0.000316228
+nelec by numeric integration = 16.000000000000117
+Create RSH-DF object <pyscf.pbc.df.fft.FFTDF object at 0x7f0073acab40> for omega=-0.11
+init E= -73.9193940668816
+HOMO = -0.0790551994149  LUMO = 0.147995143009
+nelec by numeric integration = 16.000000000000025
+cycle= 1 E= -77.7541761076832  delta_E= -3.83  |g|= 2.93  |ddm|= 5.27
+HOMO = 0.650665572951  LUMO = 0.759243437282
+nelec by numeric integration = 15.999999999999991
+cycle= 2 E= -78.2932054668981  delta_E= -0.539  |g|= 2.08  |ddm|= 6.21
+HOMO = 0.244751424751  LUMO = 0.517656463985
+nelec by numeric integration = 15.999999999999986
+cycle= 3 E= -79.0464484802728  delta_E= -0.753  |g|= 0.502  |ddm|= 2.62
+HOMO = 0.327507661609  LUMO = 0.547460047491
+nelec by numeric integration = 15.999999999999977
+cycle= 4 E= -79.0866700423318  delta_E= -0.0402  |g|= 0.0256  |ddm|= 0.555
+HOMO = 0.333101510611  LUMO = 0.553181707455
+nelec by numeric integration = 15.999999999999998
+cycle= 5 E= -79.0867701473787  delta_E= -0.0001  |g|= 0.00111  |ddm|= 0.0302
+HOMO = 0.333360660626  LUMO = 0.553255772519
+nelec by numeric integration = 15.99999999999999
+cycle= 6 E= -79.0867703739746  delta_E= -2.27e-07  |g|= 9.43e-05  |ddm|= 0.00168
+HOMO = 0.333344855906  LUMO = 0.553254346754
+nelec by numeric integration = 15.999999999999986
+cycle= 7 E= -79.0867703754173  delta_E= -1.44e-09  |g|= 5.57e-06  |ddm|= 9.92e-05
+HOMO = 0.333343723919  LUMO = 0.553254021073
+nelec by numeric integration = 15.999999999999984
+Extra cycle  E= -79.0867703751213  delta_E= 2.96e-10  |g|= 6.85e-06  |ddm|= 9.11e-06
+converged SCF energy = -79.0867703751213
+E_tot (Ha) = -79.08677037512132
+Band gap (eV) = 5.9840640353183785
+wall time (s): 694.8832721710205
+OMP_NUM_THREADS: 32

@@ -1,0 +1,22 @@
+SYSTEM = rutile TiO2 (HSE06 band gap)
+
+PREC      = Accurate
+ENCUT     = 500
+EDIFF     = 1E-6
+NELM      = 200
+NELMIN    = 6
+
+ISMEAR    = 0
+SIGMA     = 0.05
+
+LHFCALC   = .TRUE.
+AEXX      = 0.25
+HFSCREEN  = 0.2
+PRECFOCK  = Fast
+ALGO      = All
+TIME      = 0.4
+
+NSW       = 0
+
+LWAVE     = .FALSE.
+LCHARG    = .FALSE.

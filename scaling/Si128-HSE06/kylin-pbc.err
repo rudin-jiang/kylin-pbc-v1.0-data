@@ -1,0 +1,76 @@
+[MGDF_DIAG] gmesh = 323 163 163  (ngrid=8581787)
+[MGDF_DIAG] level 0  mesh=63 33 33  ngrid=68607  tasks=87168
+[MGDF_DIAG] level 1  mesh=109 55 55  ngrid=329725  tasks=59136
+[MGDF_DIAG] level 2  mesh=187 95 95  ngrid=1687675  tasks=31872
+[MGDF_DIAG] level 3  mesh=323 163 163  ngrid=8581787  tasks=0
+[MGDF_DIAG] atom_pairs_kept=178176  rejected: atom=573760 set=0 pgf=541184 radius=7680
+[MGDF_DIAG] max_pair_radius=15.7373  max_pgf_rcut=14.1991  total_pairs=178176  precision_colloc=1e-14  precision_screen=1e-07
+OMP: Warning #226: KMP_AFFINITY must be set prior to first parallel region or certain API calls; ignored.
+  [bwd-lev0] integ=0.125318s  tasks=87168  us/pair=46.0052  grid=0.52343MB
+  [bwd-lev1] integ=0.081229s  tasks=59136  us/pair=43.9551  grid=2.5156MB
+  [bwd-lev2] integ=0.058881s  tasks=31872  us/pair=59.1175  grid=12.8759MB
+  [bwd] fft=0.0460277s  integ=0.265428s  reduce=0.00697398s
+  [fwd-lev0] colloc=0.0919812s  tasks=87168  us/pair=33.767  grid=0.52343MB
+  [fwd-lev1] colloc=0.0567651s  tasks=59136  us/pair=30.717  grid=2.5156MB
+  [fwd-lev2] colloc=0.0550869s  tasks=31872  us/pair=55.3081  grid=12.8759MB
+  [fwd] colloc=0.203833s  reduce=0.00224304s  fft=0.0205107s
+  [bwd-lev0] integ=0.11361s  tasks=87168  us/pair=41.7071  grid=0.52343MB
+  [bwd-lev1] integ=0.079272s  tasks=59136  us/pair=42.8961  grid=2.5156MB
+  [bwd-lev2] integ=0.058104s  tasks=31872  us/pair=58.3374  grid=12.8759MB
+  [bwd] fft=0.0464358s  integ=0.250986s  reduce=0.00436306s
+  [fwd-lev0] colloc=0.0893579s  tasks=87168  us/pair=32.8039  grid=0.52343MB
+  [fwd-lev1] colloc=0.0560689s  tasks=59136  us/pair=30.3403  grid=2.5156MB
+  [fwd-lev2] colloc=0.05111s  tasks=31872  us/pair=51.3153  grid=12.8759MB
+  [fwd] colloc=0.196537s  reduce=0.00221205s  fft=0.0202742s
+  [bwd-lev0] integ=0.117674s  tasks=87168  us/pair=43.199  grid=0.52343MB
+  [bwd-lev1] integ=0.0790811s  tasks=59136  us/pair=42.7928  grid=2.5156MB
+  [bwd-lev2] integ=0.0580971s  tasks=31872  us/pair=58.3304  grid=12.8759MB
+  [bwd] fft=0.0410922s  integ=0.254852s  reduce=0.0045228s
+  [fwd-lev0] colloc=0.089344s  tasks=87168  us/pair=32.7988  grid=0.52343MB
+  [fwd-lev1] colloc=0.0550208s  tasks=59136  us/pair=29.7732  grid=2.5156MB
+  [fwd-lev2] colloc=0.039772s  tasks=31872  us/pair=39.9318  grid=12.8759MB
+  [fwd] colloc=0.184137s  reduce=0.00216722s  fft=0.0212898s
+  [bwd-lev0] integ=0.117336s  tasks=87168  us/pair=43.0749  grid=0.52343MB
+  [bwd-lev1] integ=0.0789909s  tasks=59136  us/pair=42.744  grid=2.5156MB
+  [bwd-lev2] integ=0.058073s  tasks=31872  us/pair=58.3063  grid=12.8759MB
+  [bwd] fft=0.0370207s  integ=0.2544s  reduce=0.0043149s
+  [fwd-lev0] colloc=0.089627s  tasks=87168  us/pair=32.9027  grid=0.52343MB
+  [fwd-lev1] colloc=0.0560181s  tasks=59136  us/pair=30.3128  grid=2.5156MB
+  [fwd-lev2] colloc=0.051698s  tasks=31872  us/pair=51.9056  grid=12.8759MB
+  [fwd] colloc=0.197343s  reduce=0.00269198s  fft=0.0316529s
+  [bwd-lev0] integ=0.113512s  tasks=87168  us/pair=41.671  grid=0.52343MB
+  [bwd-lev1] integ=0.0793011s  tasks=59136  us/pair=42.9119  grid=2.5156MB
+  [bwd-lev2] integ=0.0580809s  tasks=31872  us/pair=58.3142  grid=12.8759MB
+  [bwd] fft=0.046186s  integ=0.250894s  reduce=0.00473499s
+  [fwd-lev0] colloc=0.089519s  tasks=87168  us/pair=32.8631  grid=0.52343MB
+  [fwd-lev1] colloc=0.0550609s  tasks=59136  us/pair=29.7948  grid=2.5156MB
+  [fwd-lev2] colloc=0.0396922s  tasks=31872  us/pair=39.8516  grid=12.8759MB
+  [fwd] colloc=0.184272s  reduce=0.00215077s  fft=0.020386s
+  [bwd-lev0] integ=0.117592s  tasks=87168  us/pair=43.1689  grid=0.52343MB
+  [bwd-lev1] integ=0.0791481s  tasks=59136  us/pair=42.829  grid=2.5156MB
+  [bwd-lev2] integ=0.0580299s  tasks=31872  us/pair=58.2629  grid=12.8759MB
+  [bwd] fft=0.038233s  integ=0.25477s  reduce=0.00434709s
+  [fwd-lev0] colloc=0.089565s  tasks=87168  us/pair=32.88  grid=0.52343MB
+  [fwd-lev1] colloc=0.0559351s  tasks=59136  us/pair=30.2679  grid=2.5156MB
+  [fwd-lev2] colloc=0.0507751s  tasks=31872  us/pair=50.979  grid=12.8759MB
+  [fwd] colloc=0.196275s  reduce=0.00239682s  fft=0.0246141s
+  [bwd-lev0] integ=0.114007s  tasks=87168  us/pair=41.8528  grid=0.52343MB
+  [bwd-lev1] integ=0.0791059s  tasks=59136  us/pair=42.8062  grid=2.5156MB
+  [bwd-lev2] integ=0.0581641s  tasks=31872  us/pair=58.3977  grid=12.8759MB
+  [bwd] fft=0.0407329s  integ=0.251277s  reduce=0.00434303s
+  [fwd-lev0] colloc=0.0895901s  tasks=87168  us/pair=32.8892  grid=0.52343MB
+  [fwd-lev1] colloc=0.0558391s  tasks=59136  us/pair=30.2159  grid=2.5156MB
+  [fwd-lev2] colloc=0.0510409s  tasks=31872  us/pair=51.2459  grid=12.8759MB
+  [fwd] colloc=0.19647s  reduce=0.00252271s  fft=0.0244811s
+  [bwd-lev0] integ=0.114257s  tasks=87168  us/pair=41.9446  grid=0.52343MB
+  [bwd-lev1] integ=0.080657s  tasks=59136  us/pair=43.6456  grid=2.5156MB
+  [bwd-lev2] integ=0.0580831s  tasks=31872  us/pair=58.3163  grid=12.8759MB
+  [bwd] fft=0.043684s  integ=0.252997s  reduce=0.00432491s
+  [fwd-lev0] colloc=0.089462s  tasks=87168  us/pair=32.8422  grid=0.52343MB
+  [fwd-lev1] colloc=0.0550721s  tasks=59136  us/pair=29.8009  grid=2.5156MB
+  [fwd-lev2] colloc=0.0397739s  tasks=31872  us/pair=39.9337  grid=12.8759MB
+  [fwd] colloc=0.184308s  reduce=0.00217795s  fft=0.0202048s
+  [bwd-lev0] integ=0.11683s  tasks=87168  us/pair=42.8892  grid=0.52343MB
+  [bwd-lev1] integ=0.0791631s  tasks=59136  us/pair=42.8372  grid=2.5156MB
+  [bwd-lev2] integ=0.0581491s  tasks=31872  us/pair=58.3826  grid=12.8759MB
+  [bwd] fft=0.037621s  integ=0.254142s  reduce=0.0059278s
