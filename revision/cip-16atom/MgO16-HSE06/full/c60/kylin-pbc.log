@@ -1,0 +1,262 @@
+Kylin-PBC: v1.0.0
+
+System time = 2026-09-30 20:02:49
+
+OMP threads = 32
+
+KYLIN_PBC_ROOT = "/home/rudin/code/kylin-pbc"
+KYLIN_SCR_PATH = "/tmp"
+KYLIN_JOB_PATH = "/home/rudin/tmp-review-ionic/MgO16/full/c60"
+
+SCF.xcfun                      = HSE06
+SCF.basis                      = dzvp-sr
+SCF.psudo                      = gth-pbe
+SCF.kmesh                      = 1 1 1
+SCF.gmesh                      = 5.0e-01
+SCF.ispin                      = OFF
+SCF.dspin                      = 0
+SCF.eps_engy                   = 3.7e-09 [AU]
+SCF.eps_grad                   = 1.0e-05 [AU]
+SCF.eps_dmat                   = 1.0e-03
+SCF.chk_load                   = 
+SCF.chk_save                   = 
+SCF.scf_guess                  = ATOM
+SCF.max_cycle                  = 200
+SCF.vdw_method                 = NONE
+SCF.coul_method                = MGDF
+SCF.xchg_method                = LSDF
+SCF.xchg_exxocc                = OFF
+SCF.xchg_exxace                = NONE
+SCF.xchg_robust                = FULL
+SCF.xchg_exxdiv                = EWALD
+SCF.xchg_dropG0                = ON
+SCF.lsdf_cparam                = 60
+SCF.lsdf_mparam                = 5
+SCF.lsdf_ipslct                = QRCP
+SCF.lsdf_chocut                = 1.0e-08
+SCF.lsdf_atmcut                = 2.5e+01
+SCF.lsdf_aovcut                = 1.0e-07
+SCF.lsdf_swzcut                = 0.0e+00
+SCF.lsdf_pnocut                = 0.0e+00
+SCF.lsdf_nafcut                = 0.0e+00
+SCF.mgdf_ntasks                = 4
+SCF.mgdf_kratio                = 3.0e+00
+SCF.mgdf_cutoff                = 3.0e+02 [AU]
+SCF.mgdf_relcut                = 3.0e+01
+SCF.mgdf_prprec                = 1.0e-14
+SCF.dmx_mix_method             = NONE
+SCF.dmx_mix_start              = 1
+SCF.dmx_mix_space              = 8
+SCF.dmx_mix_alpha              = 3.0e-01
+SCF.rho_mix_method             = NONE
+SCF.rho_mix_start              = 1
+SCF.rho_mix_space              = 8
+SCF.rho_mix_alpha              = 3.0e-01
+SCF.hks_mix_method             = BROY
+SCF.hks_mix_start              = 1
+SCF.hks_mix_space              = 8
+SCF.hks_mix_alpha              = 3.0e-01
+SCF.damp_factor                = 0.0e+00
+SCF.level_shift                = 0.0e+00 [AU]
+SCF.smear_method               = NONE
+SCF.smear_sigma                = 0.0e+00 [AU]
+SCF.soc                        = OFF
+SCF.soc_window                 = 1.8e+00 [AU]
+SCF.print_bandgap              = OFF
+SCF.print_time                 = OFF
+
+OPT.opt_method                 = BFGS
+OPT.max_cycle                  = 1
+OPT.eps_engy                   = 4.0e-06 [AU]
+OPT.eps_grad                   = 4.0e-04 [AU]
+OPT.trust_limit                = 3.0e-01 [AU]
+OPT.damp_factor                = 0.0e+00
+OPT.opt_mix_method             = NONE
+OPT.opt_mix_start              = 1
+OPT.opt_mix_space              = 5
+OPT.opt_mix_alpha              = 3.0e-01
+OPT.neb_method                 = FIRE
+OPT.neb_lclimb                 = ON
+OPT.neb_interp                 = IDPP
+OPT.neb_nimage                 = 5
+OPT.neb_spring                 = 1.0e-02 [AU]
+OPT.neb_maxstep                = 7.6e-02 [AU]
+
+PROP.calculation               = NONE
+FREQ.freq_method               = FREE2
+FREQ.fd_stepsize               = 2.8e-02 [AU]
+DOS.dos_method                 = GAUSS
+DOS.dos_sigma                  = 3.7e-03 [AU]
+DOS.dos_npoint                 = 1001
+DOS.dos_emin                   = 0.0e+00 [AU]
+DOS.dos_emax                   = 0.0e+00 [AU]
+
+OPT.mdx_ensemble               = NVE
+OPT.mdx_thermostat             = NHC
+OPT.mdx_max_step               = 0
+OPT.mdx_timestep               = 4.0e+01 [AU]
+OPT.mdx_temperature            = 9.5e-04 [AU]
+OPT.mdx_pressure               = 0.0e+00 [AU]
+OPT.mdx_thermo_tau             = 4.0e+03 [AU]
+OPT.mdx_baro_tau               = 2.0e+04 [AU]
+OPT.mdx_nhc_length             = 3
+OPT.mdx_nhc_mts                = 3
+OPT.mdx_constraint             = OFF
+OPT.mdx_constraint_tol         = 1.0e-10
+OPT.mdx_rng_seed               = 42
+
+K-points mesh = 1 1 1
+
+xc functional: "HSE06"
+is hybrid: YES
+HFX coeff: 0.25
+
+Basis Set Name: "dzvp-sr"
+number of shell = 40
+number of basis = 176
+gmesh = 98 98 195
+
+Pseudopotential Name: "gth-pbe"
+number of valence electron = 128
+
+OPT Calculation.
+
+==============================================================
+                   Geometry Optimization                      
+==============================================================
+  method      = BFGS
+  max_cycle   = 1
+  eps_engy    = 4.000000e-06
+  eps_grad    = 4.000000e-04
+  trust_limit = 0.300000
+  natom       = 16
+  nfree       = 48 / 48
+==============================================================
+
+--------------------------------------------------------------
+  OPT step 0
+--------------------------------------------------------------
+[OPT] Cell structure (Angstrom):
+       4.21700000       0.00000000       0.00000000
+       0.00000000       4.21700000       0.00000000
+       0.00000000       0.00000000       8.43400000
+
+Cart
+Mg         0.00000000       0.00000000       0.00000000   T T T
+Mg         0.10000000       2.15850000       2.13850000   T T T
+Mg         2.10850000       0.00000000       2.10850000   T T T
+Mg         2.10850000       2.10850000       0.00000000   T T T
+O          2.10850000       2.10850000       2.10850000   T T T
+O          2.10850000       4.21700000       4.21700000   T T T
+O          4.21700000       2.10850000       4.21700000   T T T
+O          4.21700000       4.21700000       2.10850000   T T T
+Mg         0.00000000       0.00000000       4.21700000   T T T
+Mg         0.00000000       2.10850000       6.32550000   T T T
+Mg         2.10850000       0.00000000       6.32550000   T T T
+Mg         2.10850000       2.10850000       4.21700000   T T T
+O          2.10850000       2.10850000       6.32550000   T T T
+O          2.10850000       4.21700000       8.43400000   T T T
+O          4.21700000       2.10850000       8.43400000   T T T
+O          4.21700000       4.21700000       6.32550000   T T T
+
+[OPT] Cell written to /home/rudin/tmp-review-ionic/MgO16/full/c60/opt_img/cell_opt_0.txt
+[LSDF] gmesh = (98, 98, 195), ngrid = 1872780, naofn = 176, natom = 16
+Timer "[LSDF] Voronoi partition" used time: 0.022526 s.
+Timer "[LSDF] AO evaluation + screening" used time: 4.570146 s.
+[LSDF] IP method: randomized QRCP (c=60, m=5)
+[LSDF] total IPs selected: 10640 (0.5681% of grid)
+Timer "[LSDF] IP selection" used time: 38.31300 s.
+Timer "[LSDF] aux basis fitting" used time: 6.684459 s.
+[LSDF] Step 5 diagnostics: natom=16, ngrid=1872780, naux_total=10640
+[LSDF]   OMP threads=32, MKL threads=32
+[LSDF]   Vmat_loc total size: 10640 x 1872780 = 148.46 GB
+Timer "[LSDF]   5a Vmat_loc alloc+FFT" used time: 11.33983 s.
+[LSDF]   W size: 10640 x 10640 = 863.72 MB, max_npart=118186
+Timer "[LSDF]   5b W construction (DGEMM)" used time: 12.84596 s.
+Timer "[LSDF]   5c Wmat symmetrize" used time: 0.046769 s.
+[LSDF]   robust_mode=FULL: keeping Vmat_loc (148.46 GB) in atom ordering
+Timer "[LSDF] V/W construction" used time: 24.23273 s.
+[LSDF] xchg phases: A=0.004 s, B(K_W)=0.038 s, C(K_V)=10.143 s, E(reduce)=0.000 s
+[NELEC] step = 0  nelec = 128  neInt = 128.000000  dnelc = -3.6099123690e-09
+[ENERG] step = 0  eTotl = -635.53100358  eCore = -337.00186663  eCoul = 174.38894144  eExcl = -94.40283880  eNucl = -378.51523958  eDisp = 0.00000000
+[ERROR] step = 0  engy error =  0.0000000000e+00  grad error =  0.0000000000e+00  dmat error =  0.0000000000e+00
+Timer "SCF cycle: 0" used time: 11.72827 s.
+
+[LSDF] xchg phases: A=0.001 s, B(K_W)=0.039 s, C(K_V)=7.746 s, E(reduce)=0.000 s
+[NELEC] step = 1  nelec = 128  neInt = 128.000000  dnelc = -1.8321159700e-08
+[ENERG] step = 1  eTotl = -634.35871072  eCore = -366.69511899  eCoul = 212.72475112  eExcl = -101.87310326  eNucl = -378.51523958  eDisp = 0.00000000
+[ERROR] step = 1  engy error =  1.1722928576e+00  grad error =  0.0000000000e+00  dmat error =  1.5801749883e+00
+Timer "SCF cycle: 1" used time: 9.264274 s.
+
+[LSDF] xchg phases: A=0.001 s, B(K_W)=0.040 s, C(K_V)=7.288 s, E(reduce)=0.000 s
+[NELEC] step = 2  nelec = 128  neInt = 128.000000  dnelc = -1.8862365891e-08
+[ENERG] step = 2  eTotl = -635.17878801  eCore = -362.43016013  eCoul = 205.69255816  eExcl = -99.92594645  eNucl = -378.51523958  eDisp = 0.00000000
+[ERROR] step = 2  engy error = -8.2007728736e-01  grad error =  0.0000000000e+00  dmat error =  2.0801629243e-01
+Timer "SCF cycle: 2" used time: 8.763086 s.
+
+[LSDF] xchg phases: A=0.001 s, B(K_W)=0.040 s, C(K_V)=7.516 s, E(reduce)=0.000 s
+[NELEC] step = 3  nelec = 128  neInt = 128.000000  dnelc = -1.6024543470e-08
+[ENERG] step = 3  eTotl = -635.30525027  eCore = -358.12193639  eCoul = 199.76321592  eExcl = -98.43129023  eNucl = -378.51523958  eDisp = 0.00000000
+[ERROR] step = 3  engy error = -1.2646226375e-01  grad error =  0.0000000000e+00  dmat error =  2.6428821220e-01
+Timer "SCF cycle: 3" used time: 9.005906 s.
+
+[LSDF] xchg phases: A=0.001 s, B(K_W)=0.041 s, C(K_V)=7.474 s, E(reduce)=0.000 s
+[NELEC] step = 4  nelec = 128  neInt = 128.000000  dnelc = -1.3421640688e-08
+[ENERG] step = 4  eTotl = -635.32709670  eCore = -357.76599318  eCoul = 199.46282925  eExcl = -98.50869319  eNucl = -378.51523958  eDisp = 0.00000000
+[ERROR] step = 4  engy error = -2.1846433154e-02  grad error =  0.0000000000e+00  dmat error =  7.8949632943e-02
+Timer "SCF cycle: 4" used time: 8.955116 s.
+
+[LSDF] xchg phases: A=0.001 s, B(K_W)=0.040 s, C(K_V)=7.429 s, E(reduce)=0.000 s
+[NELEC] step = 5  nelec = 128  neInt = 128.000000  dnelc = -1.4377533830e-08
+[ENERG] step = 5  eTotl = -635.32846960  eCore = -358.27098523  eCoul = 200.10812401  eExcl = -98.65036879  eNucl = -378.51523958  eDisp = 0.00000000
+[ERROR] step = 5  engy error = -1.3728961153e-03  grad error =  0.0000000000e+00  dmat error =  3.6473886720e-02
+Timer "SCF cycle: 5" used time: 8.897297 s.
+
+[LSDF] xchg phases: A=0.001 s, B(K_W)=0.039 s, C(K_V)=7.662 s, E(reduce)=0.000 s
+[NELEC] step = 6  nelec = 128  neInt = 128.000000  dnelc = -1.4317876662e-08
+[ENERG] step = 6  eTotl = -635.32848449  eCore = -358.22987026  eCoul = 200.05569634  eExcl = -98.63907099  eNucl = -378.51523958  eDisp = 0.00000000
+[ERROR] step = 6  engy error = -1.4894334640e-05  grad error =  0.0000000000e+00  dmat error =  3.0434349701e-03
+Timer "SCF cycle: 6" used time: 9.152382 s.
+
+[LSDF] xchg phases: A=0.001 s, B(K_W)=0.090 s, C(K_V)=7.221 s, E(reduce)=0.001 s
+[NELEC] step = 7  nelec = 128  neInt = 128.000000  dnelc = -1.4319013530e-08
+[ENERG] step = 7  eTotl = -635.32848502  eCore = -358.22736212  eCoul = 200.05249726  eExcl = -98.63838058  eNucl = -378.51523958  eDisp = 0.00000000
+[ERROR] step = 7  engy error = -5.2415305163e-07  grad error =  0.0000000000e+00  dmat error =  2.5697082871e-04
+Timer "SCF cycle: 7" used time: 8.774993 s.
+
+[NELEC] step = 8  nelec = 128  neInt = 128.000000  dnelc = -1.4323120467e-08
+[ENERG] step = 8  eTotl = -635.32848526  eCore = -358.22677983  eCoul = 200.05189262  eExcl = -98.63835846  eNucl = -378.51523958  eDisp = 0.00000000
+[ERROR] step = 8  engy error = -2.3714221697e-07  grad error =  0.0000000000e+00  dmat error =  2.2637018089e-04
+Timer "SCF cycle: 8" used time: 9.660923 s.
+
+[NELEC] step = 9  nelec = 128  neInt = 128.000000  dnelc = -1.4324442077e-08
+[ENERG] step = 9  eTotl = -635.32848526  eCore = -358.22675567  eCoul = 200.05183085  eExcl = -98.63832086  eNucl = -378.51523958  eDisp = 0.00000000
+[ERROR] step = 9  engy error = -7.1063368523e-09  grad error =  0.0000000000e+00  dmat error =  4.3237077825e-05
+Timer "SCF cycle: 9" used time: 7.747456 s.
+
+[NELEC] step = 10  nelec = 128  neInt = 128.000000  dnelc = -1.4323873643e-08
+[ENERG] step = 10  eTotl = -635.32848526  eCore = -358.22660574  eCoul = 200.05166743  eExcl = -98.63830737  eNucl = -378.51523958  eDisp = 0.00000000
+[ERROR] step = 10  engy error = -3.9017322706e-10  grad error =  0.0000000000e+00  dmat error =  2.1311431658e-05
+SCF converged in 10 steps.
+[LSDF] xchg_d10: ISDF-robust path (K_V + K_V~ - K_IP)
+[GRADIENT] SCF type: GRKS | atoms: 16 | DOF: 48 | time: 49.400 s
+  Atom   0:  -9.0665495756e-05  -4.4270846793e-04  -2.7990557097e-04
+  Atom   1:   2.1917970622e-02   1.0012503060e-02   7.2011257455e-03
+  Atom   2:  -5.7983365002e-03  -2.9422993106e-03  -1.4956617524e-03
+  Atom   3:  -1.5203055594e-03   1.5041675732e-04  -3.6415726016e-04
+  Atom   4:  -5.1070743249e-03  -1.4567301384e-03  -1.3674022595e-03
+  Atom   5:   6.3962479592e-04   3.2307971704e-04   2.1478906020e-04
+  Atom   6:  -1.9838286701e-03  -9.9120583407e-04  -8.5443334064e-04
+  Atom   7:  -3.0673511247e-03  -2.1850850879e-03  -1.4101169035e-03
+  Atom   8:   1.1672159834e-03  -1.5779380782e-03  -8.1893938103e-04
+  Atom   9:  -1.0309967226e-04  -5.1578710118e-05   1.9408523971e-03
+  Atom  10:   4.1947077912e-05   2.1480443463e-05   2.3699324829e-03
+  Atom  11:  -3.1697799228e-03   5.9186559419e-04  -1.1304129824e-03
+  Atom  12:  -2.3261335849e-04   4.3162864397e-05   5.0480815926e-04
+  Atom  13:   5.8658150764e-04   2.9747282487e-04   2.5010125391e-05
+  Atom  14:  -1.9112344537e-03  -9.5501397355e-04  -6.9985351130e-04
+  Atom  15:   8.5803555206e-05  -1.1620319713e-04   5.0357096293e-04
+[OPT] step = 0  energy = -635.3284852630  dE =               N/A  grad_max =  2.1917970622e-02  grad_rms =  3.9892877514e-03
+[OPT] Geometry optimization did not converge in 1 steps.
+Kylin-PBC Done.
+Timer "Kylin-PBC main" used time: 234.5831 s.

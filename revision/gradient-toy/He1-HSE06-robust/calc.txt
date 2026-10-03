@@ -1,0 +1,10 @@
+SCF.xcfun       = HSE06
+SCF.basis       = szv-sr
+SCF.kmesh       = 1 1 1
+SCF.gmesh       = 0.4
+SCF.coul_method = MGDF
+SCF.xchg_method = LSDF
+SCF.xchg_robust = FULL
+SCF.eps_engy    = 1e-9 [AU]
+OPT.max_cycle   = 1
+OPT.opt_method  = BFGS

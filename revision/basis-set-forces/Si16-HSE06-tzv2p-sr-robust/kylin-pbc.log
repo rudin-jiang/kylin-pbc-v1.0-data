@@ -1,0 +1,379 @@
+Kylin-PBC: v1.0.0
+
+System time = 2026-09-30 12:06:53
+
+OMP threads = 32
+
+KYLIN_PBC_ROOT = "/home/rudin/code/kylin-pbc"
+KYLIN_SCR_PATH = "/tmp"
+KYLIN_JOB_PATH = "/home/rudin/tmp-review-gradtoy/si16_jul2/tzv2p-sr_robust"
+
+SCF.xcfun                      = HSE06
+SCF.basis                      = tzv2p
+SCF.psudo                      = gth-pbe
+SCF.kmesh                      = 1 1 1
+SCF.gmesh                      = 5.0e-01
+SCF.ispin                      = OFF
+SCF.dspin                      = 0
+SCF.eps_engy                   = 3.7e-09 [AU]
+SCF.eps_grad                   = 1.0e-05 [AU]
+SCF.eps_dmat                   = 1.0e-03
+SCF.chk_load                   = 
+SCF.chk_save                   = 
+SCF.scf_guess                  = ATOM
+SCF.max_cycle                  = 100
+SCF.vdw_method                 = NONE
+SCF.coul_method                = MGDF
+SCF.xchg_method                = LSDF
+SCF.xchg_exxocc                = OFF
+SCF.xchg_exxace                = NONE
+SCF.xchg_robust                = FULL
+SCF.xchg_exxdiv                = EWALD
+SCF.xchg_dropG0                = ON
+SCF.lsdf_cparam                = 30
+SCF.lsdf_mparam                = 5
+SCF.lsdf_ipslct                = QRCP
+SCF.lsdf_chocut                = 1.0e-08
+SCF.lsdf_atmcut                = 2.5e+01
+SCF.lsdf_aovcut                = 1.0e-07
+SCF.lsdf_swzcut                = 0.0e+00
+SCF.lsdf_pnocut                = 0.0e+00
+SCF.lsdf_nafcut                = 0.0e+00
+SCF.mgdf_ntasks                = 4
+SCF.mgdf_kratio                = 3.0e+00
+SCF.mgdf_cutoff                = 3.0e+02 [AU]
+SCF.mgdf_relcut                = 3.0e+01
+SCF.mgdf_prprec                = 1.0e-14
+SCF.dmx_mix_method             = NONE
+SCF.dmx_mix_start              = 1
+SCF.dmx_mix_space              = 8
+SCF.dmx_mix_alpha              = 3.0e-01
+SCF.rho_mix_method             = NONE
+SCF.rho_mix_start              = 1
+SCF.rho_mix_space              = 8
+SCF.rho_mix_alpha              = 3.0e-01
+SCF.hks_mix_method             = BROY
+SCF.hks_mix_start              = 1
+SCF.hks_mix_space              = 8
+SCF.hks_mix_alpha              = 3.0e-01
+SCF.damp_factor                = 0.0e+00
+SCF.level_shift                = 0.0e+00 [AU]
+SCF.smear_method               = NONE
+SCF.smear_sigma                = 0.0e+00 [AU]
+SCF.soc                        = OFF
+SCF.soc_window                 = 1.8e+00 [AU]
+SCF.print_bandgap              = OFF
+SCF.print_time                 = OFF
+
+OPT.opt_method                 = BFGS
+OPT.max_cycle                  = 1
+OPT.eps_engy                   = 4.0e-06 [AU]
+OPT.eps_grad                   = 4.0e-04 [AU]
+OPT.trust_limit                = 3.0e-01 [AU]
+OPT.damp_factor                = 0.0e+00
+OPT.opt_mix_method             = NONE
+OPT.opt_mix_start              = 1
+OPT.opt_mix_space              = 5
+OPT.opt_mix_alpha              = 3.0e-01
+OPT.neb_method                 = FIRE
+OPT.neb_lclimb                 = ON
+OPT.neb_interp                 = IDPP
+OPT.neb_nimage                 = 5
+OPT.neb_spring                 = 1.0e-02 [AU]
+OPT.neb_maxstep                = 7.6e-02 [AU]
+
+PROP.calculation               = NONE
+FREQ.freq_method               = FREE2
+FREQ.fd_stepsize               = 2.8e-02 [AU]
+DOS.dos_method                 = GAUSS
+DOS.dos_sigma                  = 3.7e-03 [AU]
+DOS.dos_npoint                 = 1001
+DOS.dos_emin                   = 0.0e+00 [AU]
+DOS.dos_emax                   = 0.0e+00 [AU]
+
+OPT.mdx_ensemble               = NVE
+OPT.mdx_thermostat             = NHC
+OPT.mdx_max_step               = 0
+OPT.mdx_timestep               = 4.0e+01 [AU]
+OPT.mdx_temperature            = 9.5e-04 [AU]
+OPT.mdx_pressure               = 0.0e+00 [AU]
+OPT.mdx_thermo_tau             = 4.0e+03 [AU]
+OPT.mdx_baro_tau               = 2.0e+04 [AU]
+OPT.mdx_nhc_length             = 3
+OPT.mdx_nhc_mts                = 3
+OPT.mdx_constraint             = OFF
+OPT.mdx_constraint_tol         = 1.0e-10
+OPT.mdx_rng_seed               = 42
+
+K-points mesh = 1 1 1
+
+xc functional: "HSE06"
+is hybrid: YES
+HFX coeff: 0.25
+
+Basis Set Name: "tzv2p"
+number of shell = 64
+number of basis = 464
+gmesh = 31 31 61
+
+Pseudopotential Name: "gth-pbe"
+number of valence electron = 64
+
+OPT Calculation.
+
+==============================================================
+                   Geometry Optimization                      
+==============================================================
+  method      = BFGS
+  max_cycle   = 1
+  eps_engy    = 4.000000e-06
+  eps_grad    = 4.000000e-04
+  trust_limit = 0.300000
+  natom       = 16
+  nfree       = 48 / 48
+==============================================================
+
+--------------------------------------------------------------
+  OPT step 0
+--------------------------------------------------------------
+[OPT] Cell structure (Angstrom):
+       5.43100000       0.00000000       0.00000000
+       0.00000000       5.43100000       0.00000000
+       0.00000000       0.00000000      10.86200000
+
+Cart
+Si         0.00000000       0.00000000       0.00000000   T T T
+Si         0.10000000       2.76550000       2.74550000   T T T
+Si         2.71550000       0.00000000       2.71550000   T T T
+Si         2.71550000       2.71550000       0.00000000   T T T
+Si         1.35775000       1.35775000       1.35775000   T T T
+Si         1.35775000       4.07325000       4.07325000   T T T
+Si         4.07325000       1.35775000       4.07325000   T T T
+Si         4.07325000       4.07325000       1.35775000   T T T
+Si         0.00000000       0.00000000       5.43100000   T T T
+Si         0.00000000       2.71550000       8.14650000   T T T
+Si         2.71550000       0.00000000       8.14650000   T T T
+Si         2.71550000       2.71550000       5.43100000   T T T
+Si         1.35775000       1.35775000       6.78875000   T T T
+Si         1.35775000       4.07325000       9.50425000   T T T
+Si         4.07325000       1.35775000       9.50425000   T T T
+Si         4.07325000       4.07325000       6.78875000   T T T
+
+[OPT] Cell written to /home/rudin/tmp-review-gradtoy/si16_jul2/tzv2p-sr_robust/opt_img/cell_opt_0.txt
+[MGDF_DIAG] gmesh = 83 83 163  (ngrid=1122907)
+[MGDF_DIAG] level 0  mesh=17 17 33  ngrid=9537  tasks=28692
+[MGDF_DIAG] level 1  mesh=29 29 55  ngrid=46255  tasks=11913
+[MGDF_DIAG] level 2  mesh=49 49 95  ngrid=228095  tasks=8214
+[MGDF_DIAG] level 3  mesh=83 83 163  ngrid=1122907  tasks=0
+[MGDF_DIAG] atom_pairs_kept=48819  rejected: atom=41659 set=0 pgf=163733 radius=2184
+[MGDF_DIAG] max_pair_radius=23.1866  max_pgf_rcut=18.5278  total_pairs=48819  precision_colloc=1e-14  precision_screen=1e-07
+OMP: Warning #226: KMP_AFFINITY must be set prior to first parallel region or certain API calls; ignored.
+[LSDF] gmesh = (31, 31, 61), ngrid = 58621, naofn = 464, natom = 16
+Timer "[LSDF] Voronoi partition" used time: 0.021916 s.
+Timer "[LSDF] AO evaluation + screening" used time: 0.911120 s.
+[LSDF] IP method: randomized QRCP (c=30, m=5)
+[LSDF] total IPs selected: 14000 (23.8822% of grid)
+Timer "[LSDF] IP selection" used time: 2.647316 s.
+Timer "[LSDF] aux basis fitting" used time: 0.979532 s.
+[LSDF] Step 5 diagnostics: natom=16, ngrid=58621, naux_total=14000
+[LSDF]   OMP threads=32, MKL threads=32
+[LSDF]   Vmat_loc total size: 14000 x 58621 = 6.11 GB
+Timer "[LSDF]   5a Vmat_loc alloc+FFT" used time: 2.320098 s.
+[LSDF]   W size: 14000 x 14000 = 1495.36 MB, max_npart=3871
+Timer "[LSDF]   5b W construction (DGEMM)" used time: 1.453968 s.
+Timer "[LSDF]   5c Wmat symmetrize" used time: 0.142106 s.
+[LSDF]   robust_mode=FULL: keeping Vmat_loc (6.11 GB) in atom ordering
+Timer "[LSDF] V/W construction" used time: 3.916497 s.
+  [bwd-lev0] integ=0.287084s  tasks=28692  us/pair=320.183  grid=0.0727615MB
+  [bwd-lev1] integ=0.104092s  tasks=11913  us/pair=279.605  grid=0.352898MB
+  [bwd-lev2] integ=0.079879s  tasks=8214  us/pair=311.192  grid=1.74023MB
+  [bwd] fft=0.00764275s  integ=0.471055s  reduce=0.020293s
+  [fwd-lev0] colloc=0.249231s  tasks=28692  us/pair=277.966  grid=0.0727615MB
+  [fwd-lev1] colloc=0.0717819s  tasks=11913  us/pair=192.816  grid=0.352898MB
+  [fwd-lev2] colloc=0.061866s  tasks=8214  us/pair=241.017  grid=1.74023MB
+  [fwd] colloc=0.382879s  reduce=0.020076s  fft=0.00191689s
+  [bwd-lev0] integ=0.357433s  tasks=28692  us/pair=398.643  grid=0.0727615MB
+  [bwd-lev1] integ=0.126427s  tasks=11913  us/pair=339.601  grid=0.352898MB
+  [bwd-lev2] integ=0.09324s  tasks=8214  us/pair=363.243  grid=1.74023MB
+  [bwd] fft=0.00387502s  integ=0.5771s  reduce=0.016288s
+[LSDF] xchg phases: A=0.021 s, B(K_W)=0.408 s, C(K_V)=1.897 s, E(reduce)=0.029 s
+[NELEC] step = 0  nelec = 64  neInt = 64.000000  dnelc = -6.3529626004e-11
+[ENERG] step = 0  eTotl = -57.90036362  eCore = 22.57669517  eCoul = 6.94704920  eExcl = -20.25159496  eNucl = -67.17251303  eDisp = 0.00000000
+[ERROR] step = 0  engy error =  0.0000000000e+00  grad error =  0.0000000000e+00  dmat error =  0.0000000000e+00
+Timer "SCF cycle: 0" used time: 5.596135 s.
+
+  [fwd-lev0] colloc=0.249178s  tasks=28692  us/pair=277.907  grid=0.0727615MB
+  [fwd-lev1] colloc=0.0724001s  tasks=11913  us/pair=194.477  grid=0.352898MB
+  [fwd-lev2] colloc=0.0640728s  tasks=8214  us/pair=249.614  grid=1.74023MB
+  [fwd] colloc=0.385651s  reduce=0.0137949s  fft=0.00192904s
+  [bwd-lev0] integ=0.30976s  tasks=28692  us/pair=345.473  grid=0.0727615MB
+  [bwd-lev1] integ=0.104864s  tasks=11913  us/pair=281.679  grid=0.352898MB
+  [bwd-lev2] integ=0.077534s  tasks=8214  us/pair=302.056  grid=1.74023MB
+  [bwd] fft=0.00529218s  integ=0.492158s  reduce=0.000922918s
+[LSDF] xchg phases: A=0.009 s, B(K_W)=0.362 s, C(K_V)=1.705 s, E(reduce)=0.017 s
+[NELEC] step = 1  nelec = 64  neInt = 64.000000  dnelc =  3.6374103729e-10
+[ENERG] step = 1  eTotl = -62.73843940  eCore = 19.46888553  eCoul = 4.34370497  eExcl = -19.37851687  eNucl = -67.17251303  eDisp = 0.00000000
+[ERROR] step = 1  engy error = -4.8380757796e+00  grad error =  0.0000000000e+00  dmat error =  1.3076002791e+00
+Timer "SCF cycle: 1" used time: 4.939057 s.
+
+  [fwd-lev0] colloc=0.249174s  tasks=28692  us/pair=277.902  grid=0.0727615MB
+  [fwd-lev1] colloc=0.0825729s  tasks=11913  us/pair=221.803  grid=0.352898MB
+  [fwd-lev2] colloc=0.061677s  tasks=8214  us/pair=240.28  grid=1.74023MB
+  [fwd] colloc=0.393424s  reduce=0.00592995s  fft=0.00190306s
+  [bwd-lev0] integ=0.314769s  tasks=28692  us/pair=351.06  grid=0.0727615MB
+  [bwd-lev1] integ=0.102832s  tasks=11913  us/pair=276.221  grid=0.352898MB
+  [bwd-lev2] integ=0.0832829s  tasks=8214  us/pair=324.453  grid=1.74023MB
+  [bwd] fft=0.00430012s  integ=0.500884s  reduce=0.00106907s
+[LSDF] xchg phases: A=0.019 s, B(K_W)=0.340 s, C(K_V)=1.271 s, E(reduce)=0.003 s
+[NELEC] step = 2  nelec = 64  neInt = 64.000000  dnelc =  3.1803892853e-10
+[ENERG] step = 2  eTotl = -62.75915828  eCore = 19.36619693  eCoul = 4.48459615  eExcl = -19.43743834  eNucl = -67.17251303  eDisp = 0.00000000
+[ERROR] step = 2  engy error = -2.0718883258e-02  grad error =  0.0000000000e+00  dmat error =  6.0578916711e-02
+Timer "SCF cycle: 2" used time: 3.882493 s.
+
+  [fwd-lev0] colloc=0.142864s  tasks=28692  us/pair=159.335  grid=0.0727615MB
+  [fwd-lev1] colloc=0.0483561s  tasks=11913  us/pair=129.891  grid=0.352898MB
+  [fwd-lev2] colloc=0.02844s  tasks=8214  us/pair=110.796  grid=1.74023MB
+  [fwd] colloc=0.21966s  reduce=0.00586081s  fft=0.00200701s
+  [bwd-lev0] integ=0.371235s  tasks=28692  us/pair=414.036  grid=0.0727615MB
+  [bwd-lev1] integ=0.13222s  tasks=11913  us/pair=355.162  grid=0.352898MB
+  [bwd-lev2] integ=0.0966401s  tasks=8214  us/pair=376.489  grid=1.74023MB
+  [bwd] fft=0.00532103s  integ=0.600095s  reduce=0.014441s
+[LSDF] xchg phases: A=0.018 s, B(K_W)=0.386 s, C(K_V)=1.830 s, E(reduce)=0.048 s
+[NELEC] step = 3  nelec = 64  neInt = 64.000000  dnelc =  2.3807444904e-10
+[ENERG] step = 3  eTotl = -62.77596893  eCore = 19.19707308  eCoul = 4.74713563  eExcl = -19.54766462  eNucl = -67.17251303  eDisp = 0.00000000
+[ERROR] step = 3  engy error = -1.6810649235e-02  grad error =  0.0000000000e+00  dmat error =  9.1489727732e-02
+Timer "SCF cycle: 3" used time: 4.694820 s.
+
+  [fwd-lev0] colloc=0.254168s  tasks=28692  us/pair=283.472  grid=0.0727615MB
+  [fwd-lev1] colloc=0.0801401s  tasks=11913  us/pair=215.268  grid=0.352898MB
+  [fwd-lev2] colloc=0.0712399s  tasks=8214  us/pair=277.536  grid=1.74023MB
+  [fwd] colloc=0.405548s  reduce=0.0308867s  fft=0.00236607s
+  [bwd-lev0] integ=0.394826s  tasks=28692  us/pair=440.347  grid=0.0727615MB
+  [bwd-lev1] integ=0.133135s  tasks=11913  us/pair=357.62  grid=0.352898MB
+  [bwd-lev2] integ=0.115976s  tasks=8214  us/pair=451.818  grid=1.74023MB
+  [bwd] fft=0.00410604s  integ=0.643937s  reduce=0.019999s
+[LSDF] xchg phases: A=0.032 s, B(K_W)=0.420 s, C(K_V)=1.871 s, E(reduce)=0.039 s
+[NELEC] step = 4  nelec = 64  neInt = 64.000000  dnelc =  2.3865709409e-10
+[ENERG] step = 4  eTotl = -62.77612205  eCore = 19.19775386  eCoul = 4.74641303  eExcl = -19.54777591  eNucl = -67.17251303  eDisp = 0.00000000
+[ERROR] step = 4  engy error = -1.5311658669e-04  grad error =  0.0000000000e+00  dmat error =  3.1673123051e-03
+Timer "SCF cycle: 4" used time: 8.803494 s.
+
+  [fwd-lev0] colloc=0.264064s  tasks=28692  us/pair=294.509  grid=0.0727615MB
+  [fwd-lev1] colloc=0.0879121s  tasks=11913  us/pair=236.144  grid=0.352898MB
+  [fwd-lev2] colloc=0.0632391s  tasks=8214  us/pair=246.366  grid=1.74023MB
+  [fwd] colloc=0.415215s  reduce=0.0189319s  fft=0.00251913s
+  [bwd-lev0] integ=0.379126s  tasks=28692  us/pair=422.837  grid=0.0727615MB
+  [bwd-lev1] integ=0.119963s  tasks=11913  us/pair=322.237  grid=0.352898MB
+  [bwd-lev2] integ=0.100475s  tasks=8214  us/pair=391.43  grid=1.74023MB
+  [bwd] fft=0.00495505s  integ=0.599564s  reduce=0.0049479s
+[LSDF] xchg phases: A=0.024 s, B(K_W)=0.396 s, C(K_V)=1.780 s, E(reduce)=0.049 s
+[NELEC] step = 5  nelec = 64  neInt = 64.000000  dnelc =  2.4103030682e-10
+[ENERG] step = 5  eTotl = -62.77631995  eCore = 19.20076323  eCoul = 4.74261327  eExcl = -19.54718342  eNucl = -67.17251303  eDisp = 0.00000000
+[ERROR] step = 5  engy error = -1.9789881334e-04  grad error =  0.0000000000e+00  dmat error =  6.8520339074e-03
+Timer "SCF cycle: 5" used time: 5.932040 s.
+
+  [fwd-lev0] colloc=0.257886s  tasks=28692  us/pair=287.618  grid=0.0727615MB
+  [fwd-lev1] colloc=0.0762801s  tasks=11913  us/pair=204.899  grid=0.352898MB
+  [fwd-lev2] colloc=0.0656559s  tasks=8214  us/pair=255.782  grid=1.74023MB
+  [fwd] colloc=0.399822s  reduce=0.0192468s  fft=0.00196624s
+  [bwd-lev0] integ=0.354984s  tasks=28692  us/pair=395.911  grid=0.0727615MB
+  [bwd-lev1] integ=0.104588s  tasks=11913  us/pair=280.938  grid=0.352898MB
+  [bwd-lev2] integ=0.0766551s  tasks=8214  us/pair=298.632  grid=1.74023MB
+  [bwd] fft=0.00552106s  integ=0.536227s  reduce=0.000995159s
+[LSDF] xchg phases: A=0.011 s, B(K_W)=0.351 s, C(K_V)=1.859 s, E(reduce)=0.006 s
+[NELEC] step = 6  nelec = 64  neInt = 64.000000  dnelc =  2.4201085580e-10
+[ENERG] step = 6  eTotl = -62.77634549  eCore = 19.20201990  eCoul = 4.74094363  eExcl = -19.54679599  eNucl = -67.17251303  eDisp = 0.00000000
+[ERROR] step = 6  engy error = -2.5545808718e-05  grad error =  0.0000000000e+00  dmat error =  2.0731855832e-03
+Timer "SCF cycle: 6" used time: 7.512606 s.
+
+  [fwd-lev0] colloc=0.248725s  tasks=28692  us/pair=277.401  grid=0.0727615MB
+  [fwd-lev1] colloc=0.0754709s  tasks=11913  us/pair=202.726  grid=0.352898MB
+  [fwd-lev2] colloc=0.068567s  tasks=8214  us/pair=267.123  grid=1.74023MB
+  [fwd] colloc=0.392763s  reduce=0.0187364s  fft=0.00189781s
+  [bwd-lev0] integ=0.396016s  tasks=28692  us/pair=441.674  grid=0.0727615MB
+  [bwd-lev1] integ=0.13201s  tasks=11913  us/pair=354.598  grid=0.352898MB
+  [bwd-lev2] integ=0.110764s  tasks=8214  us/pair=431.513  grid=1.74023MB
+  [bwd] fft=0.00379801s  integ=0.63879s  reduce=0.016263s
+[LSDF] xchg phases: A=0.013 s, B(K_W)=0.395 s, C(K_V)=1.479 s, E(reduce)=0.003 s
+[NELEC] step = 7  nelec = 64  neInt = 64.000000  dnelc =  2.4250823571e-10
+[ENERG] step = 7  eTotl = -62.77635085  eCore = 19.20260899  eCoul = 4.74022466  eExcl = -19.54667147  eNucl = -67.17251303  eDisp = 0.00000000
+[ERROR] step = 7  engy error = -5.3538320799e-06  grad error =  0.0000000000e+00  dmat error =  1.2091513168e-03
+Timer "SCF cycle: 7" used time: 4.402126 s.
+
+  [fwd-lev0] colloc=0.139013s  tasks=28692  us/pair=155.04  grid=0.0727615MB
+  [fwd-lev1] colloc=0.0388138s  tasks=11913  us/pair=104.259  grid=0.352898MB
+  [fwd-lev2] colloc=0.0340919s  tasks=8214  us/pair=132.815  grid=1.74023MB
+  [fwd] colloc=0.211919s  reduce=0.0152214s  fft=0.00201106s
+  [bwd-lev0] integ=0.276184s  tasks=28692  us/pair=308.026  grid=0.0727615MB
+  [bwd-lev1] integ=0.106901s  tasks=11913  us/pair=287.151  grid=0.352898MB
+  [bwd-lev2] integ=0.0761991s  tasks=8214  us/pair=296.855  grid=1.74023MB
+  [bwd] fft=0.00416088s  integ=0.459284s  reduce=0.016284s
+[NELEC] step = 8  nelec = 64  neInt = 64.000000  dnelc =  2.4266455512e-10
+[ENERG] step = 8  eTotl = -62.77635117  eCore = 19.20261469  eCoul = 4.74028003  eExcl = -19.54673286  eNucl = -67.17251303  eDisp = 0.00000000
+[ERROR] step = 8  engy error = -3.2509981196e-07  grad error =  0.0000000000e+00  dmat error =  2.1004414986e-04
+Timer "SCF cycle: 8" used time: 4.401185 s.
+
+  [fwd-lev0] colloc=0.254568s  tasks=28692  us/pair=283.918  grid=0.0727615MB
+  [fwd-lev1] colloc=0.080657s  tasks=11913  us/pair=216.656  grid=0.352898MB
+  [fwd-lev2] colloc=0.0592511s  tasks=8214  us/pair=230.83  grid=1.74023MB
+  [fwd] colloc=0.394476s  reduce=0.0149622s  fft=0.002244s
+  [bwd-lev0] integ=0.36278s  tasks=28692  us/pair=404.606  grid=0.0727615MB
+  [bwd-lev1] integ=0.115523s  tasks=11913  us/pair=310.311  grid=0.352898MB
+  [bwd-lev2] integ=0.0839679s  tasks=8214  us/pair=327.121  grid=1.74023MB
+  [bwd] fft=0.00472808s  integ=0.562271s  reduce=0.0122879s
+[NELEC] step = 9  nelec = 64  neInt = 64.000000  dnelc =  2.4260771170e-10
+[ENERG] step = 9  eTotl = -62.77635121  eCore = 19.20261189  eCoul = 4.74030287  eExcl = -19.54675294  eNucl = -67.17251303  eDisp = 0.00000000
+[ERROR] step = 9  engy error = -4.1732960199e-08  grad error =  0.0000000000e+00  dmat error =  6.6690306264e-05
+Timer "SCF cycle: 9" used time: 5.964035 s.
+
+  [fwd-lev0] colloc=0.259365s  tasks=28692  us/pair=289.268  grid=0.0727615MB
+  [fwd-lev1] colloc=0.0838139s  tasks=11913  us/pair=225.136  grid=0.352898MB
+  [fwd-lev2] colloc=0.05617s  tasks=8214  us/pair=218.826  grid=1.74023MB
+  [fwd] colloc=0.399349s  reduce=0.0278318s  fft=0.00189924s
+  [bwd-lev0] integ=0.391231s  tasks=28692  us/pair=436.337  grid=0.0727615MB
+  [bwd-lev1] integ=0.120504s  tasks=11913  us/pair=323.691  grid=0.352898MB
+  [bwd-lev2] integ=0.103761s  tasks=8214  us/pair=404.232  grid=1.74023MB
+  [bwd] fft=0.00385284s  integ=0.615496s  reduce=0.023998s
+[NELEC] step = 10  nelec = 64  neInt = 64.000000  dnelc =  2.4265034426e-10
+[ENERG] step = 10  eTotl = -62.77635123  eCore = 19.20260808  eCoul = 4.74032084  eExcl = -19.54676712  eNucl = -67.17251303  eDisp = 0.00000000
+[ERROR] step = 10  engy error = -2.0170361381e-08  grad error =  0.0000000000e+00  dmat error =  5.8483703197e-05
+Timer "SCF cycle: 10" used time: 5.023944 s.
+
+  [fwd-lev0] colloc=0.252436s  tasks=28692  us/pair=281.54  grid=0.0727615MB
+  [fwd-lev1] colloc=0.079767s  tasks=11913  us/pair=214.265  grid=0.352898MB
+  [fwd-lev2] colloc=0.0563619s  tasks=8214  us/pair=219.574  grid=1.74023MB
+  [fwd] colloc=0.388565s  reduce=0.000869036s  fft=0.00187397s
+  [bwd-lev0] integ=0.395159s  tasks=28692  us/pair=440.718  grid=0.0727615MB
+  [bwd-lev1] integ=0.111967s  tasks=11913  us/pair=300.759  grid=0.352898MB
+  [bwd-lev2] integ=0.0904679s  tasks=8214  us/pair=352.444  grid=1.74023MB
+  [bwd] fft=0.0052979s  integ=0.597594s  reduce=0.00096488s
+[NELEC] step = 11  nelec = 64  neInt = 64.000000  dnelc =  2.4256507913e-10
+[ENERG] step = 11  eTotl = -62.77635124  eCore = 19.20260486  eCoul = 4.74032805  eExcl = -19.54677112  eNucl = -67.17251303  eDisp = 0.00000000
+[ERROR] step = 11  engy error = -3.1203555295e-09  grad error =  0.0000000000e+00  dmat error =  2.4000420001e-05
+SCF converged in 11 steps.
+[LSDF] xchg_d10: ISDF-robust path (K_V + K_V~ - K_IP)
+  [fwd-lev0] colloc=0.116526s  tasks=28692  us/pair=129.961  grid=0.0727615MB
+  [fwd-lev1] colloc=0.0334091s  tasks=11913  us/pair=89.7416  grid=0.352898MB
+  [fwd-lev2] colloc=0.023191s  tasks=8214  us/pair=90.3471  grid=1.74023MB
+  [fwd] colloc=0.173126s  reduce=0.000488997s  fft=0.00267673s
+[GRADIENT] SCF type: GRKS | atoms: 16 | DOF: 48 | time: 181.991 s
+  Atom   0:   2.8001689951e-03  -8.4205528049e-04  -1.5054344255e-05
+  Atom   1:   2.8386484883e-02   1.5858995559e-02   1.0330008917e-02
+  Atom   2:   1.0911260201e-03   5.9724526017e-04   1.2282602946e-03
+  Atom   3:  -6.9113427283e-04   1.9573712479e-03   3.9481442088e-05
+  Atom   4:  -3.5786993450e-03   2.4993637202e-04  -6.0166154837e-06
+  Atom   5:  -1.3787785480e-02  -1.3114564150e-02  -1.0875425452e-02
+  Atom   6:  -8.8328866270e-03  -7.5225277448e-03   3.1524592146e-03
+  Atom   7:  -6.2446804767e-03   2.4240223196e-03  -3.8270036727e-03
+  Atom   8:   2.0135619438e-03   4.9195025021e-04   1.7201681300e-04
+  Atom   9:  -3.4308551035e-04  -2.0544581848e-04  -1.7298779184e-04
+  Atom  10:   8.3759859915e-05   4.3207431844e-05   1.1166082535e-04
+  Atom  11:  -8.5794175927e-05   4.0999245930e-04   1.1965629241e-04
+  Atom  12:   2.3706808739e-04   2.2305879364e-04   3.1168031912e-04
+  Atom  13:  -7.5215503970e-04  -8.8387836477e-04  -1.2368084306e-03
+  Atom  14:  -1.5173866701e-04  -2.7314463678e-04   1.1436647242e-03
+  Atom  15:  -1.4426352472e-04   5.8550862941e-04  -4.7508026839e-04
+[OPT] step = 0  energy = -62.7763512379  dE =               N/A  grad_max =  2.8386484883e-02  grad_rms =  6.2700198941e-03
+[OPT] Geometry optimization did not converge in 1 steps.
+Kylin-PBC Done.
+Timer "Kylin-PBC main" used time: 261.0645 s.

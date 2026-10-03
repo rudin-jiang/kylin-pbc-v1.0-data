@@ -1,0 +1,17 @@
+SCF.xcfun          = HSE06
+SCF.basis          = dzvp-sr
+SCF.psudo          = gth-pbe
+SCF.kmesh          = 1 1 1
+SCF.gmesh          = 0.5
+SCF.max_cycle      = 200
+SCF.eps_engy       = 1e-7 [eV]
+SCF.coul_method    = MGDF
+SCF.xchg_method    = LSDF
+SCF.xchg_robust    = FULL
+SCF.lsdf_cparam    = 10
+SCF.xchg_dropG0    = ON
+SCF.xchg_exxdiv    = EWALD
+SCF.hks_mix_method = BROY
+SCF.hks_mix_alpha  = 0.3
+OPT.opt_method     = BFGS
+OPT.max_cycle      = 1

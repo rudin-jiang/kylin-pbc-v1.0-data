@@ -1,0 +1,9 @@
+# cmd: kylin-pbc (binary of the submitted version)
+# host: cu06
+# t_s	VmRSS_kB	VmHWM_kB
+0.0	4	4
+2.0	4798584	6922000
+4.0	5015352	6922000
+6.0	5004568	6922000
+8.0	5034840	6922000
+# PEAK ru_maxrss_kB=6922000 vmhwm_kB=6922000 ru_maxrss_GiB=6.60 vmhwm_GiB=6.60 elapsed_s=10.0 rc=0
