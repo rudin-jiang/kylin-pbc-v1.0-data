@@ -1,13 +1,25 @@
 CP2K four-center HFX + ADMMS/cpFIT3, PBE restart, EPS_SCHWARZ=1e-8
-Updated 2026-10-19 for the revised manuscript scaling figure,
-SI Table S9, and response Table R5.
+Collected 2026-10-19; status note added 2026-10-22.
+
+STATUS: superseded. The revised manuscript (Fig. 6, SI Table S9) and the
+response letter (Table R5) report the EPS_SCHWARZ=1e-6 PBE-restart series
+in ../pbe-restart/ as protocol (b), together with the atomic-guess series
+(a) in ../atomic-guess/ and the no-ADMM reference (c) in ../no-admm/. The
+1e-8 series documented below is retained for reference only; none of its
+HSE06 timings or energies enters the manuscript or the response letter.
+The only file of this directory used by them is Si16-HSE06/pbe.log, the
+historical Si16 PBE stage (identical to
+../pbe-restart/Si16-HSE06-screened-unstable/pbe.log) that is added to the
+Si16 restart timing. The fig_scaling_time.png and plot_fig_scaling_time.py
+kept here draw the superseded 1e-8 curve; the manuscript Fig. 6 and its
+script are in ../../kylin-cip6-scaling/figures/.
 
 All five cases use SCREEN_ON_INITIAL_P TRUE, 32 MPI ranks x 1 OpenMP
 thread, CP2K 2024.3 (git:6712648), and the cpu32 partition on nominal
 512 GB Intel Xeon Gold 6544Y nodes. Si16/32/64 ran on cu04 in jobs
 262935/262936/262937. Si128/256 ran on cu08 in job 249374.
 The original Kylin and CP2K atomic-guess Si256 figure points remain the
-2 TB Xeon Gold 6548N results; the replacement restart curve is all cpu32.
+2 TB Xeon Gold 6548N results; the 1e-8 restart curve is all cpu32.
 
 Atoms    HSE06(s)  Historical PBE(s)   Figure total(s)  HSE OT steps
    16     139.291              4.704           143.995             8
