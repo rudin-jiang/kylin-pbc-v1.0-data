@@ -1,0 +1,224 @@
+{
+  "c_ip": 6,
+  "calibration_case": "Si64_c06",
+  "signed_error_uHa_per_atom": "156.71645719578125",
+  "abs_error_uHa_per_atom": "156.71645719578125",
+  "total_seconds": 19.39069,
+  "target_abs_error_uHa_per_atom": "212.617938783562500",
+  "reference_energy_Ha": "-251.73692512096886",
+  "reference_case": "Si64_FTDF",
+  "selection_rule": "Among converged integer c_IP=1..30 cases, maximize absolute Si64 error subject to error <= CP2K target. Break ties by smaller c_IP.",
+  "measurements": [
+    {
+      "c_ip": 1,
+      "calibration_case": "Si64_c01",
+      "signed_error_uHa_per_atom": "26965.42458334671875",
+      "abs_error_uHa_per_atom": "26965.42458334671875",
+      "total_seconds": 12.08333
+    },
+    {
+      "c_ip": 2,
+      "calibration_case": "Si64_c02",
+      "signed_error_uHa_per_atom": "7409.13370907484375",
+      "abs_error_uHa_per_atom": "7409.13370907484375",
+      "total_seconds": 12.67101
+    },
+    {
+      "c_ip": 3,
+      "calibration_case": "Si64_c03",
+      "signed_error_uHa_per_atom": "2525.08284631937500",
+      "abs_error_uHa_per_atom": "2525.08284631937500",
+      "total_seconds": 13.93409
+    },
+    {
+      "c_ip": 4,
+      "calibration_case": "Si64_c04",
+      "signed_error_uHa_per_atom": "935.47953152484375",
+      "abs_error_uHa_per_atom": "935.47953152484375",
+      "total_seconds": 15.63565
+    },
+    {
+      "c_ip": 5,
+      "calibration_case": "Si64_c05",
+      "signed_error_uHa_per_atom": "359.96278492062500",
+      "abs_error_uHa_per_atom": "359.96278492062500",
+      "total_seconds": 17.37716
+    },
+    {
+      "c_ip": 6,
+      "calibration_case": "Si64_c06",
+      "signed_error_uHa_per_atom": "156.71645719578125",
+      "abs_error_uHa_per_atom": "156.71645719578125",
+      "total_seconds": 19.39069
+    },
+    {
+      "c_ip": 7,
+      "calibration_case": "Si64_c07",
+      "signed_error_uHa_per_atom": "73.35568739109375",
+      "abs_error_uHa_per_atom": "73.35568739109375",
+      "total_seconds": 19.00061
+    },
+    {
+      "c_ip": 8,
+      "calibration_case": "Si64_c08",
+      "signed_error_uHa_per_atom": "41.92868273953125",
+      "abs_error_uHa_per_atom": "41.92868273953125",
+      "total_seconds": 20.86942
+    },
+    {
+      "c_ip": 9,
+      "calibration_case": "Si64_c09",
+      "signed_error_uHa_per_atom": "26.68615788515625",
+      "abs_error_uHa_per_atom": "26.68615788515625",
+      "total_seconds": 22.39216
+    },
+    {
+      "c_ip": 10,
+      "calibration_case": "Si64_c10",
+      "signed_error_uHa_per_atom": "18.65571287671875",
+      "abs_error_uHa_per_atom": "18.65571287671875",
+      "total_seconds": 25.19342
+    },
+    {
+      "c_ip": 11,
+      "calibration_case": "Si64_c11",
+      "signed_error_uHa_per_atom": "11.98165155000000",
+      "abs_error_uHa_per_atom": "11.98165155000000",
+      "total_seconds": 26.9248
+    },
+    {
+      "c_ip": 12,
+      "calibration_case": "Si64_c12",
+      "signed_error_uHa_per_atom": "6.67979674140625",
+      "abs_error_uHa_per_atom": "6.67979674140625",
+      "total_seconds": 29.509
+    },
+    {
+      "c_ip": 13,
+      "calibration_case": "Si64_c13",
+      "signed_error_uHa_per_atom": "3.79676236578125",
+      "abs_error_uHa_per_atom": "3.79676236578125",
+      "total_seconds": 30.4537
+    },
+    {
+      "c_ip": 14,
+      "calibration_case": "Si64_c14",
+      "signed_error_uHa_per_atom": "2.06898683921875",
+      "abs_error_uHa_per_atom": "2.06898683921875",
+      "total_seconds": 29.06277
+    },
+    {
+      "c_ip": 15,
+      "calibration_case": "Si64_c15",
+      "signed_error_uHa_per_atom": "1.24234518406250",
+      "abs_error_uHa_per_atom": "1.24234518406250",
+      "total_seconds": 31.54534
+    },
+    {
+      "c_ip": 16,
+      "calibration_case": "Si64_c16",
+      "signed_error_uHa_per_atom": "0.76350819703125",
+      "abs_error_uHa_per_atom": "0.76350819703125",
+      "total_seconds": 33.21345
+    },
+    {
+      "c_ip": 17,
+      "calibration_case": "Si64_c17",
+      "signed_error_uHa_per_atom": "0.47412721343750",
+      "abs_error_uHa_per_atom": "0.47412721343750",
+      "total_seconds": 34.74234
+    },
+    {
+      "c_ip": 18,
+      "calibration_case": "Si64_c18",
+      "signed_error_uHa_per_atom": "0.30016193750000",
+      "abs_error_uHa_per_atom": "0.30016193750000",
+      "total_seconds": 36.53839
+    },
+    {
+      "c_ip": 19,
+      "calibration_case": "Si64_c19",
+      "signed_error_uHa_per_atom": "0.18978621343750",
+      "abs_error_uHa_per_atom": "0.18978621343750",
+      "total_seconds": 37.91135
+    },
+    {
+      "c_ip": 20,
+      "calibration_case": "Si64_c20",
+      "signed_error_uHa_per_atom": "0.12874064656250",
+      "abs_error_uHa_per_atom": "0.12874064656250",
+      "total_seconds": 40.63385
+    },
+    {
+      "c_ip": 21,
+      "calibration_case": "Si64_c21",
+      "signed_error_uHa_per_atom": "0.08556957671875",
+      "abs_error_uHa_per_atom": "0.08556957671875",
+      "total_seconds": 42.69932
+    },
+    {
+      "c_ip": 22,
+      "calibration_case": "Si64_c22",
+      "signed_error_uHa_per_atom": "0.05812836343750",
+      "abs_error_uHa_per_atom": "0.05812836343750",
+      "total_seconds": 44.45312
+    },
+    {
+      "c_ip": 23,
+      "calibration_case": "Si64_c23",
+      "signed_error_uHa_per_atom": "0.03981337781250",
+      "abs_error_uHa_per_atom": "0.03981337781250",
+      "total_seconds": 46.5889
+    },
+    {
+      "c_ip": 24,
+      "calibration_case": "Si64_c24",
+      "signed_error_uHa_per_atom": "0.02767859718750",
+      "abs_error_uHa_per_atom": "0.02767859718750",
+      "total_seconds": 48.16581
+    },
+    {
+      "c_ip": 25,
+      "calibration_case": "Si64_c25",
+      "signed_error_uHa_per_atom": "0.01934474890625",
+      "abs_error_uHa_per_atom": "0.01934474890625",
+      "total_seconds": 49.92694
+    },
+    {
+      "c_ip": 26,
+      "calibration_case": "Si64_c26",
+      "signed_error_uHa_per_atom": "0.01381254437500",
+      "abs_error_uHa_per_atom": "0.01381254437500",
+      "total_seconds": 52.16374
+    },
+    {
+      "c_ip": 27,
+      "calibration_case": "Si64_c27",
+      "signed_error_uHa_per_atom": "0.00980738156250",
+      "abs_error_uHa_per_atom": "0.00980738156250",
+      "total_seconds": 53.52257
+    },
+    {
+      "c_ip": 28,
+      "calibration_case": "Si64_c28",
+      "signed_error_uHa_per_atom": "0.00712218640625",
+      "abs_error_uHa_per_atom": "0.00712218640625",
+      "total_seconds": 54.45615
+    },
+    {
+      "c_ip": 29,
+      "calibration_case": "Si64_c29",
+      "signed_error_uHa_per_atom": "0.00521712140625",
+      "abs_error_uHa_per_atom": "0.00521712140625",
+      "total_seconds": 55.27549
+    },
+    {
+      "c_ip": 30,
+      "calibration_case": "Si64_c30",
+      "signed_error_uHa_per_atom": "0.00386648125000",
+      "abs_error_uHa_per_atom": "0.00386648125000",
+      "total_seconds": 59.16198
+    }
+  ],
+  "selected_at": "2026-10-20T04:24:34.532477+00:00"
+}

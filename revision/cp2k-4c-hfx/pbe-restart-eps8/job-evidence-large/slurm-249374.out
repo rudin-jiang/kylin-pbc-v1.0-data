@@ -1,0 +1,13 @@
+node: cu08  base: /home/rudin/tmp-review-cp2k
+[Wed Sep 30 11:41:52 PM CST 2026] start 4c-admm-pbe-noscreen/Si16/cp2k.inp
+[Wed Sep 30 11:42:51 PM CST 2026] done  4c-admm-pbe-noscreen/Si16/cp2k.inp rc=0
+[Wed Sep 30 11:42:51 PM CST 2026] start 4c-admm-pbe-e8/Si128/cp2k.inp
+[Thu Oct  1 12:02:11 AM CST 2026] done  4c-admm-pbe-e8/Si128/cp2k.inp rc=0
+[Thu Oct  1 12:02:11 AM CST 2026] start 4c-admm-pbe-e8/Si256/cp2k.inp
+[Thu Oct  1 01:37:46 AM CST 2026] done  4c-admm-pbe-e8/Si256/cp2k.inp rc=0
+[Thu Oct  1 01:37:46 AM CST 2026] start 4c-noadmm-pbe/Si16/cp2k.inp
+[Thu Oct  1 04:55:41 AM CST 2026] done  4c-noadmm-pbe/Si16/cp2k.inp rc=0
+[Thu Oct  1 04:55:41 AM CST 2026] start 4c-noadmm-pbe/Si32/cp2k.inp
+[Thu Oct  1 10:45:26 AM CST 2026] done  4c-noadmm-pbe/Si32/cp2k.inp rc=0
+[Thu Oct  1 10:45:26 AM CST 2026] start 4c-noadmm-pbe/Si64/cp2k.inp
+[Thu Oct  1 09:56:34 PM CST 2026] done  4c-noadmm-pbe/Si64/cp2k.inp rc=0

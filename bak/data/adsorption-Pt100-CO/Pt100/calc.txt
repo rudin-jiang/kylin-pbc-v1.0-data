@@ -1,0 +1,25 @@
+SCF.xcfun   = HSE06
+SCF.basis   = tzvp
+
+SCF.kmesh   = 1 1 1
+SCF.gmesh   = 0.4
+
+SCF.max_cycle = 200
+
+SCF.hks_mix_space = 16
+SCF.hks_mix_alpha = 0.1
+
+SCF.coul_method = MGDF
+SCF.xchg_method = LSDF
+
+SCF.xchg_exxace = NONE
+SCF.xchg_exxocc = ON
+SCF.xchg_robust = FULL
+
+SCF.xchg_dropG0 = ON
+SCF.xchg_exxdiv = EWALD
+
+SCF.eps_engy = 2E-6
+
+SCF.smear_method = FERMI
+SCF.smear_sigma  = 1160 [K]

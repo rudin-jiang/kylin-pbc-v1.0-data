@@ -1,0 +1,157 @@
+# CP2K input for MgO-HSE06-sc333  (external benchmark; 3x3x3 supercell, Gamma point)
+# HSE06 = RI-HFX (short-range, omega=0.11 a0^-1) + ADMM  (requirement.md).
+# 3x3x3 supercell at Gamma replaces primitive-cell k333: RI-HFXk on the tiny
+#   primitive cell over-extends the RI basis (SR range ~20 A >> half BvK ~3.8 A)
+#   and crashes (SIGSEGV); the supercell-Gamma run is the equivalent, runnable
+#   counterpart (no &KPOINTS -> standard gamma RI-HFX).
+&GLOBAL
+  PROJECT MgO-HSE06-sc333
+  RUN_TYPE ENERGY
+  PRINT_LEVEL MEDIUM
+&END GLOBAL
+
+&FORCE_EVAL
+  METHOD Quickstep
+  &DFT
+    BASIS_SET_FILE_NAME BASIS_MOLOPT
+    BASIS_SET_FILE_NAME BASIS_ADMM
+    BASIS_SET_FILE_NAME BASIS_ADMM_MOLOPT
+    POTENTIAL_FILE_NAME GTH_POTENTIALS
+    SORT_BASIS EXP
+    AUTO_BASIS RI_HFX MEDIUM
+    &AUXILIARY_DENSITY_MATRIX_METHOD
+      ADMM_TYPE ADMMS
+      EXCH_CORRECTION_FUNC DEFAULT
+    &END AUXILIARY_DENSITY_MATRIX_METHOD
+    &QS
+      EPS_DEFAULT 1.0E-12
+      METHOD GPW
+      EPS_PGF_ORB 1.0E-6
+      PW_GRID_BLOCKED FALSE
+    &END QS
+    &MGRID
+      CUTOFF 600
+      REL_CUTOFF 60
+      NGRIDS 4
+    &END MGRID
+    &SCF
+      SCF_GUESS ATOMIC
+      EPS_SCF 1.0E-6
+      MAX_SCF 50
+      # OT instead of diagonalization+Broyden: the previous Broyden run stalled in a
+      # period-2 charge-sloshing limit cycle (convergence stuck at ~2.2e-3, never
+      # below EPS_SCF) on this ionic oxide. OT converges the gapped MgO cleanly.
+      &OT
+        MINIMIZER DIIS
+        PRECONDITIONER FULL_SINGLE_INVERSE
+        ENERGY_GAP 0.05
+      &END OT
+      &OUTER_SCF
+        EPS_SCF 1.0E-6
+        MAX_SCF 50
+      &END OUTER_SCF
+      &PRINT
+        &RESTART OFF
+        &END RESTART
+      &END PRINT
+    &END SCF
+    &XC
+      &XC_FUNCTIONAL
+        &PBE
+          SCALE_X 0.0
+          SCALE_C 1.0
+        &END PBE
+        &XWPBE
+          SCALE_X -0.25
+          SCALE_X0 1.0
+          OMEGA 0.11
+        &END XWPBE
+      &END XC_FUNCTIONAL
+      &HF
+        FRACTION 0.25
+        &RI
+          EPS_FILTER 1.0E-9
+          EPS_PGF_ORB 1.0E-6
+        &END RI
+        &INTERACTION_POTENTIAL
+          POTENTIAL_TYPE SHORTRANGE
+          OMEGA 0.11
+        &END INTERACTION_POTENTIAL
+      &END HF
+    &END XC
+  &END DFT
+  &SUBSYS
+    &CELL
+      A      0.0000000000     6.3255000000     6.3255000000
+      B      6.3255000000     0.0000000000     6.3255000000
+      C      6.3255000000     6.3255000000     0.0000000000
+      PERIODIC XYZ
+    &END CELL
+    &COORD
+      Mg      0.0000000000     0.0000000000     0.0000000000
+      O       2.1085000000     2.1085000000     2.1085000000
+      Mg      2.1085000000     2.1085000000     0.0000000000
+      O       4.2170000000     4.2170000000     2.1085000000
+      Mg      4.2170000000     4.2170000000     0.0000000000
+      O       6.3255000000     6.3255000000     2.1085000000
+      Mg      2.1085000000     0.0000000000     2.1085000000
+      O       4.2170000000     2.1085000000     4.2170000000
+      Mg      4.2170000000     2.1085000000     2.1085000000
+      O       6.3255000000     4.2170000000     4.2170000000
+      Mg      6.3255000000     4.2170000000     2.1085000000
+      O       8.4340000000     6.3255000000     4.2170000000
+      Mg      4.2170000000     0.0000000000     4.2170000000
+      O       6.3255000000     2.1085000000     6.3255000000
+      Mg      6.3255000000     2.1085000000     4.2170000000
+      O       8.4340000000     4.2170000000     6.3255000000
+      Mg      8.4340000000     4.2170000000     4.2170000000
+      O      10.5425000000     6.3255000000     6.3255000000
+      Mg      0.0000000000     2.1085000000     2.1085000000
+      O       2.1085000000     4.2170000000     4.2170000000
+      Mg      2.1085000000     4.2170000000     2.1085000000
+      O       4.2170000000     6.3255000000     4.2170000000
+      Mg      4.2170000000     6.3255000000     2.1085000000
+      O       6.3255000000     8.4340000000     4.2170000000
+      Mg      2.1085000000     2.1085000000     4.2170000000
+      O       4.2170000000     4.2170000000     6.3255000000
+      Mg      4.2170000000     4.2170000000     4.2170000000
+      O       6.3255000000     6.3255000000     6.3255000000
+      Mg      6.3255000000     6.3255000000     4.2170000000
+      O       8.4340000000     8.4340000000     6.3255000000
+      Mg      4.2170000000     2.1085000000     6.3255000000
+      O       6.3255000000     4.2170000000     8.4340000000
+      Mg      6.3255000000     4.2170000000     6.3255000000
+      O       8.4340000000     6.3255000000     8.4340000000
+      Mg      8.4340000000     6.3255000000     6.3255000000
+      O      10.5425000000     8.4340000000     8.4340000000
+      Mg      0.0000000000     4.2170000000     4.2170000000
+      O       2.1085000000     6.3255000000     6.3255000000
+      Mg      2.1085000000     6.3255000000     4.2170000000
+      O       4.2170000000     8.4340000000     6.3255000000
+      Mg      4.2170000000     8.4340000000     4.2170000000
+      O       6.3255000000    10.5425000000     6.3255000000
+      Mg      2.1085000000     4.2170000000     6.3255000000
+      O       4.2170000000     6.3255000000     8.4340000000
+      Mg      4.2170000000     6.3255000000     6.3255000000
+      O       6.3255000000     8.4340000000     8.4340000000
+      Mg      6.3255000000     8.4340000000     6.3255000000
+      O       8.4340000000    10.5425000000     8.4340000000
+      Mg      4.2170000000     4.2170000000     8.4340000000
+      O       6.3255000000     6.3255000000    10.5425000000
+      Mg      6.3255000000     6.3255000000     8.4340000000
+      O       8.4340000000     8.4340000000    10.5425000000
+      Mg      8.4340000000     8.4340000000     8.4340000000
+      O      10.5425000000    10.5425000000    10.5425000000
+    &END COORD
+    &KIND Mg
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      BASIS_SET AUX_FIT cpFIT3
+      POTENTIAL GTH-PBE
+    &END KIND
+    &KIND O
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      BASIS_SET AUX_FIT cpFIT3
+      POTENTIAL GTH-PBE
+    &END KIND
+  &END SUBSYS
+&END FORCE_EVAL

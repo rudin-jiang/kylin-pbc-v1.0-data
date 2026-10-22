@@ -1,0 +1,8 @@
+SCF.xcfun          = PBE
+SCF.basis          = dzvp-sr
+SCF.kmesh          = 1 1 1
+SCF.gmesh          = 0.5
+SCF.max_cycle      = 100
+SCF.coul_method    = MGDF
+SCF.hks_mix_method = BROY
+SCF.hks_mix_alpha  = 0.3

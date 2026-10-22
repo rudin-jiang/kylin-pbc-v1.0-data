@@ -1,0 +1,2474 @@
+ DBCSR| CPU Multiplication driver                                           XSMM (U)
+ DBCSR| Multrec recursion limit                                              512 (U)
+ DBCSR| Multiplication stack size                                           1000 (D)
+ DBCSR| Maximum elements for images                                    UNLIMITED (U)
+ DBCSR| Multiplicative factor virtual images                                   1 (U)
+ DBCSR| Use multiplication densification                                       T (D)
+ DBCSR| Multiplication size stacks                                             3 (U)
+ DBCSR| Use memory pool for CPU allocation                                     F (U)
+ DBCSR| Number of 3D layers                                               SINGLE (U)
+ DBCSR| Use MPI memory allocation                                              F (U)
+ DBCSR| Use RMA algorithm                                                      F (U)
+ DBCSR| Use Communication thread                                               T (U)
+ DBCSR| Communication thread load                                             87 (D)
+ DBCSR| MPI: My process id                                                     0
+ DBCSR| MPI: Number of processes                                              32
+ DBCSR| OMP: Current number of threads                                         1
+ DBCSR| OMP: Max number of threads                                             1
+ DBCSR| Split modifier for TAS multiplication algorithm                  1.0E+00 (U)
+
+
+  **** **** ******  **  PROGRAM STARTED AT               2026-06-23 17:43:24.506
+ ***** ** ***  *** **   PROGRAM STARTED ON                                  cu01
+ **    ****   ******    PROGRAM STARTED BY                                 rudin
+ ***** **    ** ** **   PROGRAM PROCESS ID                               2852181
+  **** **  *******  **  PROGRAM STARTED IN /home/rudin/code/kylin-pbc/art/exampl
+                                           e/extern/MgO-HSE06-gamma-cp2k-ADMM
+
+ CP2K| version string:                                       CP2K version 2024.3
+ CP2K| source code revision number:                                  git:6712648
+ CP2K| cp2kflags: omp libint fftw3 libxc libgrpp elpa parallel scalapack mpi_f08
+ CP2K|             cosma xsmm plumed2 spglib mkl libvori libbqb
+ CP2K| is freely available from                            https://www.cp2k.org/
+ CP2K| Program compiled at            2026年 01月 07日 星期三 01:43:54 CST
+ CP2K| Program compiled on                                                  mu01
+ CP2K| Program compiled for                                                local
+ CP2K| Data directory path    /software/Applications/cp2k/cp2k-2024.3-oneapi-202
+ CP2K| Input file name                                                  cp2k.inp
+ 
+ GLOBAL| Force Environment number                                              1
+ GLOBAL| Basis set file name                                        BASIS_MOLOPT
+ GLOBAL| Potential file name                                      GTH_POTENTIALS
+ GLOBAL| MM Potential file name                                     MM_POTENTIAL
+ GLOBAL| Coordinate file name                                      __STD_INPUT__
+ GLOBAL| Method name                                                        CP2K
+ GLOBAL| Project name                                            MgO-HSE06-gamma
+ GLOBAL| Run type                                                         ENERGY
+ GLOBAL| FFT library                                                       FFTW3
+ GLOBAL| Diagonalization library                                            ELPA
+ GLOBAL| DGEMM library                                                      BLAS
+ GLOBAL| Minimum number of eigenvectors for ELPA usage                        16
+ GLOBAL| Orthonormality check for eigenvectors                          DISABLED
+ GLOBAL| Matrix multiplication library                                     COSMA
+ GLOBAL| All-to-all communication in single precision                          F
+ GLOBAL| FFTs using library dependent lengths                                  F
+ GLOBAL| Grid backend                                                       AUTO
+ GLOBAL| Global print level                                               MEDIUM
+ GLOBAL| MPI I/O enabled                                                       T
+ GLOBAL| Total number of message passing processes                            32
+ GLOBAL| Number of threads for this process                                    1
+ GLOBAL| This output is from process                                           0
+ GLOBAL| Stack size for threads created by OpenMP (OMP_STACKSIZE)        default
+ GLOBAL| CPU model name                              INTEL(R) XEON(R) GOLD 6544Y
+ GLOBAL| CPUID                                                              1003
+
+ MEMORY| system memory details [Kb]
+ MEMORY|                        rank 0           min           max       average
+ MEMORY| MemTotal            527978108     527978108     527978108     527978108
+ MEMORY| MemFree             464236552     464236552     464237056     464236709
+ MEMORY| Buffers              12075184      12075184      12075184      12075184
+ MEMORY| Cached               35637420      35637420      35637420      35637420
+ MEMORY| Slab                 10109916      10109916      10109916      10109916
+ MEMORY| SReclaimable          7588248       7588248       7588248       7588248
+ MEMORY| MemLikelyFree       519537404     519537404     519537908     519537561
+
+
+ *** Fundamental physical constants (SI units) ***
+
+ *** Literature: B. J. Mohr and B. N. Taylor,
+ ***             CODATA recommended values of the fundamental physical
+ ***             constants: 2006, Web Version 5.1
+ ***             http://physics.nist.gov/constants
+
+ Speed of light in vacuum [m/s]                             2.99792458000000E+08
+ Magnetic constant or permeability of vacuum [N/A**2]       1.25663706143592E-06
+ Electric constant or permittivity of vacuum [F/m]          8.85418781762039E-12
+ Planck constant (h) [J*s]                                  6.62606896000000E-34
+ Planck constant (h-bar) [J*s]                              1.05457162825177E-34
+ Elementary charge [C]                                      1.60217648700000E-19
+ Electron mass [kg]                                         9.10938215000000E-31
+ Electron g factor [ ]                                     -2.00231930436220E+00
+ Proton mass [kg]                                           1.67262163700000E-27
+ Fine-structure constant                                    7.29735253760000E-03
+ Rydberg constant [1/m]                                     1.09737315685270E+07
+ Avogadro constant [1/mol]                                  6.02214179000000E+23
+ Boltzmann constant [J/K]                                   1.38065040000000E-23
+ Atomic mass unit [kg]                                      1.66053878200000E-27
+ Bohr radius [m]                                            5.29177208590000E-11
+
+ *** Conversion factors ***
+
+ [u] -> [a.u.]                                              1.82288848426455E+03
+ [Angstrom] -> [Bohr] = [a.u.]                              1.88972613288564E+00
+ [a.u.] = [Bohr] -> [Angstrom]                              5.29177208590000E-01
+ [a.u.] -> [s]                                              2.41888432650478E-17
+ [a.u.] -> [fs]                                             2.41888432650478E-02
+ [a.u.] -> [J]                                              4.35974393937059E-18
+ [a.u.] -> [N]                                              8.23872205491840E-08
+ [a.u.] -> [K]                                              3.15774647902944E+05
+ [a.u.] -> [kJ/mol]                                         2.62549961709828E+03
+ [a.u.] -> [kcal/mol]                                       6.27509468713739E+02
+ [a.u.] -> [Pa]                                             2.94210107994716E+13
+ [a.u.] -> [bar]                                            2.94210107994716E+08
+ [a.u.] -> [atm]                                            2.90362800883016E+08
+ [a.u.] -> [eV]                                             2.72113838565563E+01
+ [a.u.] -> [Hz]                                             6.57968392072181E+15
+ [a.u.] -> [1/cm] (wave numbers)                            2.19474631370540E+05
+ [a.u./Bohr**2] -> [1/cm]                                   5.14048714338585E+03
+ 
+
+ CELL_TOP| Volume [angstrom^3]:                                        18.747822
+ CELL_TOP| Vector a [angstrom     0.000     2.108     2.108   |a| =     2.981869
+ CELL_TOP| Vector b [angstrom     2.108     0.000     2.108   |b| =     2.981869
+ CELL_TOP| Vector c [angstrom     2.108     2.108     0.000   |c| =     2.981869
+ CELL_TOP| Angle (b,c), alpha [degree]:                                60.000000
+ CELL_TOP| Angle (a,c), beta  [degree]:                                60.000000
+ CELL_TOP| Angle (a,b), gamma [degree]:                                60.000000
+ CELL_TOP| Numerically orthorhombic:                                          NO
+ CELL_TOP| Periodicity                                                       XYZ
+ 
+ GENERATE|  Preliminary Number of Bonds generated:                             0
+ GENERATE|  Achieved consistency in connectivity generation.
+
+ CELL| Volume [angstrom^3]:                                            18.747822
+ CELL| Vector a [angstrom]:       0.000     2.108     2.108   |a| =     2.981869
+ CELL| Vector b [angstrom]:       2.108     0.000     2.108   |b| =     2.981869
+ CELL| Vector c [angstrom]:       2.108     2.108     0.000   |c| =     2.981869
+ CELL| Angle (b,c), alpha [degree]:                                    60.000000
+ CELL| Angle (a,c), beta  [degree]:                                    60.000000
+ CELL| Angle (a,b), gamma [degree]:                                    60.000000
+ CELL| Numerically orthorhombic:                                              NO
+ CELL| Periodicity                                                           XYZ
+
+ CELL_REF| Volume [angstrom^3]:                                        18.747822
+ CELL_REF| Vector a [angstrom     0.000     2.108     2.108   |a| =     2.981869
+ CELL_REF| Vector b [angstrom     2.108     0.000     2.108   |b| =     2.981869
+ CELL_REF| Vector c [angstrom     2.108     2.108     0.000   |c| =     2.981869
+ CELL_REF| Angle (b,c), alpha [degree]:                                60.000000
+ CELL_REF| Angle (a,c), beta  [degree]:                                60.000000
+ CELL_REF| Angle (a,b), gamma [degree]:                                60.000000
+ CELL_REF| Numerically orthorhombic:                                          NO
+ CELL_REF| Periodicity                                                       XYZ
+
+ *******************************************************************************
+ *******************************************************************************
+ **                                                                           **
+ **     #####                         ##              ##                      **
+ **    ##   ##            ##          ##              ##                      **
+ **   ##     ##                       ##            ######                    **
+ **   ##     ##  ##   ##  ##   #####  ##  ##   ####   ##    #####    #####    **
+ **   ##     ##  ##   ##  ##  ##      ## ##   ##      ##   ##   ##  ##   ##   **
+ **   ##  ## ##  ##   ##  ##  ##      ####     ###    ##   ######   ######    **
+ **    ##  ###   ##   ##  ##  ##      ## ##      ##   ##   ##       ##        **
+ **     #######   #####   ##   #####  ##  ##  ####    ##    #####   ##        **
+ **           ##                                                    ##        **
+ **                                                                           **
+ **                                                ... make the atoms dance   **
+ **                                                                           **
+ **            Copyright (C) by CP2K developers group (2000-2024)             **
+ **                      J. Chem. Phys. 152, 194103 (2020)                    **
+ **                                                                           **
+ *******************************************************************************
+
+ DFT| Spin restricted Kohn-Sham (RKS) calculation                            RKS
+ DFT| Multiplicity                                                             1
+ DFT| Number of spin states                                                    1
+ DFT| Charge                                                                   0
+ DFT| Self-interaction correction (SIC)                                       NO
+ DFT| Cutoffs: density                                              1.000000E-10
+ DFT|          gradient                                             1.000000E-10
+ DFT|          tau                                                  1.000000E-10
+ DFT|          cutoff_smoothing_range                               0.000000E+00
+ DFT| XC density smoothing                                                  NONE
+ DFT| XC derivatives                                                          PW
+
+ FUNCTIONAL| PBE:
+ FUNCTIONAL| J.P.Perdew, K.Burke, M.Ernzerhof, Phys. Rev. Letter, vol. 77, n 18,
+ FUNCTIONAL|  pp. 3865-3868, (1996)sx=0.000sc=1.000{spin unpolarized}           
+ FUNCTIONAL| XWPBE:
+ FUNCTIONAL| Jochen Heyd and Gustavo E. Scuseria, J. Chem. Phys., 120, 7274 {LDA
+ FUNCTIONAL|  version}                                                          
+
+
+ QS| Method:                                                                 GPW
+ QS| Density plane wave grid type                        NON-SPHERICAL FULLSPACE
+ QS| Number of grid levels:                                                    4
+ QS| Density cutoff [a.u.]:                                                300.0
+ QS| Multi grid cutoff [a.u.]: 1) grid level                               300.0
+ QS|                           2) grid level                               100.0
+ QS|                           3) grid level                                33.3
+ QS|                           4) grid level                                11.1
+ QS| Grid level progression factor:                                          3.0
+ QS| Relative density cutoff [a.u.]:                                        30.0
+ QS| Interaction thresholds: eps_pgf_orb:                                1.0E-06
+ QS|                         eps_filter_matrix:                          0.0E+00
+ QS|                         eps_core_charge:                            1.0E-14
+ QS|                         eps_rho_gspace:                             1.0E-12
+ QS|                         eps_rho_rspace:                             1.0E-12
+ QS|                         eps_gvg_rspace:                             1.0E-06
+ QS|                         eps_ppl:                                    1.0E-02
+ QS|                         eps_ppnl:                                   1.0E-08
+
+ ADMM| Specific ADMM type specified                                        ADMMS
+ ADMM| Density matrix purification method                                   NONE
+ ADMM| Orbital projection with charge constrain
+ ADMM| Use Merlot (2014) scaling model
+ ADMM| eps_filter                                                0.000000000    
+ ADMM| Exchange functional in correction term                            (W)PBEX
+
+
+
+ ATOMIC KIND INFORMATION
+
+  1. Atomic kind: Mg                                    Number of atoms:       1
+
+     Orbital Basis Set                                        DZVP-MOLOPT-SR-GTH
+
+       Number of orbital shell sets:                                           1
+       Number of orbital shells:                                               5
+       Number of primitive Cartesian functions:                                7
+       Number of Cartesian basis functions:                                    9
+       Number of spherical basis functions:                                    9
+       Norm type:                                                              2
+
+       Normalised Cartesian orbitals:
+
+                        Set   Shell   Orbital            Exponent    Coefficient
+
+                          1       1    2s               30.653048       0.484709
+                                                        12.924389       0.839969
+                                                         4.968377      -0.417560
+                                                         1.851828      -0.696909
+                                                         0.673565      -0.194648
+                                                         0.168626      -0.002319
+                                                         0.059428      -0.000952
+
+                          1       2    3s               30.653048      -0.080058
+                                                        12.924389      -0.163891
+                                                         4.968377       0.094488
+                                                         1.851828       0.194057
+                                                         0.673565       0.125641
+                                                         0.168626      -0.090163
+                                                         0.059428      -0.059314
+
+                          1       3    4s               30.653048      -0.159449
+                                                        12.924389       0.095780
+                                                         4.968377      -0.082563
+                                                         1.851828      -0.227029
+                                                         0.673565      -0.181982
+                                                         0.168626       0.392873
+                                                         0.059428      -0.158429
+
+                          1       4    3px              30.653048       4.106765
+                                                        12.924389       5.139385
+                                                         4.968377       3.494459
+                                                         1.851828       1.337175
+                                                         0.673565       0.228011
+                                                         0.168626       0.004292
+                                                         0.059428      -0.000255
+                          1       4    3py              30.653048       4.106765
+                                                        12.924389       5.139385
+                                                         4.968377       3.494459
+                                                         1.851828       1.337175
+                                                         0.673565       0.228011
+                                                         0.168626       0.004292
+                                                         0.059428      -0.000255
+                          1       4    3pz              30.653048       4.106765
+                                                        12.924389       5.139385
+                                                         4.968377       3.494459
+                                                         1.851828       1.337175
+                                                         0.673565       0.228011
+                                                         0.168626       0.004292
+                                                         0.059428      -0.000255
+
+                          1       5    4px              30.653048       0.529694
+                                                        12.924389       0.985876
+                                                         4.968377       0.526402
+                                                         1.851828       0.343987
+                                                         0.673565      -0.055607
+                                                         0.168626      -0.084885
+                                                         0.059428      -0.021282
+                          1       5    4py              30.653048       0.529694
+                                                        12.924389       0.985876
+                                                         4.968377       0.526402
+                                                         1.851828       0.343987
+                                                         0.673565      -0.055607
+                                                         0.168626      -0.084885
+                                                         0.059428      -0.021282
+                          1       5    4pz              30.653048       0.529694
+                                                        12.924389       0.985876
+                                                         4.968377       0.526402
+                                                         1.851828       0.343987
+                                                         0.673565      -0.055607
+                                                         0.168626      -0.084885
+                                                         0.059428      -0.021282
+
+     Auxiliary Fit Basis Set                                              cpFIT3
+
+       Number of orbital shell sets:                                           5
+       Number of orbital shells:                                               6
+       Number of primitive Cartesian functions:                                9
+       Number of Cartesian basis functions:                                   12
+       Number of spherical basis functions:                                   12
+       Norm type:                                                              2
+
+       Normalised Cartesian orbitals:
+
+                        Set   Shell   Orbital            Exponent    Coefficient
+
+                          1       1    1s                0.075120       0.102265
+
+                          2       1    1px               0.135000       0.116643
+                          2       1    1py               0.135000       0.116643
+                          2       1    1pz               0.135000       0.116643
+
+                          3       1    1px               0.707310       0.924597
+                          3       1    1py               0.707310       0.924597
+                          3       1    1pz               0.707310       0.924597
+
+                          4       1    1s                0.819940       0.802466
+                                                         2.392760      -1.219414
+                                                        19.716310       5.025550
+
+                          4       2    2s                0.819940       0.403106
+                                                         2.392760       0.556153
+                                                        19.716310      -0.285651
+
+                          5       1    1px               2.295810       2.553185
+                                                         7.216630       6.581243
+                                                        23.098780       8.366428
+                          5       1    1py               2.295810       2.553185
+                                                         7.216630       6.581243
+                                                        23.098780       8.366428
+                          5       1    1pz               2.295810       2.553185
+                                                         7.216630       6.581243
+                                                        23.098780       8.366428
+
+     RI HFX Basis Set                                           Mg-RI-AUX-cpFIT3
+
+       Number of orbital shell sets:                                           1
+       Number of orbital shells:                                              26
+       Number of primitive Cartesian functions:                               10
+       Number of Cartesian basis functions:                                   82
+       Number of spherical basis functions:                                   74
+       Norm type:                                                              2
+
+       Normalised Cartesian orbitals:
+
+                        Set   Shell   Orbital            Exponent    Coefficient
+
+                          1       1    1s               29.801500       9.090519
+                                                        16.556389       0.000000
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1       2    2s               29.801500     -24.627162
+                                                        16.556389      16.892645
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1       3    3s               29.801500      36.919100
+                                                        16.556389     -49.634589
+                                                         9.197994      18.758421
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1       4    4s               29.801500     -40.553758
+                                                        16.556389      76.319672
+                                                         9.197994     -56.553994
+                                                         5.109997      16.201216
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1       5    5s               29.801500      37.399722
+                                                        16.556389     -84.697839
+                                                         9.197994      87.867935
+                                                         5.109997     -49.372937
+                                                         2.838887      12.239845
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1       6    6s               29.801500     -31.250499
+                                                        16.556389      78.470685
+                                                         9.197994     -97.964319
+                                                         5.109997      77.077883
+                                                         2.838887     -37.489966
+                                                         1.577159       8.597999
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1       7    7s               29.801500      24.709971
+                                                        16.556389     -65.711435
+                                                         9.197994      90.956358
+                                                         5.109997     -86.123369
+                                                         2.838887      58.663816
+                                                         1.577159     -26.401937
+                                                         0.876200       5.804288
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1       8    8s               29.801500     -18.948928
+                                                        16.556389      52.013672
+                                                         9.197994     -76.245042
+                                                         5.109997      80.045076
+                                                         2.838887     -65.619791
+                                                         1.577159      41.362556
+                                                         0.876200     -17.846668
+                                                         0.486778       3.834064
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1       9    9s               29.801500      14.287557
+                                                        16.556389     -39.907961
+                                                         9.197994      60.381723
+                                                         5.109997     -67.131726
+                                                         2.838887      61.019895
+                                                         1.577159     -46.292854
+                                                         0.876200      27.976821
+                                                         0.486778     -11.796932
+                                                         0.270432       2.502709
+                                                         0.150240       0.000000
+
+                          1      10   10s               29.801500     -10.673264
+                                                        16.556389      30.098752
+                                                         9.197994     -46.339901
+                                                         5.109997      53.177254
+                                                         2.838887     -51.188324
+                                                         1.577159      43.059048
+                                                         0.876200     -31.320703
+                                                         0.486778      18.499223
+                                                         0.270432      -7.703388
+                                                         0.150240       1.623093
+
+                          1      11    2px              29.801500      99.251651
+                                                        16.556389       0.000000
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      11    2py              29.801500      99.251651
+                                                        16.556389       0.000000
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      11    2pz              29.801500      99.251651
+                                                        16.556389       0.000000
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1      12    3px              29.801500    -203.765587
+                                                        16.556389     108.710043
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      12    3py              29.801500    -203.765587
+                                                        16.556389     108.710043
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      12    3pz              29.801500    -203.765587
+                                                        16.556389     108.710043
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1      13    4px              29.801500     257.642502
+                                                        16.556389    -259.061816
+                                                         9.197994      78.940700
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      13    4py              29.801500     257.642502
+                                                        16.556389    -259.061816
+                                                         9.197994      78.940700
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      13    4pz              29.801500     257.642502
+                                                        16.556389    -259.061816
+                                                         9.197994      78.940700
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1      14    5px              29.801500    -253.056428
+                                                        16.556389     344.588501
+                                                         9.197994    -198.097131
+                                                         5.109997      47.044768
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      14    5py              29.801500    -253.056428
+                                                        16.556389     344.588501
+                                                         9.197994    -198.097131
+                                                         5.109997      47.044768
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      14    5pz              29.801500    -253.056428
+                                                        16.556389     344.588501
+                                                         9.197994    -198.097131
+                                                         5.109997      47.044768
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1      15    6px              29.801500     216.278630
+                                                        16.556389    -345.604256
+                                                         9.197994     269.161965
+                                                         5.109997    -120.702806
+                                                         2.838887      25.301269
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      15    6py              29.801500     216.278630
+                                                        16.556389    -345.604256
+                                                         9.197994     269.161965
+                                                         5.109997    -120.702806
+                                                         2.838887      25.301269
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      15    6pz              29.801500     216.278630
+                                                        16.556389    -345.604256
+                                                         9.197994     269.161965
+                                                         5.109997    -120.702806
+                                                         2.838887      25.301269
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1      16    7px              29.801500    -171.254943
+                                                        16.556389     298.136622
+                                                         9.197994    -272.494022
+                                                         5.109997     165.611550
+                                                         2.838887     -65.595344
+                                                         1.577159      12.890412
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      16    7py              29.801500    -171.254943
+                                                        16.556389     298.136622
+                                                         9.197994    -272.494022
+                                                         5.109997     165.611550
+                                                         2.838887     -65.595344
+                                                         1.577159      12.890412
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      16    7pz              29.801500    -171.254943
+                                                        16.556389     298.136622
+                                                         9.197994    -272.494022
+                                                         5.109997     165.611550
+                                                         2.838887     -65.595344
+                                                         1.577159      12.890412
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1      17    8px              29.801500     130.097675
+                                                        16.556389    -237.090238
+                                                         9.197994     236.070809
+                                                         5.109997    -168.400216
+                                                         2.838887      90.425360
+                                                         1.577159     -33.591344
+                                                         0.876200       6.382331
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      17    8py              29.801500     130.097675
+                                                        16.556389    -237.090238
+                                                         9.197994     236.070809
+                                                         5.109997    -168.400216
+                                                         2.838887      90.425360
+                                                         1.577159     -33.591344
+                                                         0.876200       6.382331
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      17    8pz              29.801500     130.097675
+                                                        16.556389    -237.090238
+                                                         9.197994     236.070809
+                                                         5.109997    -168.400216
+                                                         2.838887      90.425360
+                                                         1.577159     -33.591344
+                                                         0.876200       6.382331
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1      18    9px              29.801500     -36.663716
+                                                        16.556389      68.460692
+                                                         9.197994     -71.353734
+                                                         5.109997      55.452070
+                                                         2.838887     -34.953202
+                                                         1.577159      17.606759
+                                                         0.876200      -6.325371
+                                                         0.486778       1.180769
+                                                         0.270432       0.105446
+                                                         0.150240       0.050575
+                          1      18    9py              29.801500     -36.663716
+                                                        16.556389      68.460692
+                                                         9.197994     -71.353734
+                                                         5.109997      55.452070
+                                                         2.838887     -34.953202
+                                                         1.577159      17.606759
+                                                         0.876200      -6.325371
+                                                         0.486778       1.180769
+                                                         0.270432       0.105446
+                                                         0.150240       0.050575
+                          1      18    9pz              29.801500     -36.663716
+                                                        16.556389      68.460692
+                                                         9.197994     -71.353734
+                                                         5.109997      55.452070
+                                                         2.838887     -34.953202
+                                                         1.577159      17.606759
+                                                         0.876200      -6.325371
+                                                         0.486778       1.180769
+                                                         0.270432       0.105446
+                                                         0.150240       0.050575
+
+                          1      19    3dx2             29.801500     625.642392
+                                                        16.556389       0.000000
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      19    3dxy             29.801500    1083.644410
+                                                        16.556389       0.000000
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      19    3dxz             29.801500    1083.644410
+                                                        16.556389       0.000000
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      19    3dy2             29.801500     625.642392
+                                                        16.556389       0.000000
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      19    3dyz             29.801500    1083.644410
+                                                        16.556389       0.000000
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      19    3dz2             29.801500     625.642392
+                                                        16.556389       0.000000
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1      20    4dx2             29.801500   -1061.734961
+                                                        16.556389     440.565490
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      20    4dxy             29.801500   -1838.978897
+                                                        16.556389     763.081812
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      20    4dxz             29.801500   -1838.978897
+                                                        16.556389     763.081812
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      20    4dy2             29.801500   -1061.734961
+                                                        16.556389     440.565490
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      20    4dyz             29.801500   -1838.978897
+                                                        16.556389     763.081812
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      20    4dz2             29.801500   -1061.734961
+                                                        16.556389     440.565490
+                                                         9.197994       0.000000
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1      21    5dx2             29.801500    1180.168354
+                                                        16.556389    -889.038884
+                                                         9.197994     218.074629
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      21    5dxy             29.801500    2044.111551
+                                                        16.556389   -1539.860516
+                                                         9.197994     377.716337
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      21    5dxz             29.801500    2044.111551
+                                                        16.556389   -1539.860516
+                                                         9.197994     377.716337
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      21    5dy2             29.801500    1180.168354
+                                                        16.556389    -889.038884
+                                                         9.197994     218.074629
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      21    5dyz             29.801500    2044.111551
+                                                        16.556389   -1539.860516
+                                                         9.197994     377.716337
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      21    5dz2             29.801500    1180.168354
+                                                        16.556389    -889.038884
+                                                         9.197994     218.074629
+                                                         5.109997       0.000000
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1      22    6dx2             29.801500   -1060.597804
+                                                        16.556389    1049.370481
+                                                         9.197994    -467.975504
+                                                         5.109997      91.794166
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      22    6dxy             29.801500   -1837.009283
+                                                        16.556389    1817.562989
+                                                         9.197994    -810.557350
+                                                         5.109997     158.992159
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      22    6dxz             29.801500   -1837.009283
+                                                        16.556389    1817.562989
+                                                         9.197994    -810.557350
+                                                         5.109997     158.992159
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      22    6dy2             29.801500   -1060.597804
+                                                        16.556389    1049.370481
+                                                         9.197994    -467.975504
+                                                         5.109997      91.794166
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      22    6dyz             29.801500   -1837.009283
+                                                        16.556389    1817.562989
+                                                         9.197994    -810.557350
+                                                         5.109997     158.992159
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      22    6dz2             29.801500   -1060.597804
+                                                        16.556389    1049.370481
+                                                         9.197994    -467.975504
+                                                         5.109997      91.794166
+                                                         2.838887       0.000000
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1      23    7dx2             29.801500     851.317334
+                                                        16.556389    -966.480480
+                                                         9.197994     566.400731
+                                                         5.109997    -202.233613
+                                                         2.838887      35.640750
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      23    7dxy             29.801500    1474.524876
+                                                        16.556389   -1673.993296
+                                                         9.197994     981.034844
+                                                         5.109997    -350.278893
+                                                         2.838887      61.731590
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      23    7dxz             29.801500    1474.524876
+                                                        16.556389   -1673.993296
+                                                         9.197994     981.034844
+                                                         5.109997    -350.278893
+                                                         2.838887      61.731590
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      23    7dy2             29.801500     851.317334
+                                                        16.556389    -966.480480
+                                                         9.197994     566.400731
+                                                         5.109997    -202.233613
+                                                         2.838887      35.640750
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      23    7dyz             29.801500    1474.524876
+                                                        16.556389   -1673.993296
+                                                         9.197994     981.034844
+                                                         5.109997    -350.278893
+                                                         2.838887      61.731590
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      23    7dz2             29.801500     851.317334
+                                                        16.556389    -966.480480
+                                                         9.197994     566.400731
+                                                         5.109997    -202.233613
+                                                         2.838887      35.640750
+                                                         1.577159       0.000000
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1      24    8dx2             29.801500    -643.656127
+                                                        16.556389     784.083110
+                                                         9.197994    -527.313127
+                                                         5.109997     247.549641
+                                                         2.838887     -79.479853
+                                                         1.577159      13.284277
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      24    8dxy             29.801500   -1114.845114
+                                                        16.556389    1358.071784
+                                                         9.197994    -913.333127
+                                                         5.109997     428.768556
+                                                         2.838887    -137.663143
+                                                         1.577159      23.009042
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      24    8dxz             29.801500   -1114.845114
+                                                        16.556389    1358.071784
+                                                         9.197994    -913.333127
+                                                         5.109997     428.768556
+                                                         2.838887    -137.663143
+                                                         1.577159      23.009042
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      24    8dy2             29.801500    -643.656127
+                                                        16.556389     784.083110
+                                                         9.197994    -527.313127
+                                                         5.109997     247.549641
+                                                         2.838887     -79.479853
+                                                         1.577159      13.284277
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      24    8dyz             29.801500   -1114.845114
+                                                        16.556389    1358.071784
+                                                         9.197994    -913.333127
+                                                         5.109997     428.768556
+                                                         2.838887    -137.663143
+                                                         1.577159      23.009042
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      24    8dz2             29.801500    -643.656127
+                                                        16.556389     784.083110
+                                                         9.197994    -527.313127
+                                                         5.109997     247.549641
+                                                         2.838887     -79.479853
+                                                         1.577159      13.284277
+                                                         0.876200       0.000000
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1      25    9dx2             29.801500     471.656814
+                                                        16.556389    -595.653521
+                                                         9.197994     429.831967
+                                                         5.109997    -231.605759
+                                                         2.838887      97.807772
+                                                         1.577159     -29.797346
+                                                         0.876200       4.850091
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      25    9dxy             29.801500     816.933566
+                                                        16.556389   -1031.702162
+                                                         9.197994     744.490806
+                                                         5.109997    -401.152941
+                                                         2.838887     169.408031
+                                                         1.577159     -51.610517
+                                                         0.876200       8.400604
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      25    9dxz             29.801500     816.933566
+                                                        16.556389   -1031.702162
+                                                         9.197994     744.490806
+                                                         5.109997    -401.152941
+                                                         2.838887     169.408031
+                                                         1.577159     -51.610517
+                                                         0.876200       8.400604
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      25    9dy2             29.801500     471.656814
+                                                        16.556389    -595.653521
+                                                         9.197994     429.831967
+                                                         5.109997    -231.605759
+                                                         2.838887      97.807772
+                                                         1.577159     -29.797346
+                                                         0.876200       4.850091
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      25    9dyz             29.801500     816.933566
+                                                        16.556389   -1031.702162
+                                                         9.197994     744.490806
+                                                         5.109997    -401.152941
+                                                         2.838887     169.408031
+                                                         1.577159     -51.610517
+                                                         0.876200       8.400604
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+                          1      25    9dz2             29.801500     471.656814
+                                                        16.556389    -595.653521
+                                                         9.197994     429.831967
+                                                         5.109997    -231.605759
+                                                         2.838887      97.807772
+                                                         1.577159     -29.797346
+                                                         0.876200       4.850091
+                                                         0.486778       0.000000
+                                                         0.270432       0.000000
+                                                         0.150240       0.000000
+
+                          1      26   10dx2             29.801500    -127.358270
+                                                        16.556389     163.822161
+                                                         9.197994    -122.551513
+                                                         5.109997      70.858363
+                                                         2.838887     -34.350918
+                                                         1.577159      13.768127
+                                                         0.876200      -4.085980
+                                                         0.486778       0.656287
+                                                         0.270432       0.062514
+                                                         0.150240       0.022349
+                          1      26   10dxy             29.801500    -220.590994
+                                                        16.556389     283.748306
+                                                         9.197994    -212.265446
+                                                         5.109997     122.730285
+                                                         2.838887     -59.497535
+                                                         1.577159      23.847096
+                                                         0.876200      -7.077126
+                                                         0.486778       1.136722
+                                                         0.270432       0.108278
+                                                         0.150240       0.038709
+                          1      26   10dxz             29.801500    -220.590994
+                                                        16.556389     283.748306
+                                                         9.197994    -212.265446
+                                                         5.109997     122.730285
+                                                         2.838887     -59.497535
+                                                         1.577159      23.847096
+                                                         0.876200      -7.077126
+                                                         0.486778       1.136722
+                                                         0.270432       0.108278
+                                                         0.150240       0.038709
+                          1      26   10dy2             29.801500    -127.358270
+                                                        16.556389     163.822161
+                                                         9.197994    -122.551513
+                                                         5.109997      70.858363
+                                                         2.838887     -34.350918
+                                                         1.577159      13.768127
+                                                         0.876200      -4.085980
+                                                         0.486778       0.656287
+                                                         0.270432       0.062514
+                                                         0.150240       0.022349
+                          1      26   10dyz             29.801500    -220.590994
+                                                        16.556389     283.748306
+                                                         9.197994    -212.265446
+                                                         5.109997     122.730285
+                                                         2.838887     -59.497535
+                                                         1.577159      23.847096
+                                                         0.876200      -7.077126
+                                                         0.486778       1.136722
+                                                         0.270432       0.108278
+                                                         0.150240       0.038709
+                          1      26   10dz2             29.801500    -127.358270
+                                                        16.556389     163.822161
+                                                         9.197994    -122.551513
+                                                         5.109997      70.858363
+                                                         2.838887     -34.350918
+                                                         1.577159      13.768127
+                                                         0.876200      -4.085980
+                                                         0.486778       0.656287
+                                                         0.270432       0.062514
+                                                         0.150240       0.022349
+
+       Atomic covalent radius [Angstrom]:                                  1.360
+
+       Atomic van der Waals radius [Angstrom]:                             1.730
+
+     GTH Potential information for                                       GTH-PBE
+
+       Description:                       Goedecker-Teter-Hutter pseudopotential
+                                           Goedecker et al., PRB 54, 1703 (1996)
+                                          Hartwigsen et al., PRB 58, 3641 (1998)
+                                                      Krack, TCA 114, 145 (2005)
+
+       Gaussian exponent of the core charge distribution:              13.456923
+       Electronic configuration (s p d ...):                               4   6
+
+       Parameters of the local part of the GTH pseudopotential:
+
+                          rloc        C1          C2          C3          C4
+                        0.192758  -20.575391    3.040167
+
+       Parameters of the non-local part of the GTH pseudopotential:
+
+                   l      r(l)      h(i,j,l)
+
+                   0    0.141407   41.047292
+                   1    0.102932   -9.985626
+
+  2. Atomic kind: O                                     Number of atoms:       1
+
+     Orbital Basis Set                                        DZVP-MOLOPT-SR-GTH
+
+       Number of orbital shell sets:                                           1
+       Number of orbital shells:                                               5
+       Number of primitive Cartesian functions:                                5
+       Number of Cartesian basis functions:                                   14
+       Number of spherical basis functions:                                   13
+       Norm type:                                                              2
+
+       Normalised Cartesian orbitals:
+
+                        Set   Shell   Orbital            Exponent    Coefficient
+
+                          1       1    2s               10.389228       0.396646
+                                                         3.849621       0.208811
+                                                         1.388401      -0.301641
+                                                         0.496955      -0.274061
+                                                         0.162492      -0.033677
+
+                          1       2    3s               10.389228       0.303673
+                                                         3.849621       0.240943
+                                                         1.388401      -0.313066
+                                                         0.496955      -0.043055
+                                                         0.162492       0.213991
+
+                          1       3    3px              10.389228      -1.530415
+                                                         3.849621      -1.371928
+                                                         1.388401      -0.761951
+                                                         0.496955      -0.253695
+                                                         0.162492      -0.035541
+                          1       3    3py              10.389228      -1.530415
+                                                         3.849621      -1.371928
+                                                         1.388401      -0.761951
+                                                         0.496955      -0.253695
+                                                         0.162492      -0.035541
+                          1       3    3pz              10.389228      -1.530415
+                                                         3.849621      -1.371928
+                                                         1.388401      -0.761951
+                                                         0.496955      -0.253695
+                                                         0.162492      -0.035541
+
+                          1       4    4px              10.389228      -0.565392
+                                                         3.849621      -0.038231
+                                                         1.388401      -0.382373
+                                                         0.496955       0.179070
+                                                         0.162492       0.122714
+                          1       4    4py              10.389228      -0.565392
+                                                         3.849621      -0.038231
+                                                         1.388401      -0.382373
+                                                         0.496955       0.179070
+                                                         0.162492       0.122714
+                          1       4    4pz              10.389228      -0.565392
+                                                         3.849621      -0.038231
+                                                         1.388401      -0.382373
+                                                         0.496955       0.179070
+                                                         0.162492       0.122714
+
+                          1       5    4dx2             10.389228       1.867377
+                                                         3.849621       0.670994
+                                                         1.388401       1.353441
+                                                         0.496955       0.273538
+                                                         0.162492       0.006620
+                          1       5    4dxy             10.389228       3.234392
+                                                         3.849621       1.162195
+                                                         1.388401       2.344229
+                                                         0.496955       0.473781
+                                                         0.162492       0.011466
+                          1       5    4dxz             10.389228       3.234392
+                                                         3.849621       1.162195
+                                                         1.388401       2.344229
+                                                         0.496955       0.473781
+                                                         0.162492       0.011466
+                          1       5    4dy2             10.389228       1.867377
+                                                         3.849621       0.670994
+                                                         1.388401       1.353441
+                                                         0.496955       0.273538
+                                                         0.162492       0.006620
+                          1       5    4dyz             10.389228       3.234392
+                                                         3.849621       1.162195
+                                                         1.388401       2.344229
+                                                         0.496955       0.473781
+                                                         0.162492       0.011466
+                          1       5    4dz2             10.389228       1.867377
+                                                         3.849621       0.670994
+                                                         1.388401       1.353441
+                                                         0.496955       0.273538
+                                                         0.162492       0.006620
+
+     Auxiliary Fit Basis Set                                              cpFIT3
+
+       Number of orbital shell sets:                                           5
+       Number of orbital shells:                                               5
+       Number of primitive Cartesian functions:                                7
+       Number of Cartesian basis functions:                                   14
+       Number of spherical basis functions:                                   13
+       Norm type:                                                              2
+
+       Normalised Cartesian orbitals:
+
+                        Set   Shell   Orbital            Exponent    Coefficient
+
+                          1       1    1s                0.270610       0.267404
+
+                          2       1    1px               0.310400       0.330250
+                          2       1    1py               0.310400       0.330250
+                          2       1    1pz               0.310400       0.330250
+
+                          3       1    1s                0.884930       0.707256
+                                                         8.504090      -0.906597
+
+                          4       1    1dx2              1.000000       1.645923
+                          4       1    1dxy              1.000000       2.850822
+                          4       1    1dxz              1.000000       2.850822
+                          4       1    1dy2              1.000000       1.645923
+                          4       1    1dyz              1.000000       2.850822
+                          4       1    1dz2              1.000000       1.645923
+
+                          5       1    1px               1.382560       1.756990
+                                                         6.082640       3.818529
+                          5       1    1py               1.382560       1.756990
+                                                         6.082640       3.818529
+                          5       1    1pz               1.382560       1.756990
+                                                         6.082640       3.818529
+
+     RI HFX Basis Set                                            O-RI-AUX-cpFIT3
+
+       Number of orbital shell sets:                                           2
+       Number of orbital shells:                                              18
+       Number of primitive Cartesian functions:                                7
+       Number of Cartesian basis functions:                                   64
+       Number of spherical basis functions:                                   56
+       Norm type:                                                              2
+
+       Normalised Cartesian orbitals:
+
+                        Set   Shell   Orbital            Exponent    Coefficient
+
+                          1       1    1s               10.226720       4.075795
+                                                         5.681511       0.000000
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+
+                          1       2    2s               10.226720     -11.041754
+                                                         5.681511       7.573931
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+
+                          1       3    3s               10.226720      16.552926
+                                                         5.681511     -22.254001
+                                                         3.156395       8.410464
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+
+                          1       4    4s               10.226720     -18.182550
+                                                         5.681511      34.218438
+                                                         3.156395     -25.356363
+                                                         1.753553       7.263924
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+
+                          1       5    5s               10.226720      16.768417
+                                                         5.681511     -37.974845
+                                                         3.156395      39.396179
+                                                         1.753553     -22.136688
+                                                         0.974196       5.487817
+                                                         0.541220       0.000000
+
+                          1       6    6s               10.226720     -14.011371
+                                                         5.681511      35.182859
+                                                         3.156395     -43.922961
+                                                         1.753553      34.558387
+                                                         0.974196     -16.808878
+                                                         0.541220       3.854970
+
+                          1       7    2px              10.226720      26.068170
+                                                         5.681511       0.000000
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1       7    2py              10.226720      26.068170
+                                                         5.681511       0.000000
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1       7    2pz              10.226720      26.068170
+                                                         5.681511       0.000000
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+
+                          1       8    3px              10.226720     -53.518464
+                                                         5.681511      28.552390
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1       8    3py              10.226720     -53.518464
+                                                         5.681511      28.552390
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1       8    3pz              10.226720     -53.518464
+                                                         5.681511      28.552390
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+
+                          1       9    4px              10.226720      67.669086
+                                                         5.681511     -68.041865
+                                                         3.156395      20.733555
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1       9    4py              10.226720      67.669086
+                                                         5.681511     -68.041865
+                                                         3.156395      20.733555
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1       9    4pz              10.226720      67.669086
+                                                         5.681511     -68.041865
+                                                         3.156395      20.733555
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+
+                          1      10    5px              10.226720     -66.464566
+                                                         5.681511      90.505210
+                                                         3.156395     -52.029660
+                                                         1.753553      12.356177
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      10    5py              10.226720     -66.464566
+                                                         5.681511      90.505210
+                                                         3.156395     -52.029660
+                                                         1.753553      12.356177
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      10    5pz              10.226720     -66.464566
+                                                         5.681511      90.505210
+                                                         3.156395     -52.029660
+                                                         1.753553      12.356177
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+
+                          1      11    6px              10.226720      56.804980
+                                                         5.681511     -90.771996
+                                                         3.156395      70.694641
+                                                         1.753553     -31.702256
+                                                         0.974196       6.645308
+                                                         0.541220       0.000000
+                          1      11    6py              10.226720      56.804980
+                                                         5.681511     -90.771996
+                                                         3.156395      70.694641
+                                                         1.753553     -31.702256
+                                                         0.974196       6.645308
+                                                         0.541220       0.000000
+                          1      11    6pz              10.226720      56.804980
+                                                         5.681511     -90.771996
+                                                         3.156395      70.694641
+                                                         1.753553     -31.702256
+                                                         0.974196       6.645308
+                                                         0.541220       0.000000
+
+                          1      12    7px              10.226720     -44.979634
+                                                         5.681511      78.304754
+                                                         3.156395     -71.569796
+                                                         1.753553      43.497413
+                                                         0.974196     -17.228434
+                                                         0.541220       3.385631
+                          1      12    7py              10.226720     -44.979634
+                                                         5.681511      78.304754
+                                                         3.156395     -71.569796
+                                                         1.753553      43.497413
+                                                         0.974196     -17.228434
+                                                         0.541220       3.385631
+                          1      12    7pz              10.226720     -44.979634
+                                                         5.681511      78.304754
+                                                         3.156395     -71.569796
+                                                         1.753553      43.497413
+                                                         0.974196     -17.228434
+                                                         0.541220       3.385631
+
+                          1      13    3dx2             10.226720      96.260495
+                                                         5.681511       0.000000
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      13    3dxy             10.226720     166.728068
+                                                         5.681511       0.000000
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      13    3dxz             10.226720     166.728068
+                                                         5.681511       0.000000
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      13    3dy2             10.226720      96.260495
+                                                         5.681511       0.000000
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      13    3dyz             10.226720     166.728068
+                                                         5.681511       0.000000
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      13    3dz2             10.226720      96.260495
+                                                         5.681511       0.000000
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+
+                          1      14    4dx2             10.226720    -163.357110
+                                                         5.681511      67.784812
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      14    4dxy             10.226720    -282.942814
+                                                         5.681511     117.406739
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      14    4dxz             10.226720    -282.942814
+                                                         5.681511     117.406739
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      14    4dy2             10.226720    -163.357110
+                                                         5.681511      67.784812
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      14    4dyz             10.226720    -282.942814
+                                                         5.681511     117.406739
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      14    4dz2             10.226720    -163.357110
+                                                         5.681511      67.784812
+                                                         3.156395       0.000000
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+
+                          1      15    5dx2             10.226720     181.579112
+                                                         5.681511    -136.786324
+                                                         3.156395      33.552668
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      15    5dxy             10.226720     314.504248
+                                                         5.681511    -236.920863
+                                                         3.156395      58.114926
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      15    5dxz             10.226720     314.504248
+                                                         5.681511    -236.920863
+                                                         3.156395      58.114926
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      15    5dy2             10.226720     181.579112
+                                                         5.681511    -136.786324
+                                                         3.156395      33.552668
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      15    5dyz             10.226720     314.504248
+                                                         5.681511    -236.920863
+                                                         3.156395      58.114926
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      15    5dz2             10.226720     181.579112
+                                                         5.681511    -136.786324
+                                                         3.156395      33.552668
+                                                         1.753553       0.000000
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+
+                          1      16    6dx2             10.226720    -163.182148
+                                                         5.681511     161.454727
+                                                         3.156395     -72.002080
+                                                         1.753553      14.123327
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      16    6dxy             10.226720    -282.639772
+                                                         5.681511     279.647791
+                                                         3.156395    -124.711261
+                                                         1.753553      24.462319
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      16    6dxz             10.226720    -282.639772
+                                                         5.681511     279.647791
+                                                         3.156395    -124.711261
+                                                         1.753553      24.462319
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      16    6dy2             10.226720    -163.182148
+                                                         5.681511     161.454727
+                                                         3.156395     -72.002080
+                                                         1.753553      14.123327
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      16    6dyz             10.226720    -282.639772
+                                                         5.681511     279.647791
+                                                         3.156395    -124.711261
+                                                         1.753553      24.462319
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+                          1      16    6dz2             10.226720    -163.182148
+                                                         5.681511     161.454727
+                                                         3.156395     -72.002080
+                                                         1.753553      14.123327
+                                                         0.974196       0.000000
+                                                         0.541220       0.000000
+
+                          1      17    7dx2             10.226720      72.919306
+                                                         5.681511     -82.783568
+                                                         3.156395      48.514868
+                                                         1.753553     -17.322254
+                                                         0.974196       3.052797
+                                                         0.541220       0.312927
+                          1      17    7dxy             10.226720     126.299944
+                                                         5.681511    -143.385346
+                                                         3.156395      84.030217
+                                                         1.753553     -30.003023
+                                                         0.974196       5.287599
+                                                         0.541220       0.542005
+                          1      17    7dxz             10.226720     126.299944
+                                                         5.681511    -143.385346
+                                                         3.156395      84.030217
+                                                         1.753553     -30.003023
+                                                         0.974196       5.287599
+                                                         0.541220       0.542005
+                          1      17    7dy2             10.226720      72.919306
+                                                         5.681511     -82.783568
+                                                         3.156395      48.514868
+                                                         1.753553     -17.322254
+                                                         0.974196       3.052797
+                                                         0.541220       0.312927
+                          1      17    7dyz             10.226720     126.299944
+                                                         5.681511    -143.385346
+                                                         3.156395      84.030217
+                                                         1.753553     -30.003023
+                                                         0.974196       5.287599
+                                                         0.541220       0.542005
+                          1      17    7dz2             10.226720      72.919306
+                                                         5.681511     -82.783568
+                                                         3.156395      48.514868
+                                                         1.753553     -17.322254
+                                                         0.974196       3.052797
+                                                         0.541220       0.312927
+
+                          2       1    4fx3              1.310400       2.704663
+                          2       1    4fx2y             1.310400       6.047811
+                          2       1    4fx2z             1.310400       6.047811
+                          2       1    4fxy2             1.310400       6.047811
+                          2       1    4fxyz             1.310400      10.475115
+                          2       1    4fxz2             1.310400       6.047811
+                          2       1    4fy3              1.310400       2.704663
+                          2       1    4fy2z             1.310400       6.047811
+                          2       1    4fyz2             1.310400       6.047811
+                          2       1    4fz3              1.310400       2.704663
+
+       Atomic covalent radius [Angstrom]:                                  0.730
+
+       Atomic van der Waals radius [Angstrom]:                             1.520
+
+     GTH Potential information for                                       GTH-PBE
+
+       Description:                       Goedecker-Teter-Hutter pseudopotential
+                                           Goedecker et al., PRB 54, 1703 (1996)
+                                          Hartwigsen et al., PRB 58, 3641 (1998)
+                                                      Krack, TCA 114, 145 (2005)
+
+       Gaussian exponent of the core charge distribution:               8.360253
+       Electronic configuration (s p d ...):                               2   4
+
+       Parameters of the local part of the GTH pseudopotential:
+
+                          rloc        C1          C2          C3          C4
+                        0.244554  -16.667215    2.487311
+
+       Parameters of the non-local part of the GTH pseudopotential:
+
+                   l      r(l)      h(i,j,l)
+
+                   0    0.220956   18.337458
+                   1    0.211332
+
+
+ MOLECULE KIND INFORMATION
+
+
+ All atoms are their own molecule, skipping detailed information
+
+
+ TOTAL NUMBERS AND MAXIMUM NUMBERS
+
+  Total number of            - Atomic kinds:                                   2
+                             - Atoms:                                          2
+                             - Shell sets:                                     2
+                             - Shells:                                        10
+                             - Primitive Cartesian functions:                 12
+                             - Cartesian basis functions:                     23
+                             - Spherical basis functions:                     22
+
+  Maximum angular momentum of- Orbital basis functions:                        2
+                             - Local part of the GTH pseudopotential:          2
+                             - Non-local part of the GTH pseudopotential:      1
+
+  AUX_FIT ADMM-Basis: 
+  Total number of            - Shell sets:                                    10
+                             - Shells:                                        11
+                             - Primitive Cartesian functions:                 16
+                             - Cartesian basis functions:                     26
+                             - Spherical basis functions:                     25
+                               Maximum angular momentum                        2
+
+
+ MODULE QUICKSTEP: ATOMIC COORDINATES IN ANGSTROM
+
+   Atom Kind Element         X             Y             Z       Z(eff)     Mass
+      1    1 Mg   12      0.000000      0.000000      0.000000  10.0000  24.3050
+      2    2 O     8      2.108500      2.108500      2.108500   6.0000  15.9994
+
+
+
+ SCF PARAMETERS         Density guess:                                    ATOMIC
+                        --------------------------------------------------------
+                        max_scf:                                             200
+                        max_scf_history:                                       0
+                        max_diis:                                              4
+                        --------------------------------------------------------
+                        eps_scf:                                        1.00E-06
+                        eps_scf_history:                                0.00E+00
+                        eps_diis:                                       5.00E-02
+                        eps_eigval:                                     1.00E-05
+                        --------------------------------------------------------
+                        level_shift [a.u.]:                             0.000000
+                        --------------------------------------------------------
+                        Mixing method:                            BROYDEN_MIXING
+                                                charge density mixing in g-space
+                        --------------------------------------------------------
+                        No outer SCF
+
+ PW_GRID| Information for grid number                                          1
+ PW_GRID| Grid distributed over                                    32 processors
+ PW_GRID| Real space group dimensions                                    32    1
+ PW_GRID| the grid is blocked:                                                NO
+ PW_GRID| Cutoff [a.u.]                                                    300.0
+ PW_GRID| spherical cutoff:                                                   NO
+ PW_GRID|   Bounds   1            -22      22                Points:          45
+ PW_GRID|   Bounds   2            -22      22                Points:          45
+ PW_GRID|   Bounds   3            -22      22                Points:          45
+ PW_GRID| Volume element (a.u.^3)  0.1388E-02     Volume (a.u.^3)       126.5166
+ PW_GRID| Grid span                                                    FULLSPACE
+ PW_GRID|   Distribution                         Average         Max         Min
+ PW_GRID|   G-Vectors                             2847.7        2880        2835
+ PW_GRID|   G-Rays                                  63.3          64          63
+ PW_GRID|   Real Space Points                     2847.7        4050        2025
+
+ PW_GRID| Information for grid number                                          2
+ PW_GRID| Number of the reference grid                                         1
+ PW_GRID| Grid distributed over                                    32 processors
+ PW_GRID| Real space group dimensions                                     4    8
+ PW_GRID| the grid is blocked:                                                NO
+ PW_GRID| Cutoff [a.u.]                                                    100.0
+ PW_GRID| spherical cutoff:                                                   NO
+ PW_GRID|   Bounds   1            -12      12                Points:          25
+ PW_GRID|   Bounds   2            -12      12                Points:          25
+ PW_GRID|   Bounds   3            -12      12                Points:          25
+ PW_GRID| Volume element (a.u.^3)  0.8097E-02     Volume (a.u.^3)       126.5166
+ PW_GRID| Grid span                                                    FULLSPACE
+ PW_GRID|   Distribution                         Average         Max         Min
+ PW_GRID|   G-Vectors                              488.3         525         475
+ PW_GRID|   G-Rays                                  19.5          21          19
+ PW_GRID|   Real Space Points                      488.3         700         450
+
+ PW_GRID| Information for grid number                                          3
+ PW_GRID| Number of the reference grid                                         1
+ PW_GRID| Grid distributed over                                    32 processors
+ PW_GRID| Real space group dimensions                                     4    8
+ PW_GRID| the grid is blocked:                                                NO
+ PW_GRID| Cutoff [a.u.]                                                     33.3
+ PW_GRID| spherical cutoff:                                                   NO
+ PW_GRID|   Bounds   1             -7       7                Points:          15
+ PW_GRID|   Bounds   2             -7       7                Points:          15
+ PW_GRID|   Bounds   3             -7       7                Points:          15
+ PW_GRID| Volume element (a.u.^3)  0.3749E-01     Volume (a.u.^3)       126.5166
+ PW_GRID| Grid span                                                    FULLSPACE
+ PW_GRID|   Distribution                         Average         Max         Min
+ PW_GRID|   G-Vectors                              105.5         150          75
+ PW_GRID|   G-Rays                                   7.0          10           5
+ PW_GRID|   Real Space Points                      105.5         120          45
+
+ PW_GRID| Information for grid number                                          4
+ PW_GRID| Number of the reference grid                                         1
+ PW_GRID| Grid distributed over                                    32 processors
+ PW_GRID| Real space group dimensions                                     4    8
+ PW_GRID| the grid is blocked:                                                NO
+ PW_GRID| Cutoff [a.u.]                                                     11.1
+ PW_GRID| spherical cutoff:                                                   NO
+ PW_GRID|   Bounds   1             -4       4                Points:           9
+ PW_GRID|   Bounds   2             -4       4                Points:           9
+ PW_GRID|   Bounds   3             -4       4                Points:           9
+ PW_GRID| Volume element (a.u.^3)  0.1735         Volume (a.u.^3)       126.5166
+ PW_GRID| Grid span                                                    FULLSPACE
+ PW_GRID|   Distribution                         Average         Max         Min
+ PW_GRID|   G-Vectors                               22.8          36           9
+ PW_GRID|   G-Rays                                   2.5           4           1
+ PW_GRID|   Real Space Points                       22.8          54          18
+
+ POISSON| Solver                                                        PERIODIC
+ POISSON| Periodicity                                                        XYZ
+
+ RS_GRID| Information for grid number                                          1
+ RS_GRID|   Bounds   1            -22      22                Points:          45
+ RS_GRID|   Bounds   2            -22      22                Points:          45
+ RS_GRID|   Bounds   3            -22      22                Points:          45
+ RS_GRID| Real space fully replicated
+ RS_GRID| Group size                                                           1
+
+ RS_GRID| Information for grid number                                          2
+ RS_GRID|   Bounds   1            -12      12                Points:          25
+ RS_GRID|   Bounds   2            -12      12                Points:          25
+ RS_GRID|   Bounds   3            -12      12                Points:          25
+ RS_GRID| Real space fully replicated
+ RS_GRID| Group size                                                           1
+
+ RS_GRID| Information for grid number                                          3
+ RS_GRID|   Bounds   1             -7       7                Points:          15
+ RS_GRID|   Bounds   2             -7       7                Points:          15
+ RS_GRID|   Bounds   3             -7       7                Points:          15
+ RS_GRID| Real space fully replicated
+ RS_GRID| Group size                                                           1
+
+ RS_GRID| Information for grid number                                          4
+ RS_GRID|   Bounds   1             -4       4                Points:           9
+ RS_GRID|   Bounds   2             -4       4                Points:           9
+ RS_GRID|   Bounds   3             -4       4                Points:           9
+ RS_GRID| Real space fully replicated
+ RS_GRID| Group size                                                           1
+
+ *** WARNING in hfx_types.F:2091 :: Periodic Hartree Fock calculation   ***
+ *** requested with the use of a truncated or shortrange potential. The ***
+ *** cutoff radius is larger than half the minimal cell dimension. This ***
+ *** may lead to unphysical total energies. Reduce the cutoff radius in ***
+ *** order to avoid possible problems.                                  ***
+
+
+  HFX_INFO| Replica ID:                                                        1
+  HFX_INFO| FRACTION:                                               0.2500000000
+  HFX_INFO| Interaction Potential:                                    SHORTRANGE
+  HFX_INFO| Omega:                                                  0.1100000000
+  HFX_INFO| Cutoff Radius [angstrom]:                              20.0467199179
+  HFX_RI_INFO| RI metric:                                             SHORTRANGE
+  HFX_RI_INFO| Omega:                                               0.1100000000
+  HFX_RI_INFO| Cutoff Radius [angstrom]:                           20.0467199179
+  HFX_RI_INFO| RI flavor:                                                    RHO
+  HFX_RI_INFO| EPS_FILTER                                                1.0E-09
+  HFX_RI_INFO| EPS_FILTER 2-center                                       1.0E-12
+  HFX_RI_INFO| EPS_FILTER storage                                        1.0E-11
+  HFX_RI_INFO| EPS_FILTER MO                                             1.0E-12
+  HFX_RI_INFO| EPS_PGF_ORB                                               1.0E-06
+  HFX_RI_INFO| EPS_SCHWARZ:                                              1.0E-10
+  HFX_RI_INFO| EPS_SCHWARZ_FORCES:                                       1.0E-08
+  HFX_RI_INFO| Minimum block size                                              4
+  HFX_RI_INFO| MO block size                                                  64
+  HFX_RI_INFO| Memory reduction factor                                         3
+
+ Number of electrons:                                                         16
+ Number of occupied orbitals:                                                  8
+ Number of molecular orbitals:                                                 8
+
+ Number of orbital functions:                                                 22
+ Number of independent orbital functions:                                     22
+
+ Extrapolation method: initial_guess
+
+ Atomic guess: The first density matrix is obtained in terms of atomic orbitals
+               and electronic configurations assigned to each atomic kind
+
+ Guess for atomic kind: Mg
+
+ Electronic structure
+    Total number of core electrons                                          2.00
+    Total number of valence electrons                                      10.00
+    Total number of electrons                                              12.00
+    Multiplicity                                                   not specified
+    S   [  2.00] 2.00  2.00
+    P      6.00
+ 
+
+ *******************************************************************************
+                  Iteration          Convergence                     Energy [au]
+ *******************************************************************************
+                          1        0.485354                     -62.902226664244
+                          2        0.105692                     -62.921913697109
+                          3        0.335819E-02                 -62.923394100147
+                          4        0.696592E-04                 -62.923398953249
+                          5        0.319399E-06                 -62.923398954581
+
+ Energy components [Hartree]           Total Energy ::          -62.923398954581
+                                        Band Energy ::          -16.036073473620
+                                     Kinetic Energy ::           51.571533994436
+                                   Potential Energy ::         -114.494932949017
+                                      Virial (-V/T) ::            2.220118815185
+                                        Core Energy ::         -104.170174203299
+                                          XC Energy ::           -8.249975644758
+                                     Coulomb Energy ::           49.496750893476
+                       Total Pseudopotential Energy ::         -155.802053789472
+                       Local Pseudopotential Energy ::         -154.930913553489
+                    Nonlocal Pseudopotential Energy ::           -0.871140235983
+                                        Confinement ::            0.603455917368
+
+ Orbital energies  State     L     Occupation   Energy[a.u.]          Energy[eV]
+
+                       1     0          2.000      -2.886409          -78.543171
+                       2     0          2.000      -0.139325           -3.791224
+ 
+                       1     1          6.000      -1.664101          -45.282493
+ 
+
+ Total Electron Density at R=0:                                         0.000687
+
+ Guess for atomic kind: O
+
+ Electronic structure
+    Total number of core electrons                                          2.00
+    Total number of valence electrons                                       6.00
+    Total number of electrons                                               8.00
+    Multiplicity                                                   not specified
+    S   [  2.00] 2.00
+    P      4.00
+ 
+
+ *******************************************************************************
+                  Iteration          Convergence                     Energy [au]
+ *******************************************************************************
+                          1        0.702811                     -15.577904332270
+                          2        0.612408                     -15.588447180504
+                          3        0.955344E-02                 -15.655871208406
+                          4        0.223754E-02                 -15.655885053552
+                          5        0.157183E-02                 -15.655885461027
+                          6        0.124953E-02                 -15.655885607150
+                          7        0.312011E-06                 -15.655885858066
+
+ Energy components [Hartree]           Total Energy ::          -15.655885858066
+                                        Band Energy ::           -2.983128125584
+                                     Kinetic Energy ::           11.754765134683
+                                   Potential Energy ::          -27.410650992749
+                                      Virial (-V/T) ::            2.331875684345
+                                        Core Energy ::          -26.153522949072
+                                          XC Energy ::           -3.157392363346
+                                     Coulomb Energy ::           13.655029454351
+                       Total Pseudopotential Energy ::          -37.943026860963
+                       Local Pseudopotential Energy ::          -39.220419683052
+                    Nonlocal Pseudopotential Energy ::            1.277392822089
+                                        Confinement ::            0.347387772086
+
+ Orbital energies  State     L     Occupation   Energy[a.u.]          Energy[eV]
+
+                       1     0          2.000      -0.861522          -23.443215
+ 
+                       1     1          4.000      -0.315021           -8.572154
+ 
+
+ Total Electron Density at R=0:                                         0.000093
+ Re-scaling the density matrix to get the right number of electrons
+                  # Electrons              Trace(P)               Scaling factor
+                           16                26.937                        0.594
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+  MEMORY_INFO| Memory for 3-center HFX integrals (compressed):          1.65 MiB
+  MEMORY_INFO| Compression factor:                                          0.39
+     Occupancy of density matrix P:                           6.2E+02 / 100.000%
+     Occupancy of 3c ints:                                    8.1E+04 / 100.000%
+     Occupancy after contraction with K:                      8.1E+04 / 100.000%
+     Occupancy after contraction with P:                      8.1E+04 / 100.000%
+     Occupancy of Kohn-Sham matrix:                           6.2E+02 / 100.000%
+     1 NoMix/Diag. 0.30E+00  199.6     0.76766265       -81.0372622491 -8.10E+01
+     2 Broy./Diag. 0.30E+00    2.4     0.11079681       -80.5406833397  4.97E-01
+     3 Broy./Diag. 0.30E+00    2.4     0.45817708       -81.9979289166 -1.46E+00
+     4 Broy./Diag. 0.30E+00    2.4     0.37847465       -81.7238244740  2.74E-01
+     5 Broy./Diag. 0.30E+00    2.4     0.39883915       -81.3581121474  3.66E-01
+     6 Broy./Diag. 0.30E+00    2.4     0.30637952       -81.1606935658  1.97E-01
+     7 Broy./Diag. 0.30E+00    2.4     0.25042190       -81.2383046813 -7.76E-02
+     8 Broy./Diag. 0.30E+00    2.4     0.13392879       -81.4454276500 -2.07E-01
+     9 Broy./Diag. 0.30E+00    2.4     0.11939281       -81.5185074833 -7.31E-02
+    10 Broy./Diag. 0.30E+00    2.4     0.07342187       -81.4702582187  4.82E-02
+    11 Broy./Diag. 0.30E+00    2.4     0.06103104       -81.4971885502 -2.69E-02
+    12 Broy./Diag. 0.30E+00    2.4     0.04459500       -81.6921461898 -1.95E-01
+    13 Broy./Diag. 0.30E+00    2.4     0.04400719       -81.8210685441 -1.29E-01
+    14 Broy./Diag. 0.30E+00    2.4     0.03809115       -82.0286608366 -2.08E-01
+    15 Broy./Diag. 0.30E+00    2.4     0.02922807       -82.2420465667 -2.13E-01
+    16 Broy./Diag. 0.30E+00    2.4     0.04247984       -82.3304990202 -8.85E-02
+    17 Broy./Diag. 0.30E+00    2.4     0.02422838       -82.4064220905 -7.59E-02
+    18 Broy./Diag. 0.30E+00    2.4     0.02020828       -82.3615275088  4.49E-02
+    19 Broy./Diag. 0.30E+00    2.4     0.03325974       -82.4892120620 -1.28E-01
+    20 Broy./Diag. 0.30E+00    2.4     0.01035743       -82.5757343677 -8.65E-02
+    21 Broy./Diag. 0.30E+00    2.4     0.01297426       -82.5863177116 -1.06E-02
+    22 Broy./Diag. 0.30E+00    2.4     0.01039894       -82.5934759119 -7.16E-03
+    23 Broy./Diag. 0.30E+00    2.4     0.01441151       -82.5203238341  7.32E-02
+    24 Broy./Diag. 0.30E+00    2.4     0.01865832       -82.4513052551  6.90E-02
+    25 Broy./Diag. 0.30E+00    2.4     0.01813458       -82.3739485917  7.74E-02
+    26 Broy./Diag. 0.30E+00    2.4     0.01441699       -82.3074309477  6.65E-02
+    27 Broy./Diag. 0.30E+00    2.4     0.01115771       -82.2838087699  2.36E-02
+    28 Broy./Diag. 0.30E+00    2.4     0.00868415       -82.2840629655 -2.54E-04
+    29 Broy./Diag. 0.30E+00    2.4     0.00761179       -82.2847350858 -6.72E-04
+    30 Broy./Diag. 0.30E+00    2.4     0.00641256       -82.2861736050 -1.44E-03
+    31 Broy./Diag. 0.30E+00    2.4     0.00550080       -82.2874114756 -1.24E-03
+    32 Broy./Diag. 0.30E+00    2.4     0.00464087       -82.2880796520 -6.68E-04
+    33 Broy./Diag. 0.30E+00    2.4     0.00388999       -82.2883752176 -2.96E-04
+    34 Broy./Diag. 0.30E+00    2.4     0.00332830       -82.2887093905 -3.34E-04
+    35 Broy./Diag. 0.30E+00    2.4     0.00275631       -82.2890162973 -3.07E-04
+    36 Broy./Diag. 0.30E+00    2.4     0.00226537       -82.2890552745 -3.90E-05
+    37 Broy./Diag. 0.30E+00    2.4     0.00156431       -82.2890804640 -2.52E-05
+    38 Broy./Diag. 0.30E+00    2.4     0.00059931       -82.2895399783 -4.60E-04
+    39 Broy./Diag. 0.30E+00    2.4     0.00036474       -82.2897084303 -1.68E-04
+    40 Broy./Diag. 0.30E+00    2.4     0.00013416       -82.2896182260  9.02E-05
+    41 Broy./Diag. 0.30E+00    2.4     0.00005007       -82.2893657061  2.53E-04
+    42 Broy./Diag. 0.30E+00    2.4     0.00049928       -82.2891538882  2.12E-04
+    43 Broy./Diag. 0.30E+00    2.4     0.00084990       -82.2898539707 -7.00E-04
+    44 Broy./Diag. 0.30E+00    2.4     0.00111800       -82.2894130773  4.41E-04
+    45 Broy./Diag. 0.30E+00    2.4     0.00287969       -82.2879397095  1.47E-03
+    46 Broy./Diag. 0.30E+00    2.4     0.00336419       -82.2875722557  3.67E-04
+    47 Broy./Diag. 0.30E+00    2.4     0.00221189       -82.2882304222 -6.58E-04
+    48 Broy./Diag. 0.30E+00    2.4     0.00141537       -82.2884902909 -2.60E-04
+    49 Broy./Diag. 0.30E+00    2.4     0.00130695       -82.2884452772  4.50E-05
+    50 Broy./Diag. 0.30E+00    2.4     0.00096345       -82.2883335747  1.12E-04
+    51 Broy./Diag. 0.30E+00    2.4     0.00071084       -82.2882771589  5.64E-05
+    52 Broy./Diag. 0.30E+00    2.4     0.00051068       -82.2883002609 -2.31E-05
+    53 Broy./Diag. 0.30E+00    2.4     0.00042342       -82.2883105129 -1.03E-05
+    54 Broy./Diag. 0.30E+00    2.4     0.00027813       -82.2883051686  5.34E-06
+    55 Broy./Diag. 0.30E+00    2.4     0.00008563       -82.2882895863  1.56E-05
+    56 Broy./Diag. 0.30E+00    2.4     0.00007814       -82.2882836788  5.91E-06
+    57 Broy./Diag. 0.30E+00    2.4     0.00008255       -82.2882848663 -1.19E-06
+    58 Broy./Diag. 0.30E+00    2.4     0.00004255       -82.2882861569 -1.29E-06
+    59 Broy./Diag. 0.30E+00    2.4     0.00003345       -82.2882879344 -1.78E-06
+    60 Broy./Diag. 0.30E+00    2.4     0.00003561       -82.2882824978  5.44E-06
+    61 Broy./Diag. 0.30E+00    2.4     0.00002325       -82.2882842091 -1.71E-06
+    62 Broy./Diag. 0.30E+00    2.4     0.00001391       -82.2882888598 -4.65E-06
+    63 Broy./Diag. 0.30E+00    2.4     0.00000282       -82.2882901391 -1.28E-06
+    64 Broy./Diag. 0.30E+00    2.4     0.00000209       -82.2882901332  5.87E-09
+    65 Broy./Diag. 0.30E+00    2.4     0.00000182       -82.2882880958  2.04E-06
+    66 Broy./Diag. 0.30E+00    2.3     0.00000135       -82.2882842818  3.81E-06
+    67 Broy./Diag. 0.30E+00    2.4     0.00000205       -82.2882828410  1.44E-06
+    68 Broy./Diag. 0.30E+00    2.4     0.00000162       -82.2882828611 -2.01E-08
+    69 Broy./Diag. 0.30E+00    2.4     0.00000107       -82.2882831305 -2.69E-07
+    70 Broy./Diag. 0.30E+00    2.4     0.00000093       -82.2882832906 -1.60E-07
+
+  *** SCF run converged in    70 steps ***
+
+
+  Electronic density on regular grids:        -15.9999998587        0.0000001413
+  Core density on regular grids:               16.0000000000       -0.0000000000
+  Total charge density on r-space grids:        0.0000001413
+  Total charge density g-space grids:           0.0000001413
+
+  Overlap energy of the core charge distribution:               0.00000000000000
+  Self energy of the core charge distribution:               -187.87291228687351
+  Core Hamiltonian energy:                                     56.45644741126274
+  Hartree energy:                                              64.88611366272693
+  Exchange-correlation energy:                                 -9.78504700786553
+  Hartree-Fock Exchange energy:                                -5.97288506985850
+
+  Total energy:                                               -82.28828329060785
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     Mg       1          8.602250                              1.397750
+       2     O        2          7.397750                             -1.397750
+ # Total charge                             16.000000                 -0.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       Mg     1      10.000         10.247                        -0.247
+      2       O      2       6.000          5.753                         0.247
+
+  Total Charge                                                            0.000
+ !-----------------------------------------------------------------------------!
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy [a.u.]:              -82.288283290607851
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                                DBCSR STATISTICS                             -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+ COUNTER                                    TOTAL       BLAS       SMM       ACC
+ flops     9 x     8 x     9                 3888       0.0%    100.0%      0.0%     
+ flops    13 x     8 x     9                 5616       0.0%    100.0%      0.0%     
+ flops     9 x     8 x    13                 5616       0.0%    100.0%      0.0%     
+ flops    13 x     8 x    13                 8112       0.0%    100.0%      0.0%     
+ flops     9 x     9 x     8                92016       0.0%    100.0%      0.0%     
+ flops    13 x     9 x     8               132912       0.0%    100.0%      0.0%     
+ flops    12 x    12 x     8               161280       0.0%    100.0%      0.0%     
+ flops    13 x    12 x     8               174720       0.0%    100.0%      0.0%     
+ flops    13 x    13 x     8               381264       0.0%    100.0%      0.0%     
+ flops inhomo. stacks                           0       0.0%      0.0%      0.0%
+ flops total                       965.424000E+03       0.0%    100.0%      0.0%
+ flops max/rank                    560.928000E+03       0.0%    100.0%      0.0%
+ matmuls inhomo. stacks                         0       0.0%      0.0%      0.0%
+ matmuls total                                435       0.0%    100.0%      0.0%
+ number of processed stacks                   435       0.0%    100.0%      0.0%
+ average stack size                                     0.0       1.0       0.0
+ marketing flops                     1.273056E+06
+ -------------------------------------------------------------------------------
+ # multiplications                            144
+ max memory usage/rank             448.417792E+06
+ # max total images/rank                        2
+ # max 3D layers                                1
+ # MPI messages exchanged                   59904
+ MPI messages size (bytes):
+  total size                         2.213664E+06
+  min size                           0.000000E+00
+  max size                           2.288000E+03
+  average size                      36.953526E+00
+ MPI breakdown and total messages size (bytes):
+             size <=      128               58011                        0
+       128 < size <=     8192                1893                  2213664
+      8192 < size <=    32768                   0                        0
+     32768 < size <=   131072                   0                        0
+    131072 < size <=  4194304                   0                        0
+   4194304 < size <= 16777216                   0                        0
+  16777216 < size                               0                        0
+ -------------------------------------------------------------------------------
+
+ *** WARNING in dbcsr_mm.F:301 :: Using a non-square number of MPI ranks ***
+ *** might lead to poor performance. Used ranks: 32 Suggested: 36 64     ***
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                      DBCSR MESSAGE PASSING PERFORMANCE                      -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+ ROUTINE             CALLS      AVE VOLUME [Bytes]
+ MP_Bcast               10                     12.
+ MP_Allreduce         1242                      9.
+ MP_Alltoall          6113                   3326.
+ MP_ISend             4602                    153.
+ MP_IRecv             4320                     61.
+ -------------------------------------------------------------------------------
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                                DBM STATISTICS                               -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+    M  x    N  x    K                                          COUNT     PERCENT
+    ?  x    ?  x  ???                                           8960      33.28%
+  ???  x    ?  x    ?                                           8960      33.28%
+   ??  x    ?  x    ?                                           4480      16.64%
+    ?  x    ?  x   ??                                           4295      15.95%
+    ?  x    ?  x    ?                                             88       0.33%
+   ??  x   ??  x   ??                                             64       0.24%
+    ?  x   ??  x   ??                                             32       0.12%
+   ??  x   ??  x    ?                                             32       0.12%
+    ?  x   ??  x    ?                                             16       0.06%
+ -------------------------------------------------------------------------------
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                                GRID STATISTICS                              -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+ LP    KERNEL             BACKEND                              COUNT     PERCENT
+ 2     collocate general  CPU                                 430127      20.22%
+ 2     integrate general  CPU                                 425950      20.02%
+ 1     collocate general  CPU                                 254940      11.98%
+ 1     integrate general  CPU                                 254940      11.98%
+ 3     collocate general  CPU                                 170398       8.01%
+ 3     integrate general  CPU                                 168280       7.91%
+ 0     collocate general  CPU                                 138674       6.52%
+ 0     integrate general  CPU                                 138672       6.52%
+ 4     collocate general  CPU                                  73395       3.45%
+ 4     integrate general  CPU                                  72380       3.40%
+ -------------------------------------------------------------------------------
+
+ MEMORY| Estimated peak process memory [MiB]                                 428
+
+ -------------------------------------------------------------------------------
+ ----                             MULTIGRID INFO                            ----
+ -------------------------------------------------------------------------------
+ count for grid        1:         340801          cutoff [a.u.]          300.00
+ count for grid        2:         101585          cutoff [a.u.]          100.00
+ count for grid        3:          51245          cutoff [a.u.]           33.33
+ count for grid        4:          36211          cutoff [a.u.]           11.11
+ total gridlevel count  :         529842
+
+ RI-HFX PERFORMANCE| DBT total number of flops:                         5.89E+08
+ RI-HFX PERFORMANCE| DBT total execution time:                              1.53
+ RI-HFX PERFORMANCE| DBT flop rate (Gflops / MPI rank):                     0.01
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                         MESSAGE PASSING PERFORMANCE                         -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+
+ ROUTINE             CALLS      AVE VOLUME [Bytes]
+ MP_Group             8419
+ MP_Bcast             3880                 175842.
+ MP_Allreduce        34123                     11.
+ MP_Sync             12068
+ MP_Alltoall          7045                 142527.
+ MP_SendRecv         17546                   9928.
+ MP_ISendRecv        17391                   9888.
+ MP_Wait             18449
+ MP_comm_split        3634
+ MP_ISend             5337                    156.
+ MP_IRecv             4229                    176.
+ -------------------------------------------------------------------------------
+
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                           R E F E R E N C E S                               -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+ 
+ CP2K version 2024.3, the CP2K developers group (2024).
+ CP2K is freely available from https://www.cp2k.org/ .
+ 
+ A. Bussy, O. Schuett, J. Hutter.
+ J. Chem. Phys. 158, 164109 (2023).
+ Sparse tensor based nuclear gradients for periodic Hartree-Fock and low-scaling 
+ correlated wave function methods in the CP2K software package: A massively 
+ parallel and GPU accelerated implementation..
+ https://doi.org/10.1063/5.0144493
+
+ T. D. Kuehne, M. Iannuzzi, M. Del Ben, V. V. Rybkin, P. Seewald, F. Stein, T. 
+ Laino, R. Z. Khaliullin, O. Schuett, F. Schiffmann, D. Golze, J. Wilhelm, S. 
+ Chulkov, M. H. Bani-Hashemian, V. Weber, U. Borstnik, M. Taillefumier, A. S. 
+ Jakobovits, A. Lazzaro, H. Pabst, T. Mueller, R. Schade, M. Guidon, S. 
+ Andermatt, N. Holmberg, G. K. Schenter, A. Hehn, A. Bussy, F. Belleflamme, G. 
+ Tabacchi, A. Gloess, M. Lass, I. Bethune, C. J. Mundy, C. Plessl, M. Watkins, 
+ J. VandeVondele, M. Krack, J. Hutter.
+ J. Chem. Phys. 152, 194103 (2020).
+ CP2K: An electronic structure and molecular dynamics software package - 
+ Quickstep: Efficient and accurate electronic structure calculations.
+ https://doi.org/10.1063/5.0007045
+
+ G. L. Stoychev, A. A. Auer, F. Neese.
+ J. Chem. Theory Comput. 13, 554-562 (2017).
+ Automatic Generation of Auxiliary Basis Sets.
+ https://doi.org/10.1021/acs.jctc.6b01041
+
+ O. Schuett, P. Messmer, J. Hutter, J. VandeVondele.
+ Electronic Structure Calculations on Graphics Processing Units, 173-190 (2016).
+ GPU-Accelerated Sparse Matrix-Matrix Multiplication for Linear Scaling Density 
+ Functional Theory.
+ https://doi.org/10.1002/9781118670712.ch8
+
+ A. Heinecke, G. Henry, M. Hutchinson, H. Pabst.
+ Proceedings of Intl. Supercomputing Conference, 981-991 (2016).
+ LIBXSMM: Accelerating Small Matrix Multiplications by Runtime Code Generation.
+ https://doi.org/10.1109/SC.2016.83
+
+ J. Hutter, M. Iannuzzi, F. Schiffmann, J. VandeVondele.
+ WIREs Comput Mol Sci. 4, 15-25 (2014).
+ CP2K: atomistic simulations of condensed matter systems.
+ https://doi.org/10.1002/wcms.1159
+
+ U. Borstnik, J. VandeVondele, V. Weber, J. Hutter.
+ Parallel Comput. 40, 47-58 (2014).
+ Sparse matrix multiplication: The distributed block-compressed sparse row 
+ library.
+ https://doi.org/10.1016/j.parco.2014.03.012
+
+ P. Merlot, R. Izsak, A. Borgo, T. Kjaergaard, T. Helgaker, S. Reine.
+ J. Chem. Phys. 141, 094104 (2014).
+ Charge-constrained auxiliary-density-matrix methods for the Hartree-Fock 
+ exchange contribution.
+ https://doi.org/10.1063/1.4894267
+
+ A. Marek, V. Blum, R. Johanni, V. Havu, B. Lang, T. Auckenthaler, A. Heinecke, 
+ H. Bungartz, H. Lederer.
+ J. Phys. Condens. Matter 26, 213201 (2014).
+ The ELPA library: scalable parallel eigenvalue solutions for electronic 
+ structure theory and computational science.
+ https://doi.org/10.1088/0953-8984/26/21/213201
+
+ M. Guidon, J. Hutter, J. VandeVondele.
+ J. Chem. Theory Comput. 6, 2348-2364 (2010).
+ Auxiliary Density Matrix Methods for Hartree-Fock Exchange Calculations.
+ https://doi.org/10.1021/ct1002225
+
+ M. Guidon, J. Hutter, J. VandeVondele.
+ J. Chem. Theory Comput. 5, 3010-3021 (2009).
+ Robust Periodic Hartree-Fock Exchange for Large-Scale Simulations Using 
+ Gaussian Basis Sets.
+ https://doi.org/10.1021/ct900494g
+
+ M. Guidon, F. Schiffmann, J. Hutter, J. VandeVondele.
+ J. Chem. Phys. 128, 214104 (2008).
+ Ab initio molecular dynamics using hybrid density functionals.
+ https://doi.org/10.1063/1.2931945
+
+ J. VandeVondele, J. Hutter.
+ J. Chem. Phys. 127, 114105 (2007).
+ Gaussian basis sets for accurate calculations on molecular systems in gas and 
+ condensed phases.
+ https://doi.org/10.1063/1.2770708
+
+ J. VandeVondele, M. Krack, F. Mohamed, M. Parrinello, T. Chassaing, J. Hutter.
+ Comput. Phys. Commun. 167, 103-128 (2005).
+ QUICKSTEP: Fast and accurate density functional calculations using a mixed 
+ Gaussian and plane waves approach.
+ https://doi.org/10.1016/j.cpc.2004.12.014
+
+ M. Krack.
+ Theor. Chem. Acc. 114, 145-152 (2005).
+ Pseudopotentials for H to Kr optimized for gradient-corrected 
+ exchange-correlation functionals.
+ https://doi.org/10.1007/s00214-005-0655-y
+
+ M. Frigo, S. G. Johnson.
+ Proc. IEEE 93, 216-231 (2005).
+ The design and implementation of FFTW3.
+ https://doi.org/10.1109/JPROC.2004.840301
+
+ J. Heyd, G. E. Scuseria.
+ J. Chem. Phys. 120, 7274-7280 (2004).
+ Assessment and validation of a screened Coulomb hybrid density functional.
+ https://doi.org/10.1063/1.1668634
+
+ C. Hartwigsen, S. Goedecker, J. Hutter.
+ Phys. Rev. B 58, 3641-3662 (1998).
+ Relativistic separable dual-space Gaussian pseudopotentials from H to Rn.
+ https://doi.org/10.1103/PhysRevB.58.3641
+
+ G. Lippert, J. Hutter, M. Parrinello.
+ Mol. Phys. 92, 477-487 (1997).
+ A hybrid Gaussian and plane wave density functional scheme.
+ https://doi.org/10.1080/002689797170220
+
+ S. Goedecker, M. Teter, J. Hutter.
+ Phys. Rev. B 54, 1703-1710 (1996).
+ Separable dual-space Gaussian pseudopotentials.
+ https://doi.org/10.1103/PhysRevB.54.1703
+
+ J. P. Perdew, K. Burke, M. Ernzerhof.
+ Phys. Rev. Lett. 77, 3865-3868 (1996).
+ Generalized gradient approximation made simple.
+ https://doi.org/10.1103/PhysRevLett.77.3865
+
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                                T I M I N G                                  -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+ SUBROUTINE                       CALLS  ASD         SELF TIME        TOTAL TIME
+                                MAXIMUM       AVERAGE  MAXIMUM  AVERAGE  MAXIMUM
+ CP2K                                 1  1.0    0.008    0.017  364.141  364.142
+ qs_energies                          1  2.0    0.000    0.000  363.884  363.884
+ scf_env_do_scf                       1  3.0    0.000    0.000  362.908  362.908
+ scf_env_do_scf_inner_loop           70  4.0    0.001    0.009  362.908  362.908
+ qs_ks_update_qs_env                 70  5.0    0.000    0.000  309.170  309.171
+ rebuild_ks_matrix                   70  6.0    0.000    0.000  309.169  309.170
+ qs_ks_build_kohn_sham_matrix        70  7.0    0.004    0.004  309.168  309.170
+ hfx_ks_matrix                       70  8.0    0.001    0.001  199.583  199.585
+ hfx_ri_update_ks                    70  9.0    0.001    0.001  199.581  199.581
+ hfx_ri_update_ks_Pmat               70 10.0    0.197    0.202  199.579  199.579
+ mp_sync                          12068 13.4  186.887  198.091  186.887  198.091
+ hfx_ri_pre_scf_Pmat                  1 11.0    0.000    0.000  197.969  197.969
+ hfx_ri_pre_scf_Pmat_int              1 12.0    0.000    0.000  197.938  197.938
+ hfx_ri_pre_scf_calc_tensors          1 13.0    0.001    0.001  197.343  197.938
+ build_3c_integrals                   2 14.0    7.282   79.221   11.158  128.154
+ transfer_rs2pw                     566  9.5    0.001    0.001   84.375   87.818
+ mp_sendrecv_dv                   17546 11.5   84.345   87.789   84.345   87.789
+ transfer_rs2pw_300                 143 10.4    0.016    0.020   84.341   87.786
+ calculate_rho_elec                 141  7.5    0.002    0.002   87.766   87.766
+ density_rs2pw                      141  8.5    0.002    0.002   84.310   87.748
+ grid_collocate_task_list           141  8.5    3.451   87.602    3.451   87.602
+ sum_up_and_integrate                70  8.0    0.001    0.001   46.414   75.587
+ integrate_v_rspace                 140  9.0    0.002    0.002   46.411   75.582
+ grid_integrate_task_list           140 10.0    2.772   75.418    2.772   75.418
+ qs_rho_update_rho_low               71  5.0    0.000    0.000   54.350   54.351
+ fft_wrap_pw1pw2                   2385 10.7    0.003    0.003   43.823   45.528
+ fft3d_ps                          2385 12.7    0.055    0.068   43.794   45.500
+ fft_wrap_pw1pw2_300               1542 11.9    0.005    0.005   43.745   45.449
+ mp_alltoall_z22v                  2385 14.7   43.680   45.409   43.680   45.409
+ yz_to_x                            702 14.3    0.003    0.004   43.627   45.338
+ potential_pw2rs                    140 10.0    0.002    0.002   43.638   45.283
+ admm_mo_calc_rho_aux                70  8.0    0.000    0.000   33.478   33.478
+ abc_contract_xsmm              8540487 15.0    2.528   30.580    2.528   30.580
+ admm_mo_merge_ks_matrix             70  8.0    0.000    0.000   29.251   30.378
+ merge_ks_matrix_none                70  9.0    0.001    0.001   29.250   30.377
+ copy_dbcsr_to_fm                   218  8.7    0.001    0.001   29.225   30.353
+ dbcsr_desymmetrize_deep            360 10.6    0.003    0.004   29.199   30.326
+ mp_alltoall_i22                    935 11.5   29.189   30.316   29.189   30.316
+ build_3c_integrals_put_dbcsr   1353535 15.0    1.026   14.599    1.026   14.599
+ -------------------------------------------------------------------------------
+
+ The number of warnings for this run is : 2
+ 
+ -------------------------------------------------------------------------------
+  **** **** ******  **  PROGRAM ENDED AT                 2026-06-23 17:49:29.257
+ ***** ** ***  *** **   PROGRAM RAN ON                                      cu01
+ **    ****   ******    PROGRAM RAN BY                                     rudin
+ ***** **    ** ** **   PROGRAM PROCESS ID                               2852181
+  **** **  *******  **  PROGRAM STOPPED IN /home/rudin/code/kylin-pbc/art/exampl
+                                           e/extern/MgO-HSE06-gamma-cp2k-ADMM

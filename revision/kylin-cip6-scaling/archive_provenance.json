@@ -1,0 +1,366 @@
+{
+  "created_at_utc": "2026-10-20T05:00:02.008191+00:00",
+  "original_suite_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020",
+  "archive_absolute_path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/kylin-cip6-scaling",
+  "binary_sha256": "14bc8db355154879b8dd83c8b3480fa725d9a3e8be9a54cb24784d6c41b243f9",
+  "binary_not_copied": true,
+  "copied_files": [
+    {
+      "archive_path": "cases/Si16_selected_c06/calc.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si16_selected_c06/calc.txt",
+      "sha256": "ebbb67e35509b882354bd82fad697f39cbf30e0ba269d47834fb3f9965be6216"
+    },
+    {
+      "archive_path": "cases/Si16_selected_c06/cell.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si16_selected_c06/cell.txt",
+      "sha256": "3933fe0cefdbb8e3f2f62d9b6aba6ade741fcd28cc0988fb58015c34a1126cbb"
+    },
+    {
+      "archive_path": "cases/Si16_selected_c06/run.log",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si16_selected_c06/run.log",
+      "sha256": "dc89d50b924e9e1e3dee052c8cd39d046db24dae1421d31a70ab81dc576073dd"
+    },
+    {
+      "archive_path": "cases/Si16_selected_c06/run_metadata.json",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si16_selected_c06/run_metadata.json",
+      "sha256": "0985039f454a0704431f7eba8b93b2cf34c9a9b93f4268b0cca4f2d64d395cae"
+    },
+    {
+      "archive_path": "cases/Si16_selected_c06/time.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si16_selected_c06/time.txt",
+      "sha256": "351b1cfad0ea5cd7d0a9dc4cf9398850c7e7c9b7d9e45f27bf190cfaf5700045"
+    },
+    {
+      "archive_path": "cases/Si16_selected_c06/exitcode.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si16_selected_c06/exitcode.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "archive_path": "cases/Si32_selected_c06/calc.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si32_selected_c06/calc.txt",
+      "sha256": "ebbb67e35509b882354bd82fad697f39cbf30e0ba269d47834fb3f9965be6216"
+    },
+    {
+      "archive_path": "cases/Si32_selected_c06/cell.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si32_selected_c06/cell.txt",
+      "sha256": "16731bcd09ba166cd49c582e7cc86033b11f9ed9f1c7640360ee060bb7945b87"
+    },
+    {
+      "archive_path": "cases/Si32_selected_c06/run.log",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si32_selected_c06/run.log",
+      "sha256": "b27eea14f09929b24b4dea5ad9ffd7c5b04b53966c70088e292ad3013b6e1dfc"
+    },
+    {
+      "archive_path": "cases/Si32_selected_c06/run_metadata.json",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si32_selected_c06/run_metadata.json",
+      "sha256": "41942fa98fa345125f86104515c61f59d31ce524515f61dd15caa2c195fc87f0"
+    },
+    {
+      "archive_path": "cases/Si32_selected_c06/time.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si32_selected_c06/time.txt",
+      "sha256": "180c60553f81341f99f48e4d46145cb0ef292f4f08cfccd3321b073fdfae2ba3"
+    },
+    {
+      "archive_path": "cases/Si32_selected_c06/exitcode.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si32_selected_c06/exitcode.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "archive_path": "cases/Si64_selected_c06/calc.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_selected_c06/calc.txt",
+      "sha256": "ebbb67e35509b882354bd82fad697f39cbf30e0ba269d47834fb3f9965be6216"
+    },
+    {
+      "archive_path": "cases/Si64_selected_c06/cell.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_selected_c06/cell.txt",
+      "sha256": "d6033ca64b5893b5eb723a312898c5f384d8cdda0a40b6357ffb2ee37e8ba406"
+    },
+    {
+      "archive_path": "cases/Si64_selected_c06/run.log",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_selected_c06/run.log",
+      "sha256": "02e3f1e7dd70cf20cf237b7b9d6d0848f830f09e887ec165fa3a6d4ea3ae040a"
+    },
+    {
+      "archive_path": "cases/Si64_selected_c06/run_metadata.json",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_selected_c06/run_metadata.json",
+      "sha256": "1fc2b77fbe8f7e63e46c10a6ea5a5d8857a4ca9693a3c92bb66fcff1d8cd8cbf"
+    },
+    {
+      "archive_path": "cases/Si64_selected_c06/time.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_selected_c06/time.txt",
+      "sha256": "f68c47212fc52b1465fc78b8caf1c77c1f9710d2a8374eeb285e8e47665bfb72"
+    },
+    {
+      "archive_path": "cases/Si64_selected_c06/exitcode.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_selected_c06/exitcode.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "archive_path": "cases/Si128_selected_c06/calc.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si128_selected_c06/calc.txt",
+      "sha256": "513f7559b0fc68d28213c7e72853d9a8a9837f49431e01f2014ff0ef29d96192"
+    },
+    {
+      "archive_path": "cases/Si128_selected_c06/cell.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si128_selected_c06/cell.txt",
+      "sha256": "669defe468a95769067c2b22872b99a1ea4b387582dd75e21ea3e04f190e0271"
+    },
+    {
+      "archive_path": "cases/Si128_selected_c06/run.log",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si128_selected_c06/run.log",
+      "sha256": "eea52eb35228024dff18ca5e9a392fea1c6a619afdc710146d8c9ab1b89ace43"
+    },
+    {
+      "archive_path": "cases/Si128_selected_c06/run_metadata.json",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si128_selected_c06/run_metadata.json",
+      "sha256": "3e74ec2b54d073f640dd7cc6d82d3553bc9054abb3698689ea7ff9651dbcdbe6"
+    },
+    {
+      "archive_path": "cases/Si128_selected_c06/time.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si128_selected_c06/time.txt",
+      "sha256": "450881d6ec97d6aa7d409d5d3949ecc838923c8596727149906a8cd4c47a3668"
+    },
+    {
+      "archive_path": "cases/Si128_selected_c06/exitcode.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si128_selected_c06/exitcode.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "archive_path": "cases/Si256_selected_c06/calc.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si256_selected_c06/calc.txt",
+      "sha256": "e0ba0f7f321661543552870967eca491605a2b3f535df267934ad2a954d2ca08"
+    },
+    {
+      "archive_path": "cases/Si256_selected_c06/cell.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si256_selected_c06/cell.txt",
+      "sha256": "3d82e9a55faee999f1d09f7dee6b0904c595ea9b9882dff78e5e0e08c7e370a7"
+    },
+    {
+      "archive_path": "cases/Si256_selected_c06/run.log",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si256_selected_c06/run.log",
+      "sha256": "4b86f1e5b3edbd4ee8f7f85012d0df106f2b8edf98c6dc302615dd32efdf30cb"
+    },
+    {
+      "archive_path": "cases/Si256_selected_c06/run_metadata.json",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si256_selected_c06/run_metadata.json",
+      "sha256": "5f739984bbd88bbeeda3fb3c8ab3036c965e4eae5b8b6cbb800fa95f1ea645d4"
+    },
+    {
+      "archive_path": "cases/Si256_selected_c06/time.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si256_selected_c06/time.txt",
+      "sha256": "94f567db1b28e2a32a00accc808584f5b4e54b4ee74cdcc9a57bf124a60646f7"
+    },
+    {
+      "archive_path": "cases/Si256_selected_c06/exitcode.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si256_selected_c06/exitcode.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "archive_path": "controls/Si64_FTDF/calc.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_FTDF/calc.txt",
+      "sha256": "dfe6a6197b91ac376a32ca7f593ecf9b130c401d896e6ee3ef08f828502e8fcd"
+    },
+    {
+      "archive_path": "controls/Si64_FTDF/cell.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_FTDF/cell.txt",
+      "sha256": "d6033ca64b5893b5eb723a312898c5f384d8cdda0a40b6357ffb2ee37e8ba406"
+    },
+    {
+      "archive_path": "controls/Si64_FTDF/run.log",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_FTDF/run.log",
+      "sha256": "2747ca3fce5a2ca1d67b50e3321627af9e646f69351ccb2031e97a19ca5cf018"
+    },
+    {
+      "archive_path": "controls/Si64_FTDF/run_metadata.json",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_FTDF/run_metadata.json",
+      "sha256": "6258414471ce53c7e2f7122fbe945c79c071ee38379b2f806bd109674cc440eb"
+    },
+    {
+      "archive_path": "controls/Si64_FTDF/time.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_FTDF/time.txt",
+      "sha256": "95efc27663ff5634ca68c1a24d9be0403efc33085da20da14a6fa21243b24026"
+    },
+    {
+      "archive_path": "controls/Si64_FTDF/exitcode.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_FTDF/exitcode.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "archive_path": "controls/Si64_c30/calc.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_c30/calc.txt",
+      "sha256": "3aa9827523d786ad331c5d016174fe5bd8a720e87b0d012d8dce43c5ef78b2c4"
+    },
+    {
+      "archive_path": "controls/Si64_c30/cell.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_c30/cell.txt",
+      "sha256": "d6033ca64b5893b5eb723a312898c5f384d8cdda0a40b6357ffb2ee37e8ba406"
+    },
+    {
+      "archive_path": "controls/Si64_c30/run.log",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_c30/run.log",
+      "sha256": "041c63108a1863bd36139c6aaa7cb7bf7ac28aeec18c1c275c0271ca1e4915ea"
+    },
+    {
+      "archive_path": "controls/Si64_c30/run_metadata.json",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_c30/run_metadata.json",
+      "sha256": "c84e7d658bedb095ba23d211573af958909c2a6fd225c577f9b34bef77556a80"
+    },
+    {
+      "archive_path": "controls/Si64_c30/time.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_c30/time.txt",
+      "sha256": "06fc1aa95a4252fd651dcb8a15875b78c3ff13d0e0b1bdff4790fd0360e20ca5"
+    },
+    {
+      "archive_path": "controls/Si64_c30/exitcode.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_c30/exitcode.txt",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "archive_path": "source-records/summary.json",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/summary.json",
+      "sha256": "aa7d2c6c2dee4d799e4e5a6e81cc503c2df52d9e097b3e36d74cb8ce8341aa45"
+    },
+    {
+      "archive_path": "source-records/selected.json",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/selected.json",
+      "sha256": "94cbbd49ed01793bc3c1ea96c3d469fa1382c8830d23f8b7320cd282d9633620"
+    },
+    {
+      "archive_path": "source-records/calibration.csv",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/calibration.csv",
+      "sha256": "cff45c480f4a15a79f6f3d503b2456671ecccd4a92b17f55b1f128b53b7fdc43"
+    },
+    {
+      "archive_path": "source-records/results.csv",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/results.csv",
+      "sha256": "6a84eda0a0e7cf70a4ddd3ba62fe54ecb7302b6908f22cfe1f850066c94d5eb5"
+    },
+    {
+      "archive_path": "source-records/manifest.json",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/manifest.json",
+      "sha256": "c5ff3c4ac1776f35dbad8a0a348bba546ad47fefeabc2697ef889ac3acc4e23d"
+    },
+    {
+      "archive_path": "reference-fftdf-historical/Si16-HSE06/calc.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/art/example/scaling/Si16-HSE06-FTDF/calc.txt",
+      "sha256": "2fe86a5d4dc033639a121ae8720b3f262c6e0919cc2e47717f6eed5c8e753381"
+    },
+    {
+      "archive_path": "reference-fftdf-historical/Si16-HSE06/cell.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/art/example/scaling/Si16-HSE06-FTDF/cell.txt",
+      "sha256": "3933fe0cefdbb8e3f2f62d9b6aba6ade741fcd28cc0988fb58015c34a1126cbb"
+    },
+    {
+      "archive_path": "reference-fftdf-historical/Si16-HSE06/kylin-pbc.log",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/art/example/scaling/Si16-HSE06-FTDF/kylin-pbc.log",
+      "sha256": "7a1ec1c80fd881735ae953954a3dff13a3813c18bc55ae82283e3c38f001b6ce"
+    },
+    {
+      "archive_path": "reference-fftdf-historical/Si32-HSE06/calc.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/art/example/scaling/Si32-HSE06-FTDF/calc.txt",
+      "sha256": "2fe86a5d4dc033639a121ae8720b3f262c6e0919cc2e47717f6eed5c8e753381"
+    },
+    {
+      "archive_path": "reference-fftdf-historical/Si32-HSE06/cell.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/art/example/scaling/Si32-HSE06-FTDF/cell.txt",
+      "sha256": "16731bcd09ba166cd49c582e7cc86033b11f9ed9f1c7640360ee060bb7945b87"
+    },
+    {
+      "archive_path": "reference-fftdf-historical/Si32-HSE06/kylin-pbc.log",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/art/example/scaling/Si32-HSE06-FTDF/kylin-pbc.log",
+      "sha256": "06a98a323f8dc9318ca5df7d1f00d633b93093994eb3c8b91b793959c7747db3"
+    },
+    {
+      "archive_path": "reference-fftdf-historical/Si64-HSE06/calc.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/art/example/scaling/Si64-HSE06-FTDF/calc.txt",
+      "sha256": "2fe86a5d4dc033639a121ae8720b3f262c6e0919cc2e47717f6eed5c8e753381"
+    },
+    {
+      "archive_path": "reference-fftdf-historical/Si64-HSE06/cell.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/art/example/scaling/Si64-HSE06-FTDF/cell.txt",
+      "sha256": "d6033ca64b5893b5eb723a312898c5f384d8cdda0a40b6357ffb2ee37e8ba406"
+    },
+    {
+      "archive_path": "reference-fftdf-historical/Si64-HSE06/kylin-pbc.log",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/art/example/scaling/Si64-HSE06-FTDF/kylin-pbc.log",
+      "sha256": "bf311a0b746f15fe88a24cadad392c34e1162a25e5f9d403d89597b091e105ba"
+    },
+    {
+      "archive_path": "reference-fftdf-historical/Si128-HSE06/calc.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/art/example/internal/Si128-HSE06-gamma-FTDF/calc.txt",
+      "sha256": "2fe86a5d4dc033639a121ae8720b3f262c6e0919cc2e47717f6eed5c8e753381"
+    },
+    {
+      "archive_path": "reference-fftdf-historical/Si128-HSE06/cell.txt",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/art/example/internal/Si128-HSE06-gamma-FTDF/cell.txt",
+      "sha256": "4cdea0b3afae303ea9d6c79ba299aa0f91e67dc4f69f22913ce885ec5b7718cd"
+    },
+    {
+      "archive_path": "reference-fftdf-historical/Si128-HSE06/kylin-pbc.log",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/art/example/internal/Si128-HSE06-gamma-FTDF/kylin-pbc.log",
+      "sha256": "1b8dc4eb900a9c67a86797b987cad5a142f8dfa4c58e227ba6d6e1e1209d00f9"
+    },
+    {
+      "archive_path": "figures/plot_fig_scaling_time.py",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-paper-2/revise/kylin-pbc-v1.0-paper-revise/plot_fig_scaling_time.py",
+      "sha256": "01de7ec0c6ae3c0d05fd252b0aca25bd8eb19736dbb69f64930e6e9001c6538c"
+    },
+    {
+      "archive_path": "figures/fig_scaling_time.png",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-paper-2/revise/kylin-pbc-v1.0-paper-revise/fig_scaling_time.png",
+      "sha256": "d3387e39f34385d82cbd91bfb3467850b7aa6d0d00a131b20012ff3085d856be"
+    },
+    {
+      "archive_path": "figures/fig_scaling_time.pdf",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-paper-2/revise/kylin-pbc-v1.0-paper-revise/fig_scaling_time.pdf",
+      "sha256": "74fca2e41f08163b50e814e16ff72605da591ea2c8e7bef6fb58e013804bd95a"
+    },
+    {
+      "archive_path": "figures/fig_scaling_time.svg",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-paper-2/revise/kylin-pbc-v1.0-paper-revise/fig_scaling_time.svg",
+      "sha256": "e524812cdc7537d0878a158412eec530257f4f78c8e4f6e47462938c9f0b86fe"
+    },
+    {
+      "archive_path": "figures/fig_scaling_time_timings.csv",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-paper-2/revise/kylin-pbc-v1.0-paper-revise/fig_scaling_time_timings.csv",
+      "sha256": "9120451cf29c3a6c3c500c0d3da7b31dae5859ec1b7a6133a4beacb67d49ca46"
+    },
+    {
+      "archive_path": "figures/fig_scaling_time_provenance.json",
+      "original_absolute_path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-paper-2/revise/kylin-pbc-v1.0-paper-revise/fig_scaling_time_provenance.json",
+      "sha256": "32cb1f868eed4ea4f4d79a0f84f9dc96a747bd5e86c7dbbd85a130d4f81a25b0"
+    }
+  ],
+  "existing_historical_c30_sources": [
+    {
+      "atoms": 16,
+      "archive_relative_path": "../../scaling/Si16-HSE06/kylin-pbc.log",
+      "sha256": "ad525fb0a6a35f1ef08e358016e804efc5e75f9f6d39607e86acd08a5058e194"
+    },
+    {
+      "atoms": 32,
+      "archive_relative_path": "../../scaling/Si32-HSE06/kylin-pbc.log",
+      "sha256": "8acea370c61680730015e12e779939112ca7a3d0c6c184ace8176dfa1c39896a"
+    },
+    {
+      "atoms": 64,
+      "archive_relative_path": "../../scaling/Si64-HSE06/kylin-pbc.log",
+      "sha256": "b33f6cb7c022c5e6606c662a0fc18850268ccb0c095baa979c65a5f1c649aae0"
+    },
+    {
+      "atoms": 128,
+      "archive_relative_path": "../../scaling/Si128-HSE06/kylin-pbc.log",
+      "sha256": "739bd246780ac79fdbdc82f5f1fd1575363d947b93a7864d2fbe410fa0cec032"
+    },
+    {
+      "atoms": 256,
+      "archive_relative_path": "../../scaling/Si256-HSE06/kylin-pbc.log",
+      "sha256": "e8a7e1d3a66073124445760b9d7b6f59bb4f47bdc97064d8402ae752ebfa785f"
+    }
+  ],
+  "missing_reference_sizes": [
+    256
+  ],
+  "figure_archive_update_utc": "2026-10-20T05:22:04.763838+00:00",
+  "figure_note": "Updated Fig. 6 without the three bottom footnotes; six data arrays, fitted slopes, source-log provenance, and timing CSV are unchanged. Six manuscript output files copied exactly; archived script not executed during this copy."
+}

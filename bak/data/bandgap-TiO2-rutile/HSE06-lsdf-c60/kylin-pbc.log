@@ -1,0 +1,416 @@
+Kylin-PBC: v1.0.0
+
+System time = 2026-06-12 13:27:23
+
+OMP threads = 64
+
+KYLIN_PBC_ROOT = "/home/rudin/code/kylin-pbc"
+KYLIN_SCR_PATH = "/tmp"
+KYLIN_JOB_PATH = "/home/rudin/code/kylin-pbc/bandgap-TiO2-rutile/HSE06-lsdf-c60"
+
+SCF.xcfun                      = HSE06
+SCF.basis                      = dzvp-sr
+SCF.psudo                      = gth-pbe
+SCF.kmesh                      = 4 4 6
+SCF.gmesh                      = 5.0e-01
+SCF.ispin                      = OFF
+SCF.dspin                      = 0
+SCF.eps_engy                   = 1.0e-06 [AU]
+SCF.eps_grad                   = 1.0e-05 [AU]
+SCF.eps_dmat                   = 1.0e-03
+SCF.chk_load                   = 
+SCF.chk_save                   = 
+SCF.scf_guess                  = ATOM
+SCF.max_cycle                  = 200
+SCF.vdw_method                 = NONE
+SCF.coul_method                = MGDF
+SCF.xchg_method                = LSDF
+SCF.xchg_exxocc                = OFF
+SCF.xchg_exxace                = NONE
+SCF.xchg_robust                = FULL
+SCF.xchg_exxdiv                = NONE
+SCF.lsdf_cparam                = 60
+SCF.lsdf_mparam                = 5
+SCF.lsdf_ipslct                = QRCP
+SCF.lsdf_chocut                = 1.0e-08
+SCF.lsdf_atmcut                = 2.5e+01
+SCF.lsdf_aovcut                = 1.0e-07
+SCF.lsdf_swzcut                = 0.0e+00
+SCF.lsdf_pnocut                = 0.0e+00
+SCF.lsdf_nafcut                = 0.0e+00
+SCF.mgdf_ntasks                = 4
+SCF.mgdf_kratio                = 3.0e+00
+SCF.mgdf_cutoff                = 3.0e+02 [AU]
+SCF.mgdf_relcut                = 3.0e+01
+SCF.mgdf_prprec                = 1.0e-14
+SCF.dmx_mix_method             = NONE
+SCF.dmx_mix_start              = 1
+SCF.dmx_mix_space              = 8
+SCF.dmx_mix_alpha              = 3.0e-01
+SCF.rho_mix_method             = NONE
+SCF.rho_mix_start              = 1
+SCF.rho_mix_space              = 8
+SCF.rho_mix_alpha              = 3.0e-01
+SCF.hks_mix_method             = BROY
+SCF.hks_mix_start              = 1
+SCF.hks_mix_space              = 16
+SCF.hks_mix_alpha              = 2.0e-01
+SCF.damp_factor                = 0.0e+00
+SCF.level_shift                = 0.0e+00 [AU]
+SCF.smear_method               = FERMI
+SCF.smear_sigma                = 9.5e-04 [AU]
+SCF.soc                        = OFF
+SCF.soc_window                 = 1.8e+00 [AU]
+SCF.print_bandgap              = ON
+SCF.print_time                 = OFF
+
+OPT.opt_method                 = BFGS
+OPT.max_cycle                  = 0
+OPT.eps_engy                   = 4.0e-06 [AU]
+OPT.eps_grad                   = 4.0e-04 [AU]
+OPT.trust_limit                = 3.0e-01 [AU]
+OPT.damp_factor                = 0.0e+00
+OPT.opt_mix_method             = NONE
+OPT.opt_mix_start              = 1
+OPT.opt_mix_space              = 5
+OPT.opt_mix_alpha              = 3.0e-01
+OPT.neb_method                 = FIRE
+OPT.neb_lclimb                 = ON
+OPT.neb_interp                 = IDPP
+OPT.neb_nimage                 = 5
+OPT.neb_spring                 = 1.0e-02 [AU]
+OPT.neb_maxstep                = 7.6e-02 [AU]
+
+PROP.calculation               = NONE
+FREQ.freq_method               = FREE2
+FREQ.fd_stepsize               = 2.8e-02 [AU]
+DOS.dos_method                 = GAUSS
+DOS.dos_sigma                  = 3.7e-03 [AU]
+DOS.dos_npoint                 = 1001
+DOS.dos_emin                   = 0.0e+00 [AU]
+DOS.dos_emax                   = 0.0e+00 [AU]
+
+OPT.mdx_ensemble               = NVE
+OPT.mdx_thermostat             = NHC
+OPT.mdx_max_step               = 0
+OPT.mdx_timestep               = 4.0e+01 [AU]
+OPT.mdx_temperature            = 9.5e-04 [AU]
+OPT.mdx_pressure               = 0.0e+00 [AU]
+OPT.mdx_thermo_tau             = 4.0e+03 [AU]
+OPT.mdx_baro_tau               = 2.0e+04 [AU]
+OPT.mdx_nhc_length             = 3
+OPT.mdx_nhc_mts                = 3
+OPT.mdx_constraint             = OFF
+OPT.mdx_constraint_tol         = 1.0e-10
+OPT.mdx_rng_seed               = 42
+
+K-points mesh = 4 4 6
+
+xc functional: "HSE06"
+is hybrid: YES
+HFX coeff: 0.25
+
+Basis Set Name: "dzvp-sr"
+number of shell = 20
+number of basis = 104
+gmesh = 65 65 43
+
+Pseudopotential Name: "gth-pbe"
+number of valence electron = 48
+
+SCF Calculation.
+K sampling = 4 4 6
+[LSDF-K] gmesh = (65, 65, 43), nkpts = 96, naofn = 104, natom = 6
+Timer "[LSDF-K] Voronoi partition" used time: 0.003422 s.
+[LSDF-K]   atom 0: 21823 grid points, 26 AOs
+[LSDF-K]   atom 1: 21796 grid points, 26 AOs
+[LSDF-K]   atom 2: 34523 grid points, 13 AOs
+[LSDF-K]   atom 3: 34513 grid points, 13 AOs
+[LSDF-K]   atom 4: 34563 grid points, 13 AOs
+[LSDF-K]   atom 5: 34457 grid points, 13 AOs
+[LSDF-K]   atom 0: 104 / 104 AOs kept after screening
+[LSDF-K]   atom 1: 104 / 104 AOs kept after screening
+[LSDF-K]   atom 2: 104 / 104 AOs kept after screening
+[LSDF-K]   atom 3: 104 / 104 AOs kept after screening
+[LSDF-K]   atom 4: 104 / 104 AOs kept after screening
+[LSDF-K]   atom 5: 104 / 104 AOs kept after screening
+Timer "[LSDF-K] AO evaluation + screening" used time: 14.10834 s.
+[LSDF-K]   atom 0: 1565 IPs selected
+[LSDF-K]   atom 1: 1565 IPs selected
+[LSDF-K]   atom 2: 785 IPs selected
+[LSDF-K]   atom 3: 785 IPs selected
+[LSDF-K]   atom 4: 785 IPs selected
+[LSDF-K]   atom 5: 785 IPs selected
+[LSDF-K]   total IPs: 6270 (3.4512% of grid)
+Timer "[LSDF-K] IP selection" used time: 21.96940 s.
+[LSDF-K]   aux fitting over k-summed pair products (Nk = 96)
+[LSDF-K]   atom 0: aux_basis (1565 x 21823), nao_local = 104
+[LSDF-K]   atom 1: aux_basis (1565 x 21796), nao_local = 104
+[LSDF-K]   atom 2: aux_basis (785 x 34523), nao_local = 104
+[LSDF-K]   atom 3: aux_basis (785 x 34513), nao_local = 104
+[LSDF-K]   atom 4: aux_basis (785 x 34563), nao_local = 104
+[LSDF-K]   atom 5: aux_basis (785 x 34457), nao_local = 104
+Timer "[LSDF-K] aux basis fitting" used time: 47.26646 s.
+[LSDF-K]   W_k[0]: (6270 x 6270)
+[LSDF-K]   W_k[1]: (6270 x 6270)
+[LSDF-K]   W_k[2]: (6270 x 6270)
+[LSDF-K]   W_k[3]: (6270 x 6270)
+[LSDF-K]   W_k[4]: (6270 x 6270)
+[LSDF-K]   W_k[5]: (6270 x 6270)
+[LSDF-K]   W_k[6]: (6270 x 6270)
+[LSDF-K]   W_k[7]: (6270 x 6270)
+[LSDF-K]   W_k[8]: (6270 x 6270)
+[LSDF-K]   W_k[9]: (6270 x 6270)
+[LSDF-K]   W_k[10]: (6270 x 6270)
+[LSDF-K]   W_k[11]: (6270 x 6270)
+[LSDF-K]   W_k[12]: (6270 x 6270)
+[LSDF-K]   W_k[13]: (6270 x 6270)
+[LSDF-K]   W_k[14]: (6270 x 6270)
+[LSDF-K]   W_k[15]: (6270 x 6270)
+[LSDF-K]   W_k[16]: (6270 x 6270)
+[LSDF-K]   W_k[17]: (6270 x 6270)
+[LSDF-K]   W_k[18]: (6270 x 6270)
+[LSDF-K]   W_k[19]: (6270 x 6270)
+[LSDF-K]   W_k[20]: (6270 x 6270)
+[LSDF-K]   W_k[21]: (6270 x 6270)
+[LSDF-K]   W_k[22]: (6270 x 6270)
+[LSDF-K]   W_k[23]: (6270 x 6270)
+[LSDF-K]   W_k[24]: (6270 x 6270)
+[LSDF-K]   W_k[25]: (6270 x 6270)
+[LSDF-K]   W_k[26]: (6270 x 6270)
+[LSDF-K]   W_k[27]: (6270 x 6270)
+[LSDF-K]   W_k[28]: (6270 x 6270)
+[LSDF-K]   W_k[29]: (6270 x 6270)
+[LSDF-K]   W_k[30]: (6270 x 6270)
+[LSDF-K]   W_k[31]: (6270 x 6270)
+[LSDF-K]   W_k[32]: (6270 x 6270)
+[LSDF-K]   W_k[33]: (6270 x 6270)
+[LSDF-K]   W_k[34]: (6270 x 6270)
+[LSDF-K]   W_k[35]: (6270 x 6270)
+[LSDF-K]   W_k[36]: (6270 x 6270)
+[LSDF-K]   W_k[37]: (6270 x 6270)
+[LSDF-K]   W_k[38]: (6270 x 6270)
+[LSDF-K]   W_k[39]: (6270 x 6270)
+[LSDF-K]   W_k[40]: (6270 x 6270)
+[LSDF-K]   W_k[41]: (6270 x 6270)
+[LSDF-K]   W_k[42]: (6270 x 6270)
+[LSDF-K]   W_k[43]: (6270 x 6270)
+[LSDF-K]   W_k[44]: (6270 x 6270)
+[LSDF-K]   W_k[45]: (6270 x 6270)
+[LSDF-K]   W_k[46]: (6270 x 6270)
+[LSDF-K]   W_k[47]: (6270 x 6270)
+[LSDF-K]   W_k[48]: (6270 x 6270)
+[LSDF-K]   W_k[49]: (6270 x 6270)
+[LSDF-K]   W_k[50]: (6270 x 6270)
+[LSDF-K]   W_k[51]: (6270 x 6270)
+[LSDF-K]   W_k[52]: (6270 x 6270)
+[LSDF-K]   W_k[53]: (6270 x 6270)
+[LSDF-K]   W_k[54]: (6270 x 6270)
+[LSDF-K]   W_k[55]: (6270 x 6270)
+[LSDF-K]   W_k[56]: (6270 x 6270)
+[LSDF-K]   W_k[57]: (6270 x 6270)
+[LSDF-K]   W_k[58]: (6270 x 6270)
+[LSDF-K]   W_k[59]: (6270 x 6270)
+[LSDF-K]   W_k[60]: (6270 x 6270)
+[LSDF-K]   W_k[61]: (6270 x 6270)
+[LSDF-K]   W_k[62]: (6270 x 6270)
+[LSDF-K]   W_k[63]: (6270 x 6270)
+[LSDF-K]   W_k[64]: (6270 x 6270)
+[LSDF-K]   W_k[65]: (6270 x 6270)
+[LSDF-K]   W_k[66]: (6270 x 6270)
+[LSDF-K]   W_k[67]: (6270 x 6270)
+[LSDF-K]   W_k[68]: (6270 x 6270)
+[LSDF-K]   W_k[69]: (6270 x 6270)
+[LSDF-K]   W_k[70]: (6270 x 6270)
+[LSDF-K]   W_k[71]: (6270 x 6270)
+[LSDF-K]   W_k[72]: (6270 x 6270)
+[LSDF-K]   W_k[73]: (6270 x 6270)
+[LSDF-K]   W_k[74]: (6270 x 6270)
+[LSDF-K]   W_k[75]: (6270 x 6270)
+[LSDF-K]   W_k[76]: (6270 x 6270)
+[LSDF-K]   W_k[77]: (6270 x 6270)
+[LSDF-K]   W_k[78]: (6270 x 6270)
+[LSDF-K]   W_k[79]: (6270 x 6270)
+[LSDF-K]   W_k[80]: (6270 x 6270)
+[LSDF-K]   W_k[81]: (6270 x 6270)
+[LSDF-K]   W_k[82]: (6270 x 6270)
+[LSDF-K]   W_k[83]: (6270 x 6270)
+[LSDF-K]   W_k[84]: (6270 x 6270)
+[LSDF-K]   W_k[85]: (6270 x 6270)
+[LSDF-K]   W_k[86]: (6270 x 6270)
+[LSDF-K]   W_k[87]: (6270 x 6270)
+[LSDF-K]   W_k[88]: (6270 x 6270)
+[LSDF-K]   W_k[89]: (6270 x 6270)
+[LSDF-K]   W_k[90]: (6270 x 6270)
+[LSDF-K]   W_k[91]: (6270 x 6270)
+[LSDF-K]   W_k[92]: (6270 x 6270)
+[LSDF-K]   W_k[93]: (6270 x 6270)
+[LSDF-K]   W_k[94]: (6270 x 6270)
+[LSDF-K]   W_k[95]: (6270 x 6270)
+Timer "[LSDF-K] W_k construction" used time: 16146.78 s.
+Timer "[LSDF-K] aovals_pivots" used time: 1.313519 s.
+Timer "LSDF-K build" used time: 16231.45 s.
+[LSDF-K] build complete: naux = 6270
+[IGUESS] MINAO initial guess done. naofn = 104  nkpot = 96
+[NELEC] step = 0  nelec = 48  neInt = 44.570608  dnelc = -3.4293919533e+00
+[ENERG] step = 0  eTotl = -179.38552161  eCore = -58.77632380  eCoul = 37.08384268  eExcl = -25.53716027  eNucl = -132.15588022  eDisp = 0.00000000
+[ERROR] step = 0  engy error =  0.0000000000e+00  grad error =  0.0000000000e+00  dmat error =  0.0000000000e+00
+Timer "SCF cycle: 0" used time: 1109.302 s.
+
+[NELEC] step = 1  nelec = 48  neInt = 48.000000  dnelc =  4.3343106881e-13
+[ENERG] step = 1  eTotl = -179.83057310  eCore = -64.01525502  eCoul = 46.32963722  eExcl = -29.98907507  eNucl = -132.15588022  eDisp = 0.00000000
+[ERROR] step = 1  engy error = -4.4505148506e-01  grad error =  0.0000000000e+00  dmat error =  1.8443665315e+00
+Timer "SCF cycle: 1" used time: 1087.467 s.
+
+[NELEC] step = 2  nelec = 48  neInt = 48.000000  dnelc =  4.8316906032e-13
+[ENERG] step = 2  eTotl = -180.63285237  eCore = -63.94997269  eCoul = 44.73236622  eExcl = -29.25936569  eNucl = -132.15588022  eDisp = 0.00000000
+[ERROR] step = 2  engy error = -8.0227927169e-01  grad error =  0.0000000000e+00  dmat error =  2.8846766072e-01
+Timer "SCF cycle: 2" used time: 1058.509 s.
+
+[NELEC] step = 3  nelec = 48  neInt = 48.000000  dnelc =  5.2580162446e-13
+[ENERG] step = 3  eTotl = -180.75668433  eCore = -63.63017485  eCoul = 43.89099409  eExcl = -28.86162335  eNucl = -132.15588022  eDisp = 0.00000000
+[ERROR] step = 3  engy error = -1.2383195699e-01  grad error =  0.0000000000e+00  dmat error =  1.5403188421e-01
+Timer "SCF cycle: 3" used time: 1343.118 s.
+
+[NELEC] step = 4  nelec = 48  neInt = 48.000000  dnelc =  3.1974423109e-13
+[ENERG] step = 4  eTotl = -180.75303840  eCore = -61.80525437  eCoul = 41.84340997  eExcl = -28.63531378  eNucl = -132.15588022  eDisp = 0.00000000
+[ERROR] step = 4  engy error =  3.6459259362e-03  grad error =  0.0000000000e+00  dmat error =  1.4985208973e-01
+Timer "SCF cycle: 4" used time: 1255.667 s.
+
+[NELEC] step = 5  nelec = 48  neInt = 48.000000  dnelc =  3.0553337638e-13
+[ENERG] step = 5  eTotl = -180.72951959  eCore = -61.64420375  eCoul = 41.72143882  eExcl = -28.65087444  eNucl = -132.15588022  eDisp = 0.00000000
+[ERROR] step = 5  engy error =  2.3518815325e-02  grad error =  0.0000000000e+00  dmat error =  2.2601586278e-02
+Timer "SCF cycle: 5" used time: 1250.735 s.
+
+[NELEC] step = 6  nelec = 48  neInt = 48.000000  dnelc =  4.8316906032e-13
+[ENERG] step = 6  eTotl = -180.76615426  eCore = -62.74839742  eCoul = 42.69237440  eExcl = -28.55425102  eNucl = -132.15588022  eDisp = 0.00000000
+[ERROR] step = 6  engy error = -3.6634673620e-02  grad error =  0.0000000000e+00  dmat error =  1.3741986009e-01
+Timer "SCF cycle: 6" used time: 1364.583 s.
+
+[NELEC] step = 7  nelec = 48  neInt = 48.000000  dnelc =  3.9079850467e-13
+[ENERG] step = 7  eTotl = -180.78674782  eCore = -62.32912071  eCoul = 42.28460793  eExcl = -28.58635481  eNucl = -132.15588022  eDisp = 0.00000000
+[ERROR] step = 7  engy error = -2.0593554986e-02  grad error =  0.0000000000e+00  dmat error =  5.0441633249e-02
+Timer "SCF cycle: 7" used time: 1087.653 s.
+
+[NELEC] step = 8  nelec = 48  neInt = 48.000000  dnelc =  3.8369307731e-13
+[ENERG] step = 8  eTotl = -180.78674326  eCore = -62.33399519  eCoul = 42.28946684  eExcl = -28.58633469  eNucl = -132.15588022  eDisp = 0.00000000
+[ERROR] step = 8  engy error =  4.5578111099e-06  grad error =  0.0000000000e+00  dmat error =  4.8915249936e-04
+Timer "SCF cycle: 8" used time: 1074.687 s.
+
+[NELEC] step = 9  nelec = 48  neInt = 48.000000  dnelc =  3.8369307731e-13
+[ENERG] step = 9  eTotl = -180.78674717  eCore = -62.31922717  eCoul = 42.27483262  eExcl = -28.58647241  eNucl = -132.15588022  eDisp = 0.00000000
+[ERROR] step = 9  engy error = -3.9146364941e-06  grad error =  0.0000000000e+00  dmat error =  1.6764898294e-03
+Timer "SCF cycle: 9" used time: 1072.152 s.
+
+[NELEC] step = 10  nelec = 48  neInt = 48.000000  dnelc =  3.9079850467e-13
+[ENERG] step = 10  eTotl = -180.78674945  eCore = -62.32325895  eCoul = 42.27875841  eExcl = -28.58636869  eNucl = -132.15588022  eDisp = 0.00000000
+[ERROR] step = 10  engy error = -2.2741254497e-06  grad error =  0.0000000000e+00  dmat error =  4.3220639786e-04
+Timer "SCF cycle: 10" used time: 1075.499 s.
+
+[NELEC] step = 11  nelec = 48  neInt = 48.000000  dnelc =  3.8369307731e-13
+[ENERG] step = 11  eTotl = -180.78674960  eCore = -62.32424865  eCoul = 42.27961013  eExcl = -28.58623086  eNucl = -132.15588022  eDisp = 0.00000000
+[ERROR] step = 11  engy error = -1.4909790025e-07  grad error =  0.0000000000e+00  dmat error =  1.5580327011e-04
+SCF converged in 11 steps.
+
+  Band Gap Analysis (per k-point)
+  k-pt    spin         HOMO (eV)       LUMO (eV)        Gap (eV)
+  -----------------------------------------------------------
+  0       0             8.287883       11.491069        3.203186
+  1       0             8.111116       11.943080        3.831963
+  2       0             7.255428       12.012755        4.757327
+  3       0             6.650226       12.698635        6.048410
+  4       0             7.255422       12.012755        4.757333
+  5       0             8.111114       11.943078        3.831965
+  6       0             8.030682       11.812526        3.781844
+  7       0             7.886867       12.060026        4.173160
+  8       0             7.445550       11.758373        4.312823
+  9       0             6.516005       12.106003        5.589999
+  10      0             7.445556       11.758379        4.312822
+  11      0             7.886869       12.060032        4.173164
+  12      0             7.469955       12.249159        4.779203
+  13      0             7.512746       12.417663        4.904917
+  14      0             7.190237       11.929198        4.738960
+  15      0             7.172018       11.528314        4.356296
+  16      0             7.190235       11.929195        4.738960
+  17      0             7.512741       12.417660        4.904919
+  18      0             8.030681       11.812527        3.781846
+  19      0             7.886871       12.060035        4.173164
+  20      0             7.445560       11.758378        4.312819
+  21      0             6.516007       12.106001        5.589994
+  22      0             7.445546       11.758372        4.312825
+  23      0             7.886863       12.060025        4.173162
+  24      0             8.030681       11.812526        3.781845
+  25      0             7.886868       12.060032        4.173164
+  26      0             7.445556       11.758376        4.312819
+  27      0             6.516008       12.106003        5.589995
+  28      0             7.445551       11.758375        4.312824
+  29      0             7.886864       12.060031        4.173167
+  30      0             7.843848       11.561445        3.717597
+  31      0             7.560472       12.012553        4.452081
+  32      0             7.517328       11.750239        4.232911
+  33      0             7.018630       11.719121        4.700491
+  34      0             7.517332       11.750242        4.232910
+  35      0             7.560472       12.012555        4.452083
+  36      0             7.102199       11.923004        4.820805
+  37      0             7.076414       12.291197        5.214783
+  38      0             7.222052       12.150936        4.928883
+  39      0             7.312775       11.821582        4.508807
+  40      0             7.222042       12.150934        4.928891
+  41      0             7.076405       12.291206        5.214801
+  42      0             7.843903       11.562521        3.718617
+  43      0             7.560533       12.013812        4.453279
+  44      0             7.517343       11.751595        4.234252
+  45      0             7.018742       11.721589        4.702846
+  46      0             7.517330       11.751595        4.234266
+  47      0             7.560525       12.013811        4.453286
+  48      0             7.469956       12.249159        4.779203
+  49      0             7.512742       12.417662        4.904920
+  50      0             7.190234       11.929196        4.738962
+  51      0             7.172019       11.528312        4.356292
+  52      0             7.190236       11.929193        4.738957
+  53      0             7.512742       12.417659        4.904917
+  54      0             7.102203       11.923004        4.820802
+  55      0             7.076404       12.291203        5.214799
+  56      0             7.222041       12.150933        4.928892
+  57      0             7.312779       11.821581        4.508802
+  58      0             7.222055       12.150933        4.928878
+  59      0             7.076412       12.291203        5.214791
+  60      0             7.097709       11.513186        4.415477
+  61      0             6.698772       12.013233        5.314461
+  62      0             7.151123       12.691125        5.540002
+  63      0             7.509241       12.297812        4.788571
+  64      0             7.151123       12.691122        5.539998
+  65      0             6.698767       12.013233        5.314465
+  66      0             7.102201       11.923004        4.820804
+  67      0             7.076409       12.291205        5.214796
+  68      0             7.222054       12.150937        4.928882
+  69      0             7.312776       11.821583        4.508806
+  70      0             7.222038       12.150931        4.928893
+  71      0             7.076403       12.291202        5.214798
+  72      0             8.030682       11.812527        3.781845
+  73      0             7.886867       12.060033        4.173166
+  74      0             7.445557       11.758375        4.312818
+  75      0             6.516004       12.106000        5.589996
+  76      0             7.445555       11.758375        4.312820
+  77      0             7.886869       12.060030        4.173161
+  78      0             7.843904       11.562520        3.718616
+  79      0             7.560531       12.013810        4.453280
+  80      0             7.517336       11.751596        4.234261
+  81      0             7.018742       11.721590        4.702848
+  82      0             7.517343       11.751594        4.234251
+  83      0             7.560534       12.013814        4.453280
+  84      0             7.102201       11.923004        4.820803
+  85      0             7.076409       12.291208        5.214799
+  86      0             7.222045       12.150937        4.928892
+  87      0             7.312777       11.821584        4.508807
+  88      0             7.222053       12.150934        4.928880
+  89      0             7.076413       12.291197        5.214783
+  90      0             7.843848       11.561445        3.717597
+  91      0             7.560474       12.012556        4.452082
+  92      0             7.517336       11.750243        4.232908
+  93      0             7.018631       11.719120        4.700489
+  94      0             7.517327       11.750237        4.232910
+  95      0             7.560472       12.012552        4.452080
+  -----------------------------------------------------------
+  VBM =       8.287883 eV    CBM =      11.491069 eV    Band Gap =       3.203186 eV
+

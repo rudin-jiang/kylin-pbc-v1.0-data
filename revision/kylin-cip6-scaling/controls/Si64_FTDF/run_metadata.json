@@ -1,0 +1,40 @@
+{
+  "key": "Si64_FTDF",
+  "case_path": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_FTDF",
+  "atoms": 64,
+  "kind": "ref",
+  "c_ip": null,
+  "threads": 32,
+  "binary": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/kylin-pbc.snapshot",
+  "binary_sha256": "14bc8db355154879b8dd83c8b3480fa725d9a3e8be9a54cb24784d6c41b243f9",
+  "calc_sha256": "dfe6a6197b91ac376a32ca7f593ecf9b130c401d896e6ee3ef08f828502e8fcd",
+  "cell_sha256": "d6033ca64b5893b5eb723a312898c5f384d8cdda0a40b6357ffb2ee37e8ba406",
+  "data_root": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/resources",
+  "node": "cu03",
+  "cpu_model": "INTEL(R) XEON(R) GOLD 6544Y",
+  "slurm_job_id": "263448",
+  "slurm_partition": "cpu32",
+  "started_at": "2026-10-20T03:54:38.237039+00:00",
+  "timeout_seconds": 7200.0,
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si64_FTDF/time.txt",
+    "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/kylin-pbc.snapshot"
+  ],
+  "environment": {
+    "OMP_NUM_THREADS": "32",
+    "MKL_NUM_THREADS": "32",
+    "OMP_DYNAMIC": "FALSE",
+    "MKL_DYNAMIC": "FALSE",
+    "OMP_PROC_BIND": "close",
+    "OMP_PLACES": "cores",
+    "KYLIN_PBC_ROOT": "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/resources",
+    "KYLIN_SCR_PATH": "/tmp/kylin-accuracy-jrt3skmb"
+  },
+  "process_returncode": 0,
+  "ended_at": "2026-10-20T04:07:08.186428+00:00",
+  "exit_code": 0,
+  "wall_seconds": 749.9493703169865
+}

@@ -1,0 +1,22 @@
+VASP HSE06 reference energies for the Pt(100)-CO adsorption example
+===================================================================
+
+Settings (see *.INCAR): LHFCALC=.TRUE., AEXX=0.25, HFSCREEN=0.2 (HSE06),
+ENCUT=400 eV, EDIFF=1E-5, ISMEAR=0 SIGMA=0.1 eV (Gaussian smearing),
+Gamma-only k-point (KPOINTS), single-point (NSW=0).
+
+Energies are the free energy F from the last line of OSZICAR
+("1 F= ... E0= ..."), already in eV.
+
+System      F / eV
+-------------------------
+CO         -18.230330
+Pt100     -640.809503
+Pt100-CO  -661.069945
+
+Adsorption energy (defined positive for exothermic binding):
+  Eads = E(Pt100) + E(CO) - E(Pt100-CO)
+       = -640.809503 + (-18.230330) - (-661.069945)
+       =  2.0301 eV
+
+Source: bak/example-test/04-Pt100-CO/vasp-{1-CO,2-Pt100,3-Pt100-CO}/OSZICAR

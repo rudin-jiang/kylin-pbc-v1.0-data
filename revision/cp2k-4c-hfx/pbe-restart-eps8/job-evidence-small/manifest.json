@@ -1,0 +1,56 @@
+{
+  "purpose": "Missing small-cell EPS_SCHWARZ=1e-8 CP2K benchmark points",
+  "cp2k_module": "cp2k-2024.3/oneapi-2024.2.1",
+  "partition": "cpu32",
+  "mpi_ranks": 32,
+  "omp_threads_per_rank": 1,
+  "eps_schwarz": 1e-08,
+  "screen_on_initial_p": true,
+  "admm": "ADMMS/cpFIT3",
+  "max_memory_MiB_per_rank": 12000,
+  "timing_protocol": "Run HSE06 only from the existing PBE WFN; add the recorded historical PBE time, as for the Si128/256 e8 runs.",
+  "cases": [
+    {
+      "atoms": 16,
+      "path": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si16",
+      "project": "Si16-HSE06-4c-ADMM-fromPBE-e8-20261019",
+      "source_input": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si16/cp2k.inp",
+      "source_input_sha256": "0ae477c7fb9a168cde4d01dd48a50ea1c269dfaf4fc1abd5575cad585b127a3e",
+      "input_sha256": "2401cdf7ec8d820cd04433c4fdc2746c90188aa57d8627350cbc1130c1446287",
+      "source_wfn": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si16/Si16-PBE-RESTART.wfn",
+      "wfn_sha256": "703f4820a84bd204fe29c35d1b997ab1ded2c3020aeecce95172b16cbba5921e",
+      "source_pbe_log": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si16/pbe.log",
+      "source_pbe_log_sha256": "700b846fb6ff005c239ea728216658cfde521a06a7092f0439f37a49636779d0",
+      "historical_pbe_seconds": 4.704,
+      "reference_atomic_admm_energy_Ha": -63.18289908119637
+    },
+    {
+      "atoms": 32,
+      "path": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si32",
+      "project": "Si32-HSE06-4c-ADMM-fromPBE-e8-20261019",
+      "source_input": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si32/cp2k.inp",
+      "source_input_sha256": "7f9cb391cda7c4a6bf8fe2869ff82e61405287dd9386f14866cb2b4c448890ac",
+      "input_sha256": "2df14ef8e48eefd5410287f577035fe882795d3c80f11b71c92b9ac98199aba0",
+      "source_wfn": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si32/Si32-PBE-RESTART.wfn",
+      "wfn_sha256": "9dff8765d8a7da3341d21297234b4d93940f5eebee24edf1f21c51d71b67693e",
+      "source_pbe_log": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si32/pbe.log",
+      "source_pbe_log_sha256": "12a0fbae9c98d74cd6a1b95b752011fde2076b3663d82b3b1be1dd380b91e39b",
+      "historical_pbe_seconds": 10.929,
+      "reference_atomic_admm_energy_Ha": -126.28280969653419
+    },
+    {
+      "atoms": 64,
+      "path": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si64",
+      "project": "Si64-HSE06-4c-ADMM-fromPBE-e8-20261019",
+      "source_input": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si64/cp2k.inp",
+      "source_input_sha256": "320219a3957c4a3471fdaa408cccff653b693261dc4207511f6a54afc5df0808",
+      "input_sha256": "002665373b4e7ccbf907db839ffff7ac23d5984c965e93c9b3d1b7f0aa45e2b8",
+      "source_wfn": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si64/Si64-PBE-RESTART.wfn",
+      "wfn_sha256": "1446125933fa24a9f45127bbd5de0ff1e80c357905b377188cd6b77c9fc0dafc",
+      "source_pbe_log": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si64/pbe.log",
+      "source_pbe_log_sha256": "eb15140c2df15a31f2d2f9251d75c125404011ec8f08c9f30db86100d95e0870",
+      "historical_pbe_seconds": 21.629,
+      "reference_atomic_admm_energy_Ha": -251.76570605232814
+    }
+  ]
+}

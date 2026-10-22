@@ -1,0 +1,98 @@
+# CP2K input for LiH-HSE06-gamma  (external benchmark; basis/pseudo match kylin & pyscf)
+# HSE06 = RI-HFX (short-range, omega=0.11 a0^-1) + ADMM  (requirement.md S5).
+# Gamma on the 2-atom primitive cell: a minimum-image-convention warning is
+#          expected for HSE (SR range > cell) and may be ignored; this is the
+#          poorly k-converged reference for the gamma-vs-k333 comparison.
+&GLOBAL
+  PROJECT LiH-HSE06-gamma
+  RUN_TYPE ENERGY
+  PRINT_LEVEL MEDIUM
+&END GLOBAL
+
+&FORCE_EVAL
+  METHOD Quickstep
+  &DFT
+    BASIS_SET_FILE_NAME BASIS_MOLOPT
+    BASIS_SET_FILE_NAME BASIS_ADMM
+    BASIS_SET_FILE_NAME BASIS_ADMM_MOLOPT
+    POTENTIAL_FILE_NAME GTH_POTENTIALS
+    SORT_BASIS EXP
+    AUTO_BASIS RI_HFX MEDIUM
+    &AUXILIARY_DENSITY_MATRIX_METHOD
+      ADMM_TYPE ADMMS
+      EXCH_CORRECTION_FUNC DEFAULT
+    &END AUXILIARY_DENSITY_MATRIX_METHOD
+    &QS
+      EPS_DEFAULT 1.0E-12
+      METHOD GPW
+      EPS_PGF_ORB 1.0E-6
+      PW_GRID_BLOCKED FALSE
+    &END QS
+    &MGRID
+      CUTOFF 600
+      REL_CUTOFF 60
+      NGRIDS 4
+    &END MGRID
+    &SCF
+      SCF_GUESS ATOMIC
+      EPS_SCF 1.0E-6
+      MAX_SCF 200
+      EPS_DIIS 0.05
+      &MIXING
+        METHOD BROYDEN_MIXING
+        ALPHA 0.3
+        NBUFFER 8
+      &END MIXING
+      &PRINT
+        &RESTART OFF
+        &END RESTART
+      &END PRINT
+    &END SCF
+    &XC
+      &XC_FUNCTIONAL
+        &PBE
+          SCALE_X 0.0
+          SCALE_C 1.0
+        &END PBE
+        &XWPBE
+          SCALE_X -0.25
+          SCALE_X0 1.0
+          OMEGA 0.11
+        &END XWPBE
+      &END XC_FUNCTIONAL
+      &HF
+        FRACTION 0.25
+        &RI
+          EPS_FILTER 1.0E-9
+          EPS_PGF_ORB 1.0E-6
+        &END RI
+        &INTERACTION_POTENTIAL
+          POTENTIAL_TYPE SHORTRANGE
+          OMEGA 0.11
+        &END INTERACTION_POTENTIAL
+      &END HF
+    &END XC
+  &END DFT
+  &SUBSYS
+    &CELL
+      A      0.0000000000     2.0415000000     2.0415000000
+      B      2.0415000000     0.0000000000     2.0415000000
+      C      2.0415000000     2.0415000000     0.0000000000
+      PERIODIC XYZ
+    &END CELL
+    &COORD
+      Li      0.0000000000     0.0000000000     0.0000000000
+      H       2.0415000000     2.0415000000     2.0415000000
+    &END COORD
+    &KIND Li
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      BASIS_SET AUX_FIT cpFIT3
+      POTENTIAL GTH-PBE
+    &END KIND
+    &KIND H
+      BASIS_SET DZVP-MOLOPT-SR-GTH
+      BASIS_SET AUX_FIT cpFIT3
+      POTENTIAL GTH-PBE
+    &END KIND
+  &END SUBSYS
+&END FORCE_EVAL

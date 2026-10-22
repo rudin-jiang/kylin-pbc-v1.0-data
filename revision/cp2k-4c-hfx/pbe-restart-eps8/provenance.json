@@ -1,0 +1,467 @@
+{
+  "description": "Original source paths are provenance only; archive_path is relative to this directory. All listed copied/referenced files were SHA256 checked. WFN binaries are omitted; regenerate with pbe.inp. Original small-run WFN hashes are retained in job-evidence-small/manifest.json.",
+  "files": [
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si16/cp2k.inp",
+      "archive_path": "Si16-HSE06/cp2k.inp",
+      "source_sha256": "2401cdf7ec8d820cd04433c4fdc2746c90188aa57d8627350cbc1130c1446287",
+      "archive_sha256": "2401cdf7ec8d820cd04433c4fdc2746c90188aa57d8627350cbc1130c1446287",
+      "size_bytes": 3201
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si16/cp2k.log",
+      "archive_path": "Si16-HSE06/cp2k.log",
+      "source_sha256": "438ccbdbdb66e7ee695b1c4e76cf5d76da008a90e42bcff0b7d2d233505c956c",
+      "archive_sha256": "438ccbdbdb66e7ee695b1c4e76cf5d76da008a90e42bcff0b7d2d233505c956c",
+      "size_bytes": 59967
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si16/pbe.inp",
+      "archive_path": "Si16-HSE06/pbe.inp",
+      "source_sha256": "48a600a1d36e5fbbd668800ca74da109ec9cf4c8480bdb12d7ec56576ce6c48c",
+      "archive_sha256": "48a600a1d36e5fbbd668800ca74da109ec9cf4c8480bdb12d7ec56576ce6c48c",
+      "size_bytes": 2338
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si16/pbe.log",
+      "archive_path": "Si16-HSE06/pbe.log",
+      "source_sha256": "700b846fb6ff005c239ea728216658cfde521a06a7092f0439f37a49636779d0",
+      "archive_sha256": "700b846fb6ff005c239ea728216658cfde521a06a7092f0439f37a49636779d0",
+      "size_bytes": 63845
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si16/exitcode.txt",
+      "archive_path": "Si16-HSE06/job-evidence/exitcode.txt",
+      "source_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "archive_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size_bytes": 2
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si16/run_metadata.txt",
+      "archive_path": "Si16-HSE06/job-evidence/run_metadata.txt",
+      "source_sha256": "24ace788e2c633c9f5186cd93559819b8e49945ee3ba0ffeef45fe5c3e11fdfa",
+      "archive_sha256": "24ace788e2c633c9f5186cd93559819b8e49945ee3ba0ffeef45fe5c3e11fdfa",
+      "size_bytes": 441
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si16/time.txt",
+      "archive_path": "Si16-HSE06/job-evidence/time.txt",
+      "source_sha256": "bef1fc8c34ce05971f788a310273b359e611981b09ea670467c82895aeeba12b",
+      "archive_sha256": "bef1fc8c34ce05971f788a310273b359e611981b09ea670467c82895aeeba12b",
+      "size_bytes": 42
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si16/slurm-262935.out",
+      "archive_path": "Si16-HSE06/job-evidence/slurm-262935.out",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archive_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si16/slurm-262935.err",
+      "archive_path": "Si16-HSE06/job-evidence/slurm-262935.err",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archive_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/submit_Si16.slurm",
+      "archive_path": "Si16-HSE06/job-evidence/submit_Si16.slurm",
+      "source_sha256": "65bdc247de2945c41548a3012efdb35c814f58dce7b0304b9b9d448d8d6cd668",
+      "archive_sha256": "65bdc247de2945c41548a3012efdb35c814f58dce7b0304b9b9d448d8d6cd668",
+      "size_bytes": 634
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-pbe-noscreen/Si16/cp2k.log",
+      "archive_path": "../pbe-restart/Si16-HSE06/cp2k.log",
+      "source_sha256": "ec7192bb0c2c680538aead05d8f9457b2a850213e9e740cb433a6d76abb4cfef",
+      "archive_sha256": "ec7192bb0c2c680538aead05d8f9457b2a850213e9e740cb433a6d76abb4cfef",
+      "size_bytes": 60062
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm/Si16/cp2k.log",
+      "archive_path": "../atomic-guess/Si16-HSE06/cp2k.log",
+      "source_sha256": "50d776f410fe49d8ebcd4dca202990d4d5432ba54e67e897ef8ad9772ab35918",
+      "archive_sha256": "50d776f410fe49d8ebcd4dca202990d4d5432ba54e67e897ef8ad9772ab35918",
+      "size_bytes": 69555
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/art/example/scaling/Si16-HSE06/kylin-pbc.log",
+      "archive_path": "../../../scaling/Si16-HSE06/kylin-pbc.log",
+      "source_sha256": "ad525fb0a6a35f1ef08e358016e804efc5e75f9f6d39607e86acd08a5058e194",
+      "archive_sha256": "ad525fb0a6a35f1ef08e358016e804efc5e75f9f6d39607e86acd08a5058e194",
+      "size_bytes": 8131
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si32/cp2k.inp",
+      "archive_path": "Si32-HSE06/cp2k.inp",
+      "source_sha256": "2df14ef8e48eefd5410287f577035fe882795d3c80f11b71c92b9ac98199aba0",
+      "archive_sha256": "2df14ef8e48eefd5410287f577035fe882795d3c80f11b71c92b9ac98199aba0",
+      "size_bytes": 4210
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si32/cp2k.log",
+      "archive_path": "Si32-HSE06/cp2k.log",
+      "source_sha256": "caca24ce011a82bcb0e464d7cfda6b35b4c56fdce9180cd514c85b6a1daf0bdd",
+      "archive_sha256": "caca24ce011a82bcb0e464d7cfda6b35b4c56fdce9180cd514c85b6a1daf0bdd",
+      "size_bytes": 64309
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si32/pbe.inp",
+      "archive_path": "Si32-HSE06/pbe.inp",
+      "source_sha256": "5af43c64a81f3a97803826666906b6b285711e52f69592a92f7684bdc9cbeedd",
+      "archive_sha256": "5af43c64a81f3a97803826666906b6b285711e52f69592a92f7684bdc9cbeedd",
+      "size_bytes": 3347
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si32/pbe.log",
+      "archive_path": "Si32-HSE06/pbe.log",
+      "source_sha256": "12a0fbae9c98d74cd6a1b95b752011fde2076b3663d82b3b1be1dd380b91e39b",
+      "archive_sha256": "12a0fbae9c98d74cd6a1b95b752011fde2076b3663d82b3b1be1dd380b91e39b",
+      "size_bytes": 69322
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si32/exitcode.txt",
+      "archive_path": "Si32-HSE06/job-evidence/exitcode.txt",
+      "source_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "archive_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size_bytes": 2
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si32/run_metadata.txt",
+      "archive_path": "Si32-HSE06/job-evidence/run_metadata.txt",
+      "source_sha256": "460e32fedf2bcd562b9e8d90719e01543b1c160be0b0a53e4475495b782737f8",
+      "archive_sha256": "460e32fedf2bcd562b9e8d90719e01543b1c160be0b0a53e4475495b782737f8",
+      "size_bytes": 441
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si32/time.txt",
+      "archive_path": "Si32-HSE06/job-evidence/time.txt",
+      "source_sha256": "89c56e90b7f12a08db590d765c4f6a739695a3408329568ff9c447434fd9d524",
+      "archive_sha256": "89c56e90b7f12a08db590d765c4f6a739695a3408329568ff9c447434fd9d524",
+      "size_bytes": 42
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si32/slurm-262936.out",
+      "archive_path": "Si32-HSE06/job-evidence/slurm-262936.out",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archive_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si32/slurm-262936.err",
+      "archive_path": "Si32-HSE06/job-evidence/slurm-262936.err",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archive_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/submit_Si32.slurm",
+      "archive_path": "Si32-HSE06/job-evidence/submit_Si32.slurm",
+      "source_sha256": "a09b7e5e4bf735b7276e92b2ce54588498cd66589c8004f3c70751bd87ac0a32",
+      "archive_sha256": "a09b7e5e4bf735b7276e92b2ce54588498cd66589c8004f3c70751bd87ac0a32",
+      "size_bytes": 634
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si32/cp2k.log",
+      "archive_path": "../pbe-restart/Si32-HSE06/cp2k.log",
+      "source_sha256": "eb0964de3b40456a7cca6256cb033d48d28810c90838e115464a1f2682346e65",
+      "archive_sha256": "eb0964de3b40456a7cca6256cb033d48d28810c90838e115464a1f2682346e65",
+      "size_bytes": 64320
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm/Si32/cp2k.log",
+      "archive_path": "../atomic-guess/Si32-HSE06/cp2k.log",
+      "source_sha256": "788e74fb5faacdc545e6bc700d9c544f6d275aec7e159d2f5d47b16d412c4943",
+      "archive_sha256": "788e74fb5faacdc545e6bc700d9c544f6d275aec7e159d2f5d47b16d412c4943",
+      "size_bytes": 74627
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/art/example/scaling/Si32-HSE06/kylin-pbc.log",
+      "archive_path": "../../../scaling/Si32-HSE06/kylin-pbc.log",
+      "source_sha256": "8acea370c61680730015e12e779939112ca7a3d0c6c184ace8176dfa1c39896a",
+      "archive_sha256": "8acea370c61680730015e12e779939112ca7a3d0c6c184ace8176dfa1c39896a",
+      "size_bytes": 8730
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si64/cp2k.inp",
+      "archive_path": "Si64-HSE06/cp2k.inp",
+      "source_sha256": "002665373b4e7ccbf907db839ffff7ac23d5984c965e93c9b3d1b7f0aa45e2b8",
+      "archive_sha256": "002665373b4e7ccbf907db839ffff7ac23d5984c965e93c9b3d1b7f0aa45e2b8",
+      "size_bytes": 6227
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si64/cp2k.log",
+      "archive_path": "Si64-HSE06/cp2k.log",
+      "source_sha256": "cae101db510f3faa2c6044e8e7d5b65fadc3e5440669d5a292e99be6f6084b09",
+      "archive_sha256": "cae101db510f3faa2c6044e8e7d5b65fadc3e5440669d5a292e99be6f6084b09",
+      "size_bytes": 71940
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si64/pbe.inp",
+      "archive_path": "Si64-HSE06/pbe.inp",
+      "source_sha256": "b2b09a1a80172a53d667649036048c271f956989fb5b787f9ce0e01061895cae",
+      "archive_sha256": "b2b09a1a80172a53d667649036048c271f956989fb5b787f9ce0e01061895cae",
+      "size_bytes": 5364
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si64/pbe.log",
+      "archive_path": "Si64-HSE06/pbe.log",
+      "source_sha256": "eb15140c2df15a31f2d2f9251d75c125404011ec8f08c9f30db86100d95e0870",
+      "archive_sha256": "eb15140c2df15a31f2d2f9251d75c125404011ec8f08c9f30db86100d95e0870",
+      "size_bytes": 76224
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si64/exitcode.txt",
+      "archive_path": "Si64-HSE06/job-evidence/exitcode.txt",
+      "source_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "archive_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "size_bytes": 2
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si64/run_metadata.txt",
+      "archive_path": "Si64-HSE06/job-evidence/run_metadata.txt",
+      "source_sha256": "c82cda74023cf6c8710669637a9c9b353d3120d6fb2727a12084eb90fcbef48d",
+      "archive_sha256": "c82cda74023cf6c8710669637a9c9b353d3120d6fb2727a12084eb90fcbef48d",
+      "size_bytes": 441
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si64/time.txt",
+      "archive_path": "Si64-HSE06/job-evidence/time.txt",
+      "source_sha256": "da70e2a5d5635100a57ca88bc76d7a54e27de0b3d41958da80d8f9066ce45d23",
+      "archive_sha256": "da70e2a5d5635100a57ca88bc76d7a54e27de0b3d41958da80d8f9066ce45d23",
+      "size_bytes": 42
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si64/slurm-262937.out",
+      "archive_path": "Si64-HSE06/job-evidence/slurm-262937.out",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archive_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si64/slurm-262937.err",
+      "archive_path": "Si64-HSE06/job-evidence/slurm-262937.err",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archive_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/submit_Si64.slurm",
+      "archive_path": "Si64-HSE06/job-evidence/submit_Si64.slurm",
+      "source_sha256": "ac9bc8bb6d7cde208cbc966f2ab9b41bbf651c616db1a0dcb5ea5cd905301f92",
+      "archive_sha256": "ac9bc8bb6d7cde208cbc966f2ab9b41bbf651c616db1a0dcb5ea5cd905301f92",
+      "size_bytes": 634
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si64/cp2k.log",
+      "archive_path": "../pbe-restart/Si64-HSE06/cp2k.log",
+      "source_sha256": "c6d1d7f23e72a58be3fe65055aa1174f3dd7d9112b2d8ea917d14ea9cd4e4a73",
+      "archive_sha256": "c6d1d7f23e72a58be3fe65055aa1174f3dd7d9112b2d8ea917d14ea9cd4e4a73",
+      "size_bytes": 72033
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm/Si64/cp2k.log",
+      "archive_path": "../atomic-guess/Si64-HSE06/cp2k.log",
+      "source_sha256": "bfaaa61ef68becf98ee55b1e4b8d36db28afcc7917444e48be0ae0a580ea4083",
+      "archive_sha256": "bfaaa61ef68becf98ee55b1e4b8d36db28afcc7917444e48be0ae0a580ea4083",
+      "size_bytes": 81124
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/art/example/scaling/Si64-HSE06/kylin-pbc.log",
+      "archive_path": "../../../scaling/Si64-HSE06/kylin-pbc.log",
+      "source_sha256": "b33f6cb7c022c5e6606c662a0fc18850268ccb0c095baa979c65a5f1c649aae0",
+      "archive_sha256": "b33f6cb7c022c5e6606c662a0fc18850268ccb0c095baa979c65a5f1c649aae0",
+      "size_bytes": 8908
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-pbe-e8/Si128/cp2k.inp",
+      "archive_path": "Si128-HSE06/cp2k.inp",
+      "source_sha256": "af23a6f73995fac2a8a0354dec91d5e6980129a0eb6d9a78befcab747cd90154",
+      "archive_sha256": "af23a6f73995fac2a8a0354dec91d5e6980129a0eb6d9a78befcab747cd90154",
+      "size_bytes": 10246
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-pbe-e8/Si128/cp2k.log",
+      "archive_path": "Si128-HSE06/cp2k.log",
+      "source_sha256": "982539cb8f97f227825e69b7b8fe4e37a6eb5cac05b970be3f822765d5dcd833",
+      "archive_sha256": "982539cb8f97f227825e69b7b8fe4e37a6eb5cac05b970be3f822765d5dcd833",
+      "size_bytes": 88720
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si128/pbe.inp",
+      "archive_path": "Si128-HSE06/pbe.inp",
+      "source_sha256": "a200d423033dc46af657e3ac93f397234c9dddc6de04fb44650fd80f8be852ea",
+      "archive_sha256": "a200d423033dc46af657e3ac93f397234c9dddc6de04fb44650fd80f8be852ea",
+      "size_bytes": 9398
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si128/pbe.log",
+      "archive_path": "Si128-HSE06/pbe.log",
+      "source_sha256": "e5f9e634519e258283ab5661df21f4ced870d05c34335c14e46c8e825fab8ace",
+      "archive_sha256": "e5f9e634519e258283ab5661df21f4ced870d05c34335c14e46c8e825fab8ace",
+      "size_bytes": 92590
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si128/cp2k.log",
+      "archive_path": "../pbe-restart/Si128-HSE06/cp2k.log",
+      "source_sha256": "6ba4da1f8e5f069ed541b63e0604fec1add6da0f469146e62848647c5b2bce19",
+      "archive_sha256": "6ba4da1f8e5f069ed541b63e0604fec1add6da0f469146e62848647c5b2bce19",
+      "size_bytes": 89034
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm/Si128/cp2k.log",
+      "archive_path": "../atomic-guess/Si128-HSE06/cp2k.log",
+      "source_sha256": "f5e1a0033e84809d40fb84f1825af43e6060d47f659125435cc2992cd1a03e4b",
+      "archive_sha256": "f5e1a0033e84809d40fb84f1825af43e6060d47f659125435cc2992cd1a03e4b",
+      "size_bytes": 97559
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/art/example/scaling/Si128-HSE06/kylin-pbc.log",
+      "archive_path": "../../../scaling/Si128-HSE06/kylin-pbc.log",
+      "source_sha256": "739bd246780ac79fdbdc82f5f1fd1575363d947b93a7864d2fbe410fa0cec032",
+      "archive_sha256": "739bd246780ac79fdbdc82f5f1fd1575363d947b93a7864d2fbe410fa0cec032",
+      "size_bytes": 10125
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-pbe-e8/Si256/cp2k.inp",
+      "archive_path": "Si256-HSE06/cp2k.inp",
+      "source_sha256": "fe15ce26c174a83e00b2d68608cd6dce20f9666e17486b7571f591256a50a103",
+      "archive_sha256": "fe15ce26c174a83e00b2d68608cd6dce20f9666e17486b7571f591256a50a103",
+      "size_bytes": 18309
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-pbe-e8/Si256/cp2k.log",
+      "archive_path": "Si256-HSE06/cp2k.log",
+      "source_sha256": "cd84332d05b4d94fb9a4aefd9da2985e7afddac523d267d267a26fe878552b8c",
+      "archive_sha256": "cd84332d05b4d94fb9a4aefd9da2985e7afddac523d267d267a26fe878552b8c",
+      "size_bytes": 119568
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si256/pbe.inp",
+      "archive_path": "Si256-HSE06/pbe.inp",
+      "source_sha256": "151ef87655adec05061721b84a712dbf5fcc859e4a3c9ed99df5fcc1927f4845",
+      "archive_sha256": "151ef87655adec05061721b84a712dbf5fcc859e4a3c9ed99df5fcc1927f4845",
+      "size_bytes": 17462
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si256/pbe.log",
+      "archive_path": "Si256-HSE06/pbe.log",
+      "source_sha256": "a48353be4d0ba77b2a6a4fd0c9165b3e7780e4a493cf3dc5ea593cc14cfbe770",
+      "archive_sha256": "a48353be4d0ba77b2a6a4fd0c9165b3e7780e4a493cf3dc5ea593cc14cfbe770",
+      "size_bytes": 123519
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-pbe/Si256/cp2k.log",
+      "archive_path": "../pbe-restart/Si256-HSE06/cp2k.log",
+      "source_sha256": "7cf097af06227ff45b3478fc8adbe6f48757f04d5a8bc14fc3d9f0d92f6ce6bc",
+      "archive_sha256": "7cf097af06227ff45b3478fc8adbe6f48757f04d5a8bc14fc3d9f0d92f6ce6bc",
+      "size_bytes": 120044
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/4c-admm-fat/Si256/cp2k.log",
+      "archive_path": "../atomic-guess/Si256-HSE06/cp2k.log",
+      "source_sha256": "521d7d0b3a9a3e998f6710da74521577957fc792ee47f8ece9af2927c1c8845b",
+      "archive_sha256": "521d7d0b3a9a3e998f6710da74521577957fc792ee47f8ece9af2927c1c8845b",
+      "size_bytes": 132525
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/art/example/scaling/Si256-HSE06/kylin-pbc.log",
+      "archive_path": "../../../scaling/Si256-HSE06/kylin-pbc.log",
+      "source_sha256": "e8a7e1d3a66073124445760b9d7b6f59bb4f47bdc97064d8402ae752ebfa785f",
+      "archive_sha256": "e8a7e1d3a66073124445760b9d7b6f59bb4f47bdc97064d8402ae752ebfa785f",
+      "size_bytes": 10552
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/submit_extra.slurm",
+      "archive_path": "job-evidence-large/submit_extra.slurm",
+      "source_sha256": "1037a6c677483cb1fb171b0a76b9b9e592c60cbfb759d6ecca9efe02ad1672c7",
+      "archive_sha256": "1037a6c677483cb1fb171b0a76b9b9e592c60cbfb759d6ecca9efe02ad1672c7",
+      "size_bytes": 2238
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/slurm-249374.out",
+      "archive_path": "job-evidence-large/slurm-249374.out",
+      "source_sha256": "3ce87ed77025eaad58d78480526be1572cf7a41288228289b8a91dd107d9ee93",
+      "archive_sha256": "3ce87ed77025eaad58d78480526be1572cf7a41288228289b8a91dd107d9ee93",
+      "size_bytes": 914
+    },
+    {
+      "original_source": "/home/rudin/tmp-review-cp2k/slurm-249374.err",
+      "archive_path": "job-evidence-large/slurm-249374.err",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archive_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/prepare.py",
+      "archive_path": "job-evidence-small/prepare.py",
+      "source_sha256": "6f309e4330975101702ee5dc45bdcfd79e311c8b1a1bc7dc574e82014cc17868",
+      "archive_sha256": "6f309e4330975101702ee5dc45bdcfd79e311c8b1a1bc7dc574e82014cc17868",
+      "size_bytes": 4013
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/run_case.sh",
+      "archive_path": "job-evidence-small/run_case.sh",
+      "source_sha256": "4bc0eb7b43cc135fe5310a51048c6fbcb6ac46ef4325522e9a5f9bbda4cfb61e",
+      "archive_sha256": "4bc0eb7b43cc135fe5310a51048c6fbcb6ac46ef4325522e9a5f9bbda4cfb61e",
+      "size_bytes": 1007
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/manifest.json",
+      "archive_path": "job-evidence-small/manifest.json",
+      "source_sha256": "066b3f7fd16f9bad3e91790d91c4a11fdfa99348c2933734535d6e1fc654d394",
+      "archive_sha256": "066b3f7fd16f9bad3e91790d91c4a11fdfa99348c2933734535d6e1fc654d394",
+      "size_bytes": 3175
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/submitted_jobs.json",
+      "archive_path": "job-evidence-small/submitted_jobs.json",
+      "source_sha256": "f97841f40ab6df21c7b637b6d6aba07d6f1bd5a34dcbe148ee8149012f2b0a0b",
+      "archive_sha256": "f97841f40ab6df21c7b637b6d6aba07d6f1bd5a34dcbe148ee8149012f2b0a0b",
+      "size_bytes": 1152
+    },
+    {
+      "original_source": "/software/Applications/cp2k/cp2k-2024.3-oneapi-2024.2.1/data/BASIS_MOLOPT",
+      "archive_path": "cp2k-data/BASIS_MOLOPT",
+      "source_sha256": "686dd72e7601ee41d4a173e4c7c3946f1e750f03095090f44d3821c180a81a61",
+      "archive_sha256": "686dd72e7601ee41d4a173e4c7c3946f1e750f03095090f44d3821c180a81a61",
+      "size_bytes": 127679
+    },
+    {
+      "original_source": "/software/Applications/cp2k/cp2k-2024.3-oneapi-2024.2.1/data/BASIS_ADMM",
+      "archive_path": "cp2k-data/BASIS_ADMM",
+      "source_sha256": "e5ef868124a52f87af1d36377a6f6ec379bcc899dc623bd46315298e1d7c8a71",
+      "archive_sha256": "e5ef868124a52f87af1d36377a6f6ec379bcc899dc623bd46315298e1d7c8a71",
+      "size_bytes": 57524
+    },
+    {
+      "original_source": "/software/Applications/cp2k/cp2k-2024.3-oneapi-2024.2.1/data/BASIS_ADMM_MOLOPT",
+      "archive_path": "cp2k-data/BASIS_ADMM_MOLOPT",
+      "source_sha256": "de457aa584344ef6eb995a3b007282451e30d63ab86369af002bc718f8405cc9",
+      "archive_sha256": "de457aa584344ef6eb995a3b007282451e30d63ab86369af002bc718f8405cc9",
+      "size_bytes": 189911
+    },
+    {
+      "original_source": "/software/Applications/cp2k/cp2k-2024.3-oneapi-2024.2.1/data/GTH_POTENTIALS",
+      "archive_path": "cp2k-data/GTH_POTENTIALS",
+      "source_sha256": "5a9bfbc3b37a55917ade4fb704b80546d210d843759b94e3915e74acfc3fafb2",
+      "archive_sha256": "5a9bfbc3b37a55917ade4fb704b80546d210d843759b94e3915e74acfc3fafb2",
+      "size_bytes": 168128
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-paper-2/revise/kylin-pbc-v1.0-paper-revise/plot_fig_scaling_time.py",
+      "archive_path": "plot_fig_scaling_time.py",
+      "source_sha256": "4ab20f9e97bd2cb5cf5e83898d4e48d6fc973159259c61072854ffdba0939b56",
+      "archive_sha256": "4ab20f9e97bd2cb5cf5e83898d4e48d6fc973159259c61072854ffdba0939b56",
+      "size_bytes": 4305
+    },
+    {
+      "original_source": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-paper-2/revise/kylin-pbc-v1.0-paper-revise/fig_scaling_time.png",
+      "archive_path": "fig_scaling_time.png",
+      "source_sha256": "f065e14ab20820265e8e2cd79f5963b48f3947280946ffcc5fb4828afef4e907",
+      "archive_sha256": "f065e14ab20820265e8e2cd79f5963b48f3947280946ffcc5fb4828afef4e907",
+      "size_bytes": 137554
+    }
+  ]
+}

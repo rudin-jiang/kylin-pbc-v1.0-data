@@ -1,0 +1,215 @@
+{
+  "manuscript_plot_script": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/kylin-cip6-scaling/figures/plot_fig_scaling_time.py",
+  "manuscript_plot_script_sha256": "64151df0b2162f5743acd0152087ced6600ad8a06093e0a3dd161260651b7fd6",
+  "sources": {
+    "16": {
+      "kylin_pbe_original": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/scaling/Si16-PBE/kylin-pbc.log",
+        "sha256": "ee6cc95fde99aa7949100d0750503bdea0c68fb9e09c55284529136ee11142db"
+      },
+      "cp2k_pbe_original": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/scaling/Si16-PBE/cp2k.log",
+        "sha256": "95d55e5672a4f97d059d6aa84443d75aa8e2d93a686506dd77f15e1b62386797"
+      },
+      "kylin_hse_original": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/scaling/Si16-HSE06/kylin-pbc.log",
+        "sha256": "ad525fb0a6a35f1ef08e358016e804efc5e75f9f6d39607e86acd08a5058e194"
+      },
+      "cp2k_hse_atomic_4c": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/cp2k-4c-hfx/atomic-guess/Si16-HSE06/cp2k.log",
+        "sha256": "50d776f410fe49d8ebcd4dca202990d4d5432ba54e67e897ef8ad9772ab35918"
+      },
+      "kylin_hse_cip6": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/kylin-cip6-scaling/cases/Si16_selected_c06/run.log",
+        "sha256": "dc89d50b924e9e1e3dee052c8cd39d046db24dae1421d31a70ab81dc576073dd"
+      },
+      "cp2k_hse_restart_eps6_hse": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/cp2k-4c-hfx/pbe-restart/Si16-HSE06/cp2k.log",
+        "sha256": "ec7192bb0c2c680538aead05d8f9457b2a850213e9e740cb433a6d76abb4cfef"
+      },
+      "cp2k_hse_restart_eps6_pbe": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/cp2k-4c-hfx/pbe-restart-eps8/Si16-HSE06/pbe.log",
+        "sha256": "700b846fb6ff005c239ea728216658cfde521a06a7092f0439f37a49636779d0"
+      }
+    },
+    "32": {
+      "kylin_pbe_original": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/scaling/Si32-PBE/kylin-pbc.log",
+        "sha256": "ff08042cb8f5897046f491346e56b48e425bd388ead097c7b1a3143567706230"
+      },
+      "cp2k_pbe_original": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/scaling/Si32-PBE/cp2k.log",
+        "sha256": "0bca6cd0c0a059396b015f7f2ddfbecd4e40a286172718622ea43da453279c40"
+      },
+      "kylin_hse_original": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/scaling/Si32-HSE06/kylin-pbc.log",
+        "sha256": "8acea370c61680730015e12e779939112ca7a3d0c6c184ace8176dfa1c39896a"
+      },
+      "cp2k_hse_atomic_4c": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/cp2k-4c-hfx/atomic-guess/Si32-HSE06/cp2k.log",
+        "sha256": "788e74fb5faacdc545e6bc700d9c544f6d275aec7e159d2f5d47b16d412c4943"
+      },
+      "kylin_hse_cip6": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/kylin-cip6-scaling/cases/Si32_selected_c06/run.log",
+        "sha256": "b27eea14f09929b24b4dea5ad9ffd7c5b04b53966c70088e292ad3013b6e1dfc"
+      },
+      "cp2k_hse_restart_eps6_hse": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/cp2k-4c-hfx/pbe-restart/Si32-HSE06/cp2k.log",
+        "sha256": "eb0964de3b40456a7cca6256cb033d48d28810c90838e115464a1f2682346e65"
+      },
+      "cp2k_hse_restart_eps6_pbe": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/cp2k-4c-hfx/pbe-restart/Si32-HSE06/pbe.log",
+        "sha256": "12a0fbae9c98d74cd6a1b95b752011fde2076b3663d82b3b1be1dd380b91e39b"
+      }
+    },
+    "64": {
+      "kylin_pbe_original": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/scaling/Si64-PBE/kylin-pbc.log",
+        "sha256": "3410ef1bc6ad7882496a16e2112c87353899a6f11e3faddd1716c3236c15ce4d"
+      },
+      "cp2k_pbe_original": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/scaling/Si64-PBE/cp2k.log",
+        "sha256": "5d57d8546a3229baef67b2ca91340ebb2382b0ad239738de34a0032cfc956b78"
+      },
+      "kylin_hse_original": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/scaling/Si64-HSE06/kylin-pbc.log",
+        "sha256": "b33f6cb7c022c5e6606c662a0fc18850268ccb0c095baa979c65a5f1c649aae0"
+      },
+      "cp2k_hse_atomic_4c": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/cp2k-4c-hfx/atomic-guess/Si64-HSE06/cp2k.log",
+        "sha256": "bfaaa61ef68becf98ee55b1e4b8d36db28afcc7917444e48be0ae0a580ea4083"
+      },
+      "kylin_hse_cip6": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/kylin-cip6-scaling/cases/Si64_selected_c06/run.log",
+        "sha256": "02e3f1e7dd70cf20cf237b7b9d6d0848f830f09e887ec165fa3a6d4ea3ae040a"
+      },
+      "cp2k_hse_restart_eps6_hse": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/cp2k-4c-hfx/pbe-restart/Si64-HSE06/cp2k.log",
+        "sha256": "c6d1d7f23e72a58be3fe65055aa1174f3dd7d9112b2d8ea917d14ea9cd4e4a73"
+      },
+      "cp2k_hse_restart_eps6_pbe": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/cp2k-4c-hfx/pbe-restart/Si64-HSE06/pbe.log",
+        "sha256": "eb15140c2df15a31f2d2f9251d75c125404011ec8f08c9f30db86100d95e0870"
+      }
+    },
+    "128": {
+      "kylin_pbe_original": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/scaling/Si128-PBE/kylin-pbc.log",
+        "sha256": "63cd79efdf3a27e694d1416c958c18756e37c5a692ad4027c0b9c83890d02274"
+      },
+      "cp2k_pbe_original": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/scaling/Si128-PBE/cp2k.log",
+        "sha256": "bcc44338f3a08d33d7a246778c7b911caaddb9821065041bb005f16a864b041a"
+      },
+      "kylin_hse_original": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/scaling/Si128-HSE06/kylin-pbc.log",
+        "sha256": "739bd246780ac79fdbdc82f5f1fd1575363d947b93a7864d2fbe410fa0cec032"
+      },
+      "cp2k_hse_atomic_4c": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/cp2k-4c-hfx/atomic-guess/Si128-HSE06/cp2k.log",
+        "sha256": "f5e1a0033e84809d40fb84f1825af43e6060d47f659125435cc2992cd1a03e4b"
+      },
+      "kylin_hse_cip6": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/kylin-cip6-scaling/cases/Si128_selected_c06/run.log",
+        "sha256": "eea52eb35228024dff18ca5e9a392fea1c6a619afdc710146d8c9ab1b89ace43"
+      },
+      "cp2k_hse_restart_eps6_hse": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/cp2k-4c-hfx/pbe-restart/Si128-HSE06/cp2k.log",
+        "sha256": "6ba4da1f8e5f069ed541b63e0604fec1add6da0f469146e62848647c5b2bce19"
+      },
+      "cp2k_hse_restart_eps6_pbe": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/cp2k-4c-hfx/pbe-restart/Si128-HSE06/pbe.log",
+        "sha256": "e5f9e634519e258283ab5661df21f4ced870d05c34335c14e46c8e825fab8ace"
+      }
+    },
+    "256": {
+      "kylin_pbe_original": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/scaling/Si256-PBE/kylin-pbc.log",
+        "sha256": "d3ad056168c89951f54af7b55c2c8f99f64c5190fcc64f2a31fdb339a09c3697"
+      },
+      "cp2k_pbe_original": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/scaling/Si256-PBE/cp2k.log",
+        "sha256": "72f825883c76ceed9fb6c4eafb79ae8d56aa5647523f4d6aed3a9784e9b8de76"
+      },
+      "kylin_hse_original": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/scaling/Si256-HSE06/kylin-pbc.log",
+        "sha256": "e8a7e1d3a66073124445760b9d7b6f59bb4f47bdc97064d8402ae752ebfa785f"
+      },
+      "cp2k_hse_atomic_4c": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/cp2k-4c-hfx/atomic-guess/Si256-HSE06/cp2k.log",
+        "sha256": "521d7d0b3a9a3e998f6710da74521577957fc792ee47f8ece9af2927c1c8845b"
+      },
+      "kylin_hse_cip6": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/kylin-cip6-scaling/cases/Si256_selected_c06/run.log",
+        "sha256": "4b86f1e5b3edbd4ee8f7f85012d0df106f2b8edf98c6dc302615dd32efdf30cb"
+      },
+      "cp2k_hse_restart_eps6_hse": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/cp2k-4c-hfx/pbe-restart/Si256-HSE06/cp2k.log",
+        "sha256": "7cf097af06227ff45b3478fc8adbe6f48757f04d5a8bc14fc3d9f0d92f6ce6bc"
+      },
+      "cp2k_hse_restart_eps6_pbe": {
+        "path": "/home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-data/revision/cp2k-4c-hfx/pbe-restart/Si256-HSE06/pbe.log",
+        "sha256": "a48353be4d0ba77b2a6a4fd0c9165b3e7780e4a493cf3dc5ea593cc14cfbe770"
+      }
+    }
+  },
+  "series": {
+    "kylin_pbe_original": [
+      3.394,
+      8.065,
+      13.889,
+      29.882,
+      72.094
+    ],
+    "cp2k_pbe_original": [
+      0.657,
+      1.113,
+      2.379,
+      4.618,
+      9.833
+    ],
+    "kylin_hse_original": [
+      9.253,
+      26.148,
+      89.17,
+      470.462,
+      2191.967
+    ],
+    "cp2k_hse_atomic_4c": [
+      75.378,
+      168.096,
+      629.707,
+      2228.596,
+      8628.353
+    ],
+    "cp2k_hse_restart_eps6": [
+      62.085,
+      74.899,
+      153.863,
+      306.281,
+      563.341
+    ],
+    "kylin_hse_cip6": [
+      1.709668,
+      4.229587,
+      19.27205,
+      95.12772,
+      452.5603
+    ]
+  },
+  "notes": [
+    "Four base curves are taken from the CURRENT revised manuscript, not the original-submission RI-HFX/ADMM curve.",
+    "CP2K restart is original cpFIT3 at EPS_SCHWARZ=1e-6, including its historical PBE stage.",
+    "All cIP6 production points use the current frozen executable, 32 threads, cpu32/cu03, ON/EWALD.",
+    "Historical Kylin timings use a different implementation; historical Si256 uses OFF/NONE.",
+    "cIP6 is calibrated on Si64; Si256 accuracy has no FFTDF-reference validation."
+  ],
+  "loglog_slopes": {
+    "kylin_pbe_original": 1.070717172560987,
+    "cp2k_pbe_original": 0.9860147314901939,
+    "kylin_hse_original": 1.994548403643187,
+    "cp2k_hse_atomic_4c": 1.7406373556477572,
+    "cp2k_hse_restart_eps6": 0.8395221151640434,
+    "kylin_hse_cip6": 2.058777715068742
+  }
+}

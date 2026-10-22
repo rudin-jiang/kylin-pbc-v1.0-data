@@ -1,0 +1,3 @@
+VBM = 3.7885 eV  at k=(0.0, 0.0, 0.0)
+CBM = 10.0322 eV  at k=(0.0, 0.0, 0.0)
+Band gap (eV) = 6.2437  (direct)

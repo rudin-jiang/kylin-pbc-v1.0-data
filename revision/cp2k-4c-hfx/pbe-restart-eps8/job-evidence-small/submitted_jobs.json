@@ -1,0 +1,35 @@
+[
+  {
+    "atoms": 16,
+    "job_id": "262935",
+    "partition": "cpu32",
+    "nodes": 1,
+    "mpi_ranks": 32,
+    "omp_threads": 1,
+    "script": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/submit_Si16.slurm",
+    "case_dir": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si16",
+    "submitted_at_utc": "2026-10-19T03:41:21.110390+00:00"
+  },
+  {
+    "atoms": 32,
+    "job_id": "262936",
+    "partition": "cpu32",
+    "nodes": 1,
+    "mpi_ranks": 32,
+    "omp_threads": 1,
+    "script": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/submit_Si32.slurm",
+    "case_dir": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si32",
+    "submitted_at_utc": "2026-10-19T03:41:21.123697+00:00"
+  },
+  {
+    "atoms": 64,
+    "job_id": "262937",
+    "partition": "cpu32",
+    "nodes": 1,
+    "mpi_ranks": 32,
+    "omp_threads": 1,
+    "script": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/submit_Si64.slurm",
+    "case_dir": "/home/rudin/code/kylin-pbc/tmp_bench/cp2k_eps8_small_20261019/cases/Si64",
+    "submitted_at_utc": "2026-10-19T03:41:21.132361+00:00"
+  }
+]

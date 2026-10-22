@@ -1,0 +1,6 @@
+Original manuscript source: /home/rudin/code/kylin-pbc/art/kylin-pbc-v1.0-paper-2/revise/kylin-pbc-v1.0-paper-revise/kylin-pbc-v1.0-si.tex
+Source SHA256 at capture: dac4711bcc4497170becba53a680b6b3408b8c3bfffb49cc9a9eaf4c6889128b
+Captured existing historical c_IP=30 memory row:
+\quad peak memory (GiB) & 6.6 & 22.5 & 82.6 & 314 & 1178\textsuperscript{a} \\
+
+These are rounded peak-RSS values from historical separate monitoring runs, not /usr/bin/time measurements of the current c_IP=30 control.

@@ -1,0 +1,575 @@
+Kylin-PBC: v1.0.0
+
+System time = 2026-10-20 12:25:01
+
+OMP threads = 32
+
+KYLIN_PBC_ROOT = "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/resources"
+KYLIN_SCR_PATH = "/tmp/kylin-accuracy-zv2x4yi3"
+KYLIN_JOB_PATH = "/home/rudin/code/kylin-pbc/tmp_bench/accuracy_matched_eps6_20261020/cases/Si128_selected_c06"
+
+SCF.xcfun                      = HSE06
+SCF.basis                      = dzvp-sr
+SCF.psudo                      = gth-pbe
+SCF.kmesh                      = 1 1 1
+SCF.gmesh                      = 5.0e-01
+SCF.ispin                      = OFF
+SCF.dspin                      = 0
+SCF.eps_engy                   = 1.0e-06 [AU]
+SCF.eps_grad                   = 1.0e-05 [AU]
+SCF.eps_dmat                   = 1.0e-03
+SCF.chk_load                   = 
+SCF.chk_save                   = 
+SCF.scf_guess                  = ATOM
+SCF.max_cycle                  = 100
+SCF.vdw_method                 = NONE
+SCF.coul_method                = MGDF
+SCF.xchg_method                = LSDF
+SCF.xchg_exxocc                = OFF
+SCF.xchg_exxace                = NONE
+SCF.ace_eps_engy               = -1.0e+00
+SCF.ace_eps_dmat               = -1.0e+00
+SCF.ace_max_cycle              = 30
+SCF.xchg_robust                = TILE
+SCF.xchg_fv_reuse              = ON
+SCF.xchg_exxdiv                = EWALD
+SCF.xchg_dropG0                = ON
+SCF.lsdf_cparam                = 6
+SCF.lsdf_mparam                = 5
+SCF.lsdf_ip_reuse              = OFF
+SCF.lsdf_ip_drift              = 2.5e-01
+SCF.lsdf_ip_deriv              = OFF
+SCF.lsdf_qrcp_prune            = OFF
+SCF.xchg_d10_method            = AUTO
+SCF.lsdf_ipslct                = QRCP
+SCF.lsdf_chocut                = 1.0e-08
+SCF.lsdf_atmcut                = 2.5e+01
+SCF.lsdf_aovcut                = 1.0e-07
+SCF.lsdf_swzcut                = 0.0e+00
+SCF.lsdf_pnocut                = 0.0e+00
+SCF.lsdf_nafcut                = 0.0e+00
+SCF.mgdf_ortho                 = AUTO
+SCF.mgdf_ntasks                = 4
+SCF.mgdf_kratio                = 3.0e+00
+SCF.mgdf_cutoff                = 3.0e+02 [AU]
+SCF.mgdf_relcut                = 3.0e+01
+SCF.mgdf_prprec                = 1.0e-14
+SCF.dmx_mix_method             = NONE
+SCF.dmx_mix_start              = 1
+SCF.dmx_mix_space              = 8
+SCF.dmx_mix_alpha              = 3.0e-01
+SCF.rho_mix_method             = NONE
+SCF.rho_mix_start              = 1
+SCF.rho_mix_space              = 8
+SCF.rho_mix_alpha              = 3.0e-01
+SCF.hks_mix_method             = BROY
+SCF.hks_mix_start              = 1
+SCF.hks_mix_space              = 8
+SCF.hks_mix_alpha              = 3.0e-01
+SCF.damp_factor                = 0.0e+00
+SCF.level_shift                = 0.0e+00 [AU]
+SCF.smear_method               = NONE
+SCF.smear_sigma                = 0.0e+00 [AU]
+SCF.soc                        = OFF
+SCF.soc_window                 = 1.8e+00 [AU]
+SCF.print_bandgap              = ON
+SCF.print_time                 = OFF
+
+OPT.opt_method                 = BFGS
+OPT.max_cycle                  = 0
+OPT.eps_engy                   = 4.0e-06 [AU]
+OPT.eps_grad                   = 4.0e-04 [AU]
+OPT.trust_limit                = 3.0e-01 [AU]
+OPT.damp_factor                = 0.0e+00
+OPT.opt_mix_method             = NONE
+OPT.opt_mix_start              = 1
+OPT.opt_mix_space              = 5
+OPT.opt_mix_alpha              = 3.0e-01
+OPT.neb_method                 = FIRE
+OPT.neb_lclimb                 = ON
+OPT.neb_interp                 = IDPP
+OPT.neb_nimage                 = 5
+OPT.neb_spring                 = 1.0e-02 [AU]
+OPT.neb_maxstep                = 7.6e-02 [AU]
+
+PROP.calculation               = NONE
+FREQ.freq_method               = FREE2
+FREQ.fd_stepsize               = 2.8e-02 [AU]
+BAND.band_k_path               = G M K G
+BAND.band_k_step               = 10
+BAND.band_k_type               = HEX
+DOS.dos_method                 = GAUSS
+DOS.dos_sigma                  = 3.7e-03 [AU]
+DOS.dos_npoint                 = 1001
+DOS.dos_emin                   = 0.0e+00 [AU]
+DOS.dos_emax                   = 0.0e+00 [AU]
+MP2.max_memory                 = 4.1e+03
+MP2.frozen_core                = 0
+MP2.ri_method                  = FTDF
+
+OPT.mdx_ensemble               = NVE
+OPT.mdx_thermostat             = NHC
+OPT.mdx_max_step               = 0
+OPT.mdx_timestep               = 4.0e+01 [AU]
+OPT.mdx_temperature            = 9.5e-04 [AU]
+OPT.mdx_pressure               = 0.0e+00 [AU]
+OPT.mdx_thermo_tau             = 4.0e+03 [AU]
+OPT.mdx_baro_tau               = 2.0e+04 [AU]
+OPT.mdx_nhc_length             = 3
+OPT.mdx_nhc_mts                = 3
+OPT.mdx_constraint             = OFF
+OPT.mdx_constraint_tol         = 1.0e-10
+OPT.mdx_rng_seed               = 42
+OPT.mdx_dm_extrap              = LINEAR
+
+K-points mesh = 1 1 1
+
+xc functional: "HSE06"
+is hybrid: YES
+HFX coeff: 0.25
+
+Basis Set Name: "dzvp-sr"
+number of shell = 384
+number of basis = 1664
+gmesh = 113 57 57
+
+Pseudopotential Name: "gth-pbe"
+number of valence electron = 512
+
+SCF Calculation.
+Gamma point
+[MGDF] ortho kernel: ON (cell orthorhombic)
+[MGDF_DIAG] gmesh = 323 163 163  (ngrid=8581787)
+[MGDF_DIAG] level 0  mesh=63 33 33  ngrid=68607  tasks=87168
+[MGDF_DIAG] level 1  mesh=109 55 55  ngrid=329725  tasks=59136
+[MGDF_DIAG] level 2  mesh=187 95 95  ngrid=1687675  tasks=31872
+[MGDF_DIAG] level 3  mesh=323 163 163  ngrid=8581787  tasks=0
+[MGDF_DIAG] atom_pairs_kept=178176  rejected: atom=573760 set=0 pgf=541184 radius=7680
+[MGDF_DIAG] max_pair_radius=15.7373  max_pgf_rcut=14.1991  total_pairs=178176  precision_colloc=1e-14  precision_screen=1e-07
+OMP: Warning #226: KMP_AFFINITY must be set prior to first parallel region or certain API calls; ignored.
+[LSDF] gmesh = (113, 57, 57), ngrid = 367137, naofn = 1664, natom = 128
+Timer "[LSDF] Voronoi partition" used time: 0.009766 s.
+Timer "[LSDF] AO evaluation + screening" used time: 1.232516 s.
+[LSDF] IP method: randomized QRCP (c=6, m=5)
+[LSDF-IP]   ncand=2825 nkeep=166 nfound=83 kron+stage1=0.029s stage2=0.003s
+[LSDF-IP] atom nao_loc=1152 npts=2825 naux=13 naux2=169 nip=83 sketch=0.047s proj=0.003s qrcp=0.032s
+[LSDF-IP]   ncand=2744 nkeep=166 nfound=83 kron+stage1=0.033s stage2=0.007s
+[LSDF-IP] atom nao_loc=1139 npts=2744 naux=13 naux2=169 nip=83 sketch=0.050s proj=0.005s qrcp=0.041s
+[LSDF-IP]   ncand=2744 nkeep=166 nfound=83 kron+stage1=0.028s stage2=0.001s
+[LSDF-IP] atom nao_loc=1139 npts=2744 naux=13 naux2=169 nip=83 sketch=0.065s proj=0.006s qrcp=0.029s
+[LSDF-IP]   ncand=2768 nkeep=166 nfound=83 kron+stage1=0.045s stage2=0.005s
+[LSDF-IP] atom nao_loc=1152 npts=2768 naux=13 naux2=169 nip=83 sketch=0.052s proj=0.005s qrcp=0.050s
+[LSDF-IP]   ncand=3070 nkeep=166 nfound=83 kron+stage1=0.035s stage2=0.012s
+[LSDF-IP] atom nao_loc=1152 npts=3070 naux=13 naux2=169 nip=83 sketch=0.057s proj=0.005s qrcp=0.047s
+[LSDF-IP]   ncand=2769 nkeep=166 nfound=83 kron+stage1=0.042s stage2=0.014s
+[LSDF-IP] atom nao_loc=1152 npts=2769 naux=13 naux2=169 nip=83 sketch=0.056s proj=0.005s qrcp=0.056s
+[LSDF-IP]   ncand=2769 nkeep=166 nfound=83 kron+stage1=0.037s stage2=0.024s
+[LSDF-IP] atom nao_loc=1152 npts=2769 naux=13 naux2=169 nip=83 sketch=0.057s proj=0.004s qrcp=0.061s
+[LSDF-IP]   ncand=2903 nkeep=166 nfound=83 kron+stage1=0.041s stage2=0.002s
+[LSDF-IP] atom nao_loc=1152 npts=2903 naux=13 naux2=169 nip=83 sketch=0.034s proj=0.003s qrcp=0.043s
+[LSDF-IP]   ncand=2935 nkeep=166 nfound=83 kron+stage1=0.031s stage2=0.002s
+[LSDF-IP] atom nao_loc=1152 npts=2935 naux=13 naux2=169 nip=83 sketch=0.038s proj=0.003s qrcp=0.033s
+[LSDF-IP]   ncand=3070 nkeep=166 nfound=83 kron+stage1=0.044s stage2=0.055s
+[LSDF-IP] atom nao_loc=1152 npts=3070 naux=13 naux2=169 nip=83 sketch=0.065s proj=0.006s qrcp=0.099s
+[LSDF-IP]   ncand=2630 nkeep=166 nfound=83 kron+stage1=0.053s stage2=0.011s
+[LSDF-IP] atom nao_loc=1144 npts=2630 naux=13 naux2=169 nip=83 sketch=0.048s proj=0.003s qrcp=0.064s
+[LSDF-IP]   ncand=2630 nkeep=166 nfound=83 kron+stage1=0.052s stage2=0.005s
+[LSDF-IP] atom nao_loc=1144 npts=2630 naux=13 naux2=169 nip=83 sketch=0.044s proj=0.004s qrcp=0.057s
+[LSDF-IP]   ncand=2918 nkeep=166 nfound=83 kron+stage1=0.020s stage2=0.003s
+[LSDF-IP] atom nao_loc=1154 npts=2918 naux=13 naux2=169 nip=83 sketch=0.035s proj=0.003s qrcp=0.024s
+[LSDF-IP]   ncand=2903 nkeep=166 nfound=83 kron+stage1=0.046s stage2=0.017s
+[LSDF-IP] atom nao_loc=1152 npts=2903 naux=13 naux2=169 nip=83 sketch=0.047s proj=0.004s qrcp=0.063s
+[LSDF-IP]   ncand=2935 nkeep=166 nfound=83 kron+stage1=0.037s stage2=0.012s
+[LSDF-IP] atom nao_loc=1152 npts=2935 naux=13 naux2=169 nip=83 sketch=0.049s proj=0.006s qrcp=0.049s
+[LSDF-IP]   ncand=2893 nkeep=166 nfound=83 kron+stage1=0.034s stage2=0.002s
+[LSDF-IP] atom nao_loc=1152 npts=2893 naux=13 naux2=169 nip=83 sketch=0.032s proj=0.004s qrcp=0.036s
+[LSDF-IP]   ncand=2907 nkeep=166 nfound=83 kron+stage1=0.066s stage2=0.047s
+[LSDF-IP] atom nao_loc=1148 npts=2907 naux=13 naux2=169 nip=83 sketch=0.051s proj=0.005s qrcp=0.112s
+[LSDF-IP]   ncand=2892 nkeep=166 nfound=83 kron+stage1=0.025s stage2=0.003s
+[LSDF-IP] atom nao_loc=1152 npts=2892 naux=13 naux2=169 nip=83 sketch=0.051s proj=0.003s qrcp=0.028s
+[LSDF-IP]   ncand=2927 nkeep=166 nfound=83 kron+stage1=0.020s stage2=0.004s
+[LSDF-IP] atom nao_loc=1154 npts=2927 naux=13 naux2=169 nip=83 sketch=0.045s proj=0.002s qrcp=0.025s
+[LSDF-IP]   ncand=2901 nkeep=166 nfound=83 kron+stage1=0.035s stage2=0.011s
+[LSDF-IP] atom nao_loc=1152 npts=2901 naux=13 naux2=169 nip=83 sketch=0.041s proj=0.003s qrcp=0.047s
+[LSDF-IP]   ncand=2906 nkeep=166 nfound=83 kron+stage1=0.048s stage2=0.001s
+[LSDF-IP] atom nao_loc=1148 npts=2906 naux=13 naux2=169 nip=83 sketch=0.047s proj=0.004s qrcp=0.049s
+[LSDF-IP]   ncand=2913 nkeep=166 nfound=83 kron+stage1=0.035s stage2=0.015s
+[LSDF-IP] atom nao_loc=1152 npts=2913 naux=13 naux2=169 nip=83 sketch=0.049s proj=0.005s qrcp=0.051s
+[LSDF-IP]   ncand=2883 nkeep=166 nfound=83 kron+stage1=0.052s stage2=0.003s
+[LSDF-IP] atom nao_loc=1145 npts=2883 naux=13 naux2=169 nip=83 sketch=0.045s proj=0.002s qrcp=0.055s
+[LSDF-IP]   ncand=2907 nkeep=166 nfound=83 kron+stage1=0.065s stage2=0.057s
+[LSDF-IP] atom nao_loc=1148 npts=2907 naux=13 naux2=169 nip=83 sketch=0.050s proj=0.006s qrcp=0.122s
+[LSDF-IP]   ncand=2825 nkeep=166 nfound=83 kron+stage1=0.024s stage2=0.001s
+[LSDF-IP] atom nao_loc=1143 npts=2825 naux=13 naux2=169 nip=83 sketch=0.039s proj=0.005s qrcp=0.026s
+[LSDF-IP]   ncand=2789 nkeep=166 nfound=83 kron+stage1=0.027s stage2=0.003s
+[LSDF-IP] atom nao_loc=1152 npts=2789 naux=13 naux2=169 nip=83 sketch=0.049s proj=0.003s qrcp=0.030s
+[LSDF-IP]   ncand=2927 nkeep=166 nfound=83 kron+stage1=0.037s stage2=0.004s
+[LSDF-IP] atom nao_loc=1154 npts=2927 naux=13 naux2=169 nip=83 sketch=0.046s proj=0.006s qrcp=0.041s
+[LSDF-IP]   ncand=2908 nkeep=166 nfound=83 kron+stage1=0.051s stage2=0.037s
+[LSDF-IP] atom nao_loc=1148 npts=2908 naux=13 naux2=169 nip=83 sketch=0.041s proj=0.006s qrcp=0.087s
+[LSDF-IP]   ncand=2891 nkeep=166 nfound=83 kron+stage1=0.047s stage2=0.005s
+[LSDF-IP] atom nao_loc=1145 npts=2891 naux=13 naux2=169 nip=83 sketch=0.047s proj=0.006s qrcp=0.053s
+[LSDF-IP]   ncand=2902 nkeep=166 nfound=83 kron+stage1=0.044s stage2=0.011s
+[LSDF-IP] atom nao_loc=1152 npts=2902 naux=13 naux2=169 nip=83 sketch=0.047s proj=0.004s qrcp=0.055s
+[LSDF-IP]   ncand=2813 nkeep=166 nfound=83 kron+stage1=0.036s stage2=0.005s
+[LSDF-IP] atom nao_loc=1143 npts=2813 naux=13 naux2=169 nip=83 sketch=0.033s proj=0.003s qrcp=0.041s
+[LSDF-IP]   ncand=2871 nkeep=166 nfound=83 kron+stage1=0.039s stage2=0.043s
+[LSDF-IP] atom nao_loc=1145 npts=2871 naux=13 naux2=169 nip=83 sketch=0.050s proj=0.003s qrcp=0.081s
+[LSDF-IP]   ncand=2768 nkeep=166 nfound=83 kron+stage1=0.025s stage2=0.012s
+[LSDF-IP] atom nao_loc=1152 npts=2768 naux=13 naux2=169 nip=83 sketch=0.036s proj=0.002s qrcp=0.037s
+[LSDF-IP]   ncand=2922 nkeep=166 nfound=83 kron+stage1=0.032s stage2=0.018s
+[LSDF-IP] atom nao_loc=1152 npts=2922 naux=13 naux2=169 nip=83 sketch=0.039s proj=0.003s qrcp=0.050s
+[LSDF-IP]   ncand=2879 nkeep=166 nfound=83 kron+stage1=0.047s stage2=0.046s
+[LSDF-IP] atom nao_loc=1145 npts=2879 naux=13 naux2=169 nip=83 sketch=0.048s proj=0.004s qrcp=0.093s
+[LSDF-IP]   ncand=2893 nkeep=166 nfound=83 kron+stage1=0.042s stage2=0.006s
+[LSDF-IP] atom nao_loc=1145 npts=2893 naux=13 naux2=169 nip=83 sketch=0.039s proj=0.003s qrcp=0.048s
+[LSDF-IP]   ncand=2935 nkeep=166 nfound=83 kron+stage1=0.038s stage2=0.011s
+[LSDF-IP] atom nao_loc=1152 npts=2935 naux=13 naux2=169 nip=83 sketch=0.041s proj=0.003s qrcp=0.049s
+[LSDF-IP]   ncand=2758 nkeep=166 nfound=83 kron+stage1=0.023s stage2=0.006s
+[LSDF-IP] atom nao_loc=1152 npts=2758 naux=13 naux2=169 nip=83 sketch=0.040s proj=0.003s qrcp=0.030s
+[LSDF-IP]   ncand=2925 nkeep=166 nfound=83 kron+stage1=0.047s stage2=0.024s
+[LSDF-IP] atom nao_loc=1152 npts=2925 naux=13 naux2=169 nip=83 sketch=0.041s proj=0.002s qrcp=0.072s
+[LSDF-IP]   ncand=2825 nkeep=166 nfound=83 kron+stage1=0.019s stage2=0.019s
+[LSDF-IP] atom nao_loc=1143 npts=2825 naux=13 naux2=169 nip=83 sketch=0.038s proj=0.002s qrcp=0.039s
+[LSDF-IP]   ncand=2833 nkeep=166 nfound=83 kron+stage1=0.056s stage2=0.006s
+[LSDF-IP] atom nao_loc=1152 npts=2833 naux=13 naux2=169 nip=83 sketch=0.031s proj=0.009s qrcp=0.062s
+[LSDF-IP]   ncand=2812 nkeep=166 nfound=83 kron+stage1=0.026s stage2=0.005s
+[LSDF-IP] atom nao_loc=1155 npts=2812 naux=13 naux2=169 nip=83 sketch=0.042s proj=0.005s qrcp=0.031s
+[LSDF-IP]   ncand=2935 nkeep=166 nfound=83 kron+stage1=0.028s stage2=0.003s
+[LSDF-IP] atom nao_loc=1152 npts=2935 naux=13 naux2=169 nip=83 sketch=0.050s proj=0.005s qrcp=0.031s
+[LSDF-IP]   ncand=2910 nkeep=166 nfound=83 kron+stage1=0.050s stage2=0.020s
+[LSDF-IP] atom nao_loc=1152 npts=2910 naux=13 naux2=169 nip=83 sketch=0.049s proj=0.006s qrcp=0.070s
+[LSDF-IP]   ncand=2865 nkeep=166 nfound=83 kron+stage1=0.018s stage2=0.004s
+[LSDF-IP] atom nao_loc=1150 npts=2865 naux=13 naux2=169 nip=83 sketch=0.045s proj=0.002s qrcp=0.022s
+[LSDF-IP]   ncand=2771 nkeep=166 nfound=83 kron+stage1=0.047s stage2=0.037s
+[LSDF-IP] atom nao_loc=1148 npts=2771 naux=13 naux2=169 nip=83 sketch=0.053s proj=0.004s qrcp=0.084s
+[LSDF-IP]   ncand=2813 nkeep=166 nfound=83 kron+stage1=0.035s stage2=0.016s
+[LSDF-IP] atom nao_loc=1143 npts=2813 naux=13 naux2=169 nip=83 sketch=0.039s proj=0.003s qrcp=0.051s
+[LSDF-IP]   ncand=2870 nkeep=166 nfound=83 kron+stage1=0.056s stage2=0.045s
+[LSDF-IP] atom nao_loc=1145 npts=2870 naux=13 naux2=169 nip=83 sketch=0.056s proj=0.003s qrcp=0.100s
+[LSDF-IP]   ncand=2768 nkeep=166 nfound=83 kron+stage1=0.027s stage2=0.006s
+[LSDF-IP] atom nao_loc=1145 npts=2768 naux=13 naux2=169 nip=83 sketch=0.025s proj=0.003s qrcp=0.033s
+[LSDF-IP]   ncand=2925 nkeep=166 nfound=83 kron+stage1=0.028s stage2=0.007s
+[LSDF-IP] atom nao_loc=1152 npts=2925 naux=13 naux2=169 nip=83 sketch=0.037s proj=0.007s qrcp=0.035s
+[LSDF-IP]   ncand=2923 nkeep=166 nfound=83 kron+stage1=0.039s stage2=0.008s
+[LSDF-IP] atom nao_loc=1152 npts=2923 naux=13 naux2=169 nip=83 sketch=0.033s proj=0.002s qrcp=0.047s
+[LSDF-IP]   ncand=2909 nkeep=166 nfound=83 kron+stage1=0.039s stage2=0.057s
+[LSDF-IP] atom nao_loc=1152 npts=2909 naux=13 naux2=169 nip=83 sketch=0.063s proj=0.002s qrcp=0.095s
+[LSDF-IP]   ncand=3070 nkeep=166 nfound=83 kron+stage1=0.032s stage2=0.003s
+[LSDF-IP] atom nao_loc=1152 npts=3070 naux=13 naux2=169 nip=83 sketch=0.035s proj=0.005s qrcp=0.035s
+[LSDF-IP]   ncand=2771 nkeep=166 nfound=83 kron+stage1=0.035s stage2=0.012s
+[LSDF-IP] atom nao_loc=1148 npts=2771 naux=13 naux2=169 nip=83 sketch=0.047s proj=0.004s qrcp=0.047s
+[LSDF-IP]   ncand=2907 nkeep=166 nfound=83 kron+stage1=0.047s stage2=0.004s
+[LSDF-IP] atom nao_loc=1152 npts=2907 naux=13 naux2=169 nip=83 sketch=0.055s proj=0.003s qrcp=0.050s
+[LSDF-IP]   ncand=2630 nkeep=166 nfound=83 kron+stage1=0.036s stage2=0.004s
+[LSDF-IP] atom nao_loc=1144 npts=2630 naux=13 naux2=169 nip=83 sketch=0.045s proj=0.004s qrcp=0.040s
+[LSDF-IP]   ncand=2762 nkeep=166 nfound=83 kron+stage1=0.057s stage2=0.025s
+[LSDF-IP] atom nao_loc=1148 npts=2762 naux=13 naux2=169 nip=83 sketch=0.045s proj=0.003s qrcp=0.082s
+[LSDF-IP]   ncand=2913 nkeep=166 nfound=83 kron+stage1=0.032s stage2=0.007s
+[LSDF-IP] atom nao_loc=1152 npts=2913 naux=13 naux2=169 nip=83 sketch=0.043s proj=0.003s qrcp=0.039s
+[LSDF-IP]   ncand=2903 nkeep=166 nfound=83 kron+stage1=0.022s stage2=0.002s
+[LSDF-IP] atom nao_loc=1152 npts=2903 naux=13 naux2=169 nip=83 sketch=0.041s proj=0.002s qrcp=0.025s
+[LSDF-IP]   ncand=2944 nkeep=166 nfound=83 kron+stage1=0.047s stage2=0.014s
+[LSDF-IP] atom nao_loc=1152 npts=2944 naux=13 naux2=169 nip=83 sketch=0.045s proj=0.004s qrcp=0.061s
+[LSDF-IP]   ncand=2762 nkeep=166 nfound=83 kron+stage1=0.039s stage2=0.001s
+[LSDF-IP] atom nao_loc=1148 npts=2762 naux=13 naux2=169 nip=83 sketch=0.045s proj=0.002s qrcp=0.041s
+[LSDF-IP]   ncand=2948 nkeep=166 nfound=83 kron+stage1=0.059s stage2=0.023s
+[LSDF-IP] atom nao_loc=1150 npts=2948 naux=13 naux2=169 nip=83 sketch=0.042s proj=0.003s qrcp=0.082s
+[LSDF-IP]   ncand=2892 nkeep=166 nfound=83 kron+stage1=0.036s stage2=0.003s
+[LSDF-IP] atom nao_loc=1152 npts=2892 naux=13 naux2=169 nip=83 sketch=0.038s proj=0.004s qrcp=0.039s
+[LSDF-IP]   ncand=2744 nkeep=166 nfound=83 kron+stage1=0.032s stage2=0.010s
+[LSDF-IP] atom nao_loc=1139 npts=2744 naux=13 naux2=169 nip=83 sketch=0.041s proj=0.003s qrcp=0.042s
+[LSDF-IP]   ncand=2914 nkeep=166 nfound=83 kron+stage1=0.046s stage2=0.004s
+[LSDF-IP] atom nao_loc=1152 npts=2914 naux=13 naux2=169 nip=83 sketch=0.043s proj=0.002s qrcp=0.051s
+[LSDF-IP]   ncand=2768 nkeep=166 nfound=83 kron+stage1=0.021s stage2=0.003s
+[LSDF-IP] atom nao_loc=1152 npts=2768 naux=13 naux2=169 nip=83 sketch=0.050s proj=0.003s qrcp=0.024s
+[LSDF-IP]   ncand=2959 nkeep=166 nfound=83 kron+stage1=0.056s stage2=0.032s
+[LSDF-IP] atom nao_loc=1150 npts=2959 naux=13 naux2=169 nip=83 sketch=0.052s proj=0.003s qrcp=0.088s
+[LSDF-IP]   ncand=2855 nkeep=166 nfound=83 kron+stage1=0.052s stage2=0.025s
+[LSDF-IP] atom nao_loc=1150 npts=2855 naux=13 naux2=169 nip=83 sketch=0.056s proj=0.003s qrcp=0.077s
+[LSDF-IP]   ncand=2880 nkeep=166 nfound=83 kron+stage1=0.024s stage2=0.004s
+[LSDF-IP] atom nao_loc=1152 npts=2880 naux=13 naux2=169 nip=83 sketch=0.038s proj=0.004s qrcp=0.028s
+[LSDF-IP]   ncand=2744 nkeep=166 nfound=83 kron+stage1=0.023s stage2=0.018s
+[LSDF-IP] atom nao_loc=1139 npts=2744 naux=13 naux2=169 nip=83 sketch=0.050s proj=0.003s qrcp=0.042s
+[LSDF-IP]   ncand=2935 nkeep=166 nfound=83 kron+stage1=0.026s stage2=0.006s
+[LSDF-IP] atom nao_loc=1152 npts=2935 naux=13 naux2=169 nip=83 sketch=0.033s proj=0.005s qrcp=0.032s
+[LSDF-IP]   ncand=2916 nkeep=166 nfound=83 kron+stage1=0.046s stage2=0.016s
+[LSDF-IP] atom nao_loc=1152 npts=2916 naux=13 naux2=169 nip=83 sketch=0.050s proj=0.003s qrcp=0.063s
+[LSDF-IP]   ncand=2903 nkeep=166 nfound=83 kron+stage1=0.043s stage2=0.007s
+[LSDF-IP] atom nao_loc=1152 npts=2903 naux=13 naux2=169 nip=83 sketch=0.028s proj=0.002s qrcp=0.050s
+[LSDF-IP]   ncand=2903 nkeep=166 nfound=83 kron+stage1=0.046s stage2=0.007s
+[LSDF-IP] atom nao_loc=1152 npts=2903 naux=13 naux2=169 nip=83 sketch=0.042s proj=0.003s qrcp=0.054s
+[LSDF-IP]   ncand=2923 nkeep=166 nfound=83 kron+stage1=0.033s stage2=0.004s
+[LSDF-IP] atom nao_loc=1152 npts=2923 naux=13 naux2=169 nip=83 sketch=0.038s proj=0.004s qrcp=0.037s
+[LSDF-IP]   ncand=2630 nkeep=166 nfound=83 kron+stage1=0.038s stage2=0.006s
+[LSDF-IP] atom nao_loc=1144 npts=2630 naux=13 naux2=169 nip=83 sketch=0.047s proj=0.004s qrcp=0.045s
+[LSDF-IP]   ncand=2848 nkeep=166 nfound=83 kron+stage1=0.047s stage2=0.021s
+[LSDF-IP] atom nao_loc=1152 npts=2848 naux=13 naux2=169 nip=83 sketch=0.048s proj=0.004s qrcp=0.068s
+[LSDF-IP]   ncand=2918 nkeep=166 nfound=83 kron+stage1=0.040s stage2=0.008s
+[LSDF-IP] atom nao_loc=1154 npts=2918 naux=13 naux2=169 nip=83 sketch=0.044s proj=0.005s qrcp=0.048s
+[LSDF-IP]   ncand=2922 nkeep=166 nfound=83 kron+stage1=0.030s stage2=0.014s
+[LSDF-IP] atom nao_loc=1152 npts=2922 naux=13 naux2=169 nip=83 sketch=0.036s proj=0.002s qrcp=0.044s
+[LSDF-IP]   ncand=2944 nkeep=166 nfound=83 kron+stage1=0.019s stage2=0.003s
+[LSDF-IP] atom nao_loc=1152 npts=2944 naux=13 naux2=169 nip=83 sketch=0.031s proj=0.003s qrcp=0.022s
+[LSDF-IP]   ncand=2768 nkeep=166 nfound=83 kron+stage1=0.043s stage2=0.015s
+[LSDF-IP] atom nao_loc=1145 npts=2768 naux=13 naux2=169 nip=83 sketch=0.054s proj=0.002s qrcp=0.058s
+[LSDF-IP]   ncand=2925 nkeep=166 nfound=83 kron+stage1=0.044s stage2=0.044s
+[LSDF-IP] atom nao_loc=1152 npts=2925 naux=13 naux2=169 nip=83 sketch=0.060s proj=0.004s qrcp=0.089s
+[LSDF-IP]   ncand=2892 nkeep=166 nfound=83 kron+stage1=0.040s stage2=0.004s
+[LSDF-IP] atom nao_loc=1152 npts=2892 naux=13 naux2=169 nip=83 sketch=0.037s proj=0.002s qrcp=0.044s
+[LSDF-IP]   ncand=2925 nkeep=166 nfound=83 kron+stage1=0.019s stage2=0.003s
+[LSDF-IP] atom nao_loc=1152 npts=2925 naux=13 naux2=169 nip=83 sketch=0.045s proj=0.004s qrcp=0.022s
+[LSDF-IP]   ncand=2881 nkeep=166 nfound=83 kron+stage1=0.055s stage2=0.014s
+[LSDF-IP] atom nao_loc=1145 npts=2881 naux=13 naux2=169 nip=83 sketch=0.039s proj=0.002s qrcp=0.070s
+[LSDF-IP]   ncand=3140 nkeep=166 nfound=83 kron+stage1=0.046s stage2=0.012s
+[LSDF-IP] atom nao_loc=1160 npts=3140 naux=13 naux2=169 nip=83 sketch=0.038s proj=0.005s qrcp=0.057s
+[LSDF-IP]   ncand=2910 nkeep=166 nfound=83 kron+stage1=0.037s stage2=0.003s
+[LSDF-IP] atom nao_loc=1152 npts=2910 naux=13 naux2=169 nip=83 sketch=0.044s proj=0.005s qrcp=0.040s
+[LSDF-IP]   ncand=2881 nkeep=166 nfound=83 kron+stage1=0.025s stage2=0.003s
+[LSDF-IP] atom nao_loc=1152 npts=2881 naux=13 naux2=169 nip=83 sketch=0.040s proj=0.005s qrcp=0.028s
+[LSDF-IP]   ncand=2903 nkeep=166 nfound=83 kron+stage1=0.048s stage2=0.030s
+[LSDF-IP] atom nao_loc=1152 npts=2903 naux=13 naux2=169 nip=83 sketch=0.034s proj=0.006s qrcp=0.078s
+[LSDF-IP]   ncand=2935 nkeep=166 nfound=83 kron+stage1=0.050s stage2=0.031s
+[LSDF-IP] atom nao_loc=1152 npts=2935 naux=13 naux2=169 nip=83 sketch=0.051s proj=0.006s qrcp=0.081s
+[LSDF-IP]   ncand=2909 nkeep=166 nfound=83 kron+stage1=0.062s stage2=0.019s
+[LSDF-IP] atom nao_loc=1152 npts=2909 naux=13 naux2=169 nip=83 sketch=0.051s proj=0.005s qrcp=0.081s
+[LSDF-IP]   ncand=2913 nkeep=166 nfound=83 kron+stage1=0.029s stage2=0.009s
+[LSDF-IP] atom nao_loc=1152 npts=2913 naux=13 naux2=169 nip=83 sketch=0.032s proj=0.003s qrcp=0.038s
+[LSDF-IP]   ncand=2935 nkeep=166 nfound=83 kron+stage1=0.030s stage2=0.007s
+[LSDF-IP] atom nao_loc=1152 npts=2935 naux=13 naux2=169 nip=83 sketch=0.042s proj=0.002s qrcp=0.037s
+[LSDF-IP]   ncand=2756 nkeep=166 nfound=83 kron+stage1=0.028s stage2=0.010s
+[LSDF-IP] atom nao_loc=1152 npts=2756 naux=13 naux2=169 nip=83 sketch=0.040s proj=0.003s qrcp=0.038s
+[LSDF-IP]   ncand=2907 nkeep=166 nfound=83 kron+stage1=0.042s stage2=0.004s
+[LSDF-IP] atom nao_loc=1148 npts=2907 naux=13 naux2=169 nip=83 sketch=0.050s proj=0.003s qrcp=0.047s
+[LSDF-IP]   ncand=2918 nkeep=166 nfound=83 kron+stage1=0.037s stage2=0.035s
+[LSDF-IP] atom nao_loc=1148 npts=2918 naux=13 naux2=169 nip=83 sketch=0.042s proj=0.003s qrcp=0.072s
+[LSDF-IP]   ncand=2825 nkeep=166 nfound=83 kron+stage1=0.049s stage2=0.004s
+[LSDF-IP] atom nao_loc=1143 npts=2825 naux=13 naux2=169 nip=83 sketch=0.037s proj=0.002s qrcp=0.053s
+[LSDF-IP]   ncand=2935 nkeep=166 nfound=83 kron+stage1=0.026s stage2=0.007s
+[LSDF-IP] atom nao_loc=1152 npts=2935 naux=13 naux2=169 nip=83 sketch=0.035s proj=0.003s qrcp=0.033s
+[LSDF-IP]   ncand=2814 nkeep=166 nfound=83 kron+stage1=0.033s stage2=0.002s
+[LSDF-IP] atom nao_loc=1143 npts=2814 naux=13 naux2=169 nip=83 sketch=0.039s proj=0.003s qrcp=0.036s
+[LSDF-IP]   ncand=2909 nkeep=166 nfound=83 kron+stage1=0.055s stage2=0.004s
+[LSDF-IP] atom nao_loc=1148 npts=2909 naux=13 naux2=169 nip=83 sketch=0.047s proj=0.007s qrcp=0.059s
+[LSDF-IP]   ncand=2805 nkeep=166 nfound=83 kron+stage1=0.026s stage2=0.017s
+[LSDF-IP] atom nao_loc=1155 npts=2805 naux=13 naux2=169 nip=83 sketch=0.048s proj=0.003s qrcp=0.042s
+[LSDF-IP]   ncand=2768 nkeep=166 nfound=83 kron+stage1=0.074s stage2=0.015s
+[LSDF-IP] atom nao_loc=1152 npts=2768 naux=13 naux2=169 nip=83 sketch=0.040s proj=0.003s qrcp=0.089s
+[LSDF-IP]   ncand=2813 nkeep=166 nfound=83 kron+stage1=0.042s stage2=0.004s
+[LSDF-IP] atom nao_loc=1143 npts=2813 naux=13 naux2=169 nip=83 sketch=0.039s proj=0.005s qrcp=0.046s
+[LSDF-IP]   ncand=2925 nkeep=166 nfound=83 kron+stage1=0.032s stage2=0.015s
+[LSDF-IP] atom nao_loc=1152 npts=2925 naux=13 naux2=169 nip=83 sketch=0.043s proj=0.004s qrcp=0.047s
+[LSDF-IP]   ncand=2824 nkeep=166 nfound=83 kron+stage1=0.020s stage2=0.007s
+[LSDF-IP] atom nao_loc=1143 npts=2824 naux=13 naux2=169 nip=83 sketch=0.041s proj=0.002s qrcp=0.026s
+[LSDF-IP]   ncand=2902 nkeep=166 nfound=83 kron+stage1=0.034s stage2=0.020s
+[LSDF-IP] atom nao_loc=1148 npts=2902 naux=13 naux2=169 nip=83 sketch=0.066s proj=0.003s qrcp=0.054s
+[LSDF-IP]   ncand=2958 nkeep=166 nfound=83 kron+stage1=0.033s stage2=0.011s
+[LSDF-IP] atom nao_loc=1150 npts=2958 naux=13 naux2=169 nip=83 sketch=0.035s proj=0.004s qrcp=0.044s
+[LSDF-IP]   ncand=2763 nkeep=166 nfound=83 kron+stage1=0.026s stage2=0.005s
+[LSDF-IP] atom nao_loc=1148 npts=2763 naux=13 naux2=169 nip=83 sketch=0.040s proj=0.003s qrcp=0.031s
+[LSDF-IP]   ncand=2895 nkeep=166 nfound=83 kron+stage1=0.051s stage2=0.001s
+[LSDF-IP] atom nao_loc=1148 npts=2895 naux=13 naux2=169 nip=83 sketch=0.047s proj=0.007s qrcp=0.052s
+[LSDF-IP]   ncand=2907 nkeep=166 nfound=83 kron+stage1=0.034s stage2=0.016s
+[LSDF-IP] atom nao_loc=1152 npts=2907 naux=13 naux2=169 nip=83 sketch=0.054s proj=0.004s qrcp=0.050s
+[LSDF-IP]   ncand=2907 nkeep=166 nfound=83 kron+stage1=0.054s stage2=0.010s
+[LSDF-IP] atom nao_loc=1148 npts=2907 naux=13 naux2=169 nip=83 sketch=0.052s proj=0.005s qrcp=0.064s
+[LSDF-IP]   ncand=2770 nkeep=166 nfound=83 kron+stage1=0.039s stage2=0.006s
+[LSDF-IP] atom nao_loc=1148 npts=2770 naux=13 naux2=169 nip=83 sketch=0.030s proj=0.003s qrcp=0.045s
+[LSDF-IP]   ncand=2798 nkeep=166 nfound=83 kron+stage1=0.049s stage2=0.018s
+[LSDF-IP] atom nao_loc=1152 npts=2798 naux=13 naux2=169 nip=83 sketch=0.055s proj=0.002s qrcp=0.067s
+[LSDF-IP]   ncand=2909 nkeep=166 nfound=83 kron+stage1=0.053s stage2=0.015s
+[LSDF-IP] atom nao_loc=1152 npts=2909 naux=13 naux2=169 nip=83 sketch=0.049s proj=0.006s qrcp=0.068s
+[LSDF-IP]   ncand=2849 nkeep=166 nfound=83 kron+stage1=0.016s stage2=0.002s
+[LSDF-IP] atom nao_loc=1152 npts=2849 naux=13 naux2=169 nip=83 sketch=0.035s proj=0.002s qrcp=0.019s
+[LSDF-IP]   ncand=2898 nkeep=166 nfound=83 kron+stage1=0.041s stage2=0.023s
+[LSDF-IP] atom nao_loc=1148 npts=2898 naux=13 naux2=169 nip=83 sketch=0.053s proj=0.003s qrcp=0.064s
+[LSDF-IP]   ncand=2863 nkeep=166 nfound=83 kron+stage1=0.045s stage2=0.007s
+[LSDF-IP] atom nao_loc=1150 npts=2863 naux=13 naux2=169 nip=83 sketch=0.049s proj=0.004s qrcp=0.052s
+[LSDF-IP]   ncand=2853 nkeep=166 nfound=83 kron+stage1=0.064s stage2=0.010s
+[LSDF-IP] atom nao_loc=1150 npts=2853 naux=13 naux2=169 nip=83 sketch=0.038s proj=0.003s qrcp=0.073s
+[LSDF-IP]   ncand=2834 nkeep=166 nfound=83 kron+stage1=0.021s stage2=0.010s
+[LSDF-IP] atom nao_loc=1152 npts=2834 naux=13 naux2=169 nip=83 sketch=0.047s proj=0.004s qrcp=0.031s
+[LSDF-IP]   ncand=2766 nkeep=166 nfound=83 kron+stage1=0.041s stage2=0.003s
+[LSDF-IP] atom nao_loc=1152 npts=2766 naux=13 naux2=169 nip=83 sketch=0.046s proj=0.004s qrcp=0.044s
+[LSDF-IP]   ncand=2762 nkeep=166 nfound=83 kron+stage1=0.038s stage2=0.004s
+[LSDF-IP] atom nao_loc=1148 npts=2762 naux=13 naux2=169 nip=83 sketch=0.054s proj=0.004s qrcp=0.043s
+[LSDF-IP]   ncand=2771 nkeep=166 nfound=83 kron+stage1=0.030s stage2=0.009s
+[LSDF-IP] atom nao_loc=1148 npts=2771 naux=13 naux2=169 nip=83 sketch=0.057s proj=0.005s qrcp=0.039s
+[LSDF-IP]   ncand=2884 nkeep=166 nfound=83 kron+stage1=0.045s stage2=0.009s
+[LSDF-IP] atom nao_loc=1145 npts=2884 naux=13 naux2=169 nip=83 sketch=0.063s proj=0.006s qrcp=0.055s
+[LSDF-IP]   ncand=2947 nkeep=166 nfound=83 kron+stage1=0.036s stage2=0.007s
+[LSDF-IP] atom nao_loc=1150 npts=2947 naux=13 naux2=169 nip=83 sketch=0.055s proj=0.004s qrcp=0.043s
+[LSDF-IP]   ncand=2925 nkeep=166 nfound=83 kron+stage1=0.014s stage2=0.005s
+[LSDF-IP] atom nao_loc=1152 npts=2925 naux=13 naux2=169 nip=83 sketch=0.040s proj=0.003s qrcp=0.019s
+[LSDF-IP]   ncand=2916 nkeep=166 nfound=83 kron+stage1=0.013s stage2=0.002s
+[LSDF-IP] atom nao_loc=1152 npts=2916 naux=13 naux2=169 nip=83 sketch=0.032s proj=0.002s qrcp=0.015s
+[LSDF-IP]   ncand=2920 nkeep=166 nfound=83 kron+stage1=0.026s stage2=0.002s
+[LSDF-IP] atom nao_loc=1148 npts=2920 naux=13 naux2=169 nip=83 sketch=0.038s proj=0.006s qrcp=0.029s
+[LSDF-IP]   ncand=2909 nkeep=166 nfound=83 kron+stage1=0.026s stage2=0.001s
+[LSDF-IP] atom nao_loc=1152 npts=2909 naux=13 naux2=169 nip=83 sketch=0.039s proj=0.007s qrcp=0.027s
+[LSDF] total IPs selected: 10624 (2.8937% of grid)
+Timer "[LSDF] IP selection" used time: 1.598829 s.
+Timer "[LSDF] aux basis fitting" used time: 0.572526 s.
+[LSDF] Step 5 diagnostics: natom=128, ngrid=367137, naux_total=10624
+[LSDF]   OMP threads=32, MKL threads=32
+[LSDF]   Vmat_loc equiv size: 10624 x 367137 = 29.06 GB (fused=yes, skip alloc)
+[LSDF]   5a  tile-setup = 0.039 s
+[LSDF]   5a  FFT+scat   = 3.565 s
+Timer "[LSDF]   5a V-tile alloc+FFT (fused)" used time: 3.604162 s.
+[LSDF]   W size: 10624 x 10624 = 861.12 MB
+Timer "[LSDF]   5b W construction (DGEMM from tiles)" used time: 0.474230 s.
+Timer "[LSDF]   5c Wmat symmetrize" used time: 0.049974 s.
+[LSDF]   5e skipped (tiles already built in fused path)
+Timer "[LSDF] V/W construction" used time: 4.128458 s.
+  [bwd-lev0] integ=0.094506s  tasks=87168  us/pair=34.6938  grid=0.52343MB  avg_rad=9.78615  max_rad=15.7373  avg_bbox=38709.8  est_gpts=1.76811e+09  ns/gpt=1.71041
+  [bwd-lev1] integ=0.0646582s  tasks=59136  us/pair=34.9882  grid=2.5156MB  avg_rad=5.89813  max_rad=9.28036  avg_bbox=38836.8  est_gpts=1.20345e+09  ns/gpt=1.71928
+  [bwd-lev2] integ=0.0461152s  tasks=31872  us/pair=46.3004  grid=12.8759MB  avg_rad=4.11397  max_rad=5.38456  avg_bbox=63049.9  est_gpts=1.05299e+09  ns/gpt=1.40142
+  [bwd] fft=0.037061s  integ=0.205279s  reduce=0.0126991s
+  [fwd-lev0] colloc=0.047138s  tasks=87168  us/pair=17.3047  grid=0.52343MB
+  [fwd-lev1] colloc=0.0320079s  tasks=59136  us/pair=17.3203  grid=2.5156MB
+  [fwd-lev2] colloc=0.0245059s  tasks=31872  us/pair=24.6043  grid=12.8759MB
+  [fwd] colloc=0.103652s  reduce=0.0022192s  fft=0.019645s
+  [bwd-lev0] integ=0.0951328s  tasks=87168  us/pair=34.9239  grid=0.52343MB  avg_rad=9.78615  max_rad=15.7373  avg_bbox=38709.8  est_gpts=1.76811e+09  ns/gpt=1.72175
+  [bwd-lev1] integ=0.0644479s  tasks=59136  us/pair=34.8744  grid=2.5156MB  avg_rad=5.89813  max_rad=9.28036  avg_bbox=38836.8  est_gpts=1.20345e+09  ns/gpt=1.71369
+  [bwd-lev2] integ=0.0471828s  tasks=31872  us/pair=47.3723  grid=12.8759MB  avg_rad=4.11397  max_rad=5.38456  avg_bbox=63049.9  est_gpts=1.05299e+09  ns/gpt=1.43387
+  [bwd] fft=0.0346444s  integ=0.206764s  reduce=0.0128579s
+[LSDF] xchg phases: A=0.032 s, B(K_W)=0.328 s, C(K_V)=7.209 s, E(reduce)=0.049 s
+[NELEC] step = 0  nelec = 512  neInt = 511.999980  dnelc = -1.9688804798e-05
+[ENERG] step = 0  eTotl = -500.38885344  eCore = 157.07769468  eCoul = 36.53504929  eExcl = -156.53437938  eNucl = -537.46721802  eDisp = 0.00000000
+[ERROR] step = 0  engy error =  0.0000000000e+00  grad error =  0.0000000000e+00  dmat error =  0.0000000000e+00
+Timer "SCF cycle: 0" used time: 8.603977 s.
+
+  [fwd-lev0] colloc=0.047024s  tasks=87168  us/pair=17.2629  grid=0.52343MB
+  [fwd-lev1] colloc=0.031986s  tasks=59136  us/pair=17.3084  grid=2.5156MB
+  [fwd-lev2] colloc=0.0241849s  tasks=31872  us/pair=24.2821  grid=12.8759MB
+  [fwd] colloc=0.103195s  reduce=0.00220275s  fft=0.0210421s
+  [bwd-lev0] integ=0.099787s  tasks=87168  us/pair=36.6325  grid=0.52343MB  avg_rad=9.78615  max_rad=15.7373  avg_bbox=38709.8  est_gpts=1.76811e+09  ns/gpt=1.80598
+  [bwd-lev1] integ=0.0646682s  tasks=59136  us/pair=34.9936  grid=2.5156MB  avg_rad=5.89813  max_rad=9.28036  avg_bbox=38836.8  est_gpts=1.20345e+09  ns/gpt=1.71955
+  [bwd-lev2] integ=0.0462999s  tasks=31872  us/pair=46.4859  grid=12.8759MB  avg_rad=4.11397  max_rad=5.38456  avg_bbox=63049.9  est_gpts=1.05299e+09  ns/gpt=1.40704
+  [bwd] fft=0.0394969s  integ=0.210755s  reduce=0.0122201s
+[LSDF] xchg phases: A=0.031 s, B(K_W)=0.327 s, C(K_V)=6.876 s, E(reduce)=0.048 s
+[NELEC] step = 1  nelec = 512  neInt = 512.000000  dnelc = -8.1911366578e-11
+[ENERG] step = 1  eTotl = -503.61318158  eCore = 154.16384986  eCoul = 33.55584141  eExcl = -153.86565484  eNucl = -537.46721802  eDisp = 0.00000000
+[ERROR] step = 1  engy error = -3.2243281472e+00  grad error =  0.0000000000e+00  dmat error =  1.1009767498e+00
+Timer "SCF cycle: 1" used time: 8.121143 s.
+
+  [fwd-lev0] colloc=0.047163s  tasks=87168  us/pair=17.3139  grid=0.52343MB
+  [fwd-lev1] colloc=0.0320969s  tasks=59136  us/pair=17.3684  grid=2.5156MB
+  [fwd-lev2] colloc=0.0243571s  tasks=31872  us/pair=24.4549  grid=12.8759MB
+  [fwd] colloc=0.103617s  reduce=0.00636697s  fft=0.0217729s
+  [bwd-lev0] integ=0.0998719s  tasks=87168  us/pair=36.6637  grid=0.52343MB  avg_rad=9.78615  max_rad=15.7373  avg_bbox=38709.8  est_gpts=1.76811e+09  ns/gpt=1.80752
+  [bwd-lev1] integ=0.0646009s  tasks=59136  us/pair=34.9572  grid=2.5156MB  avg_rad=5.89813  max_rad=9.28036  avg_bbox=38836.8  est_gpts=1.20345e+09  ns/gpt=1.71776
+  [bwd-lev2] integ=0.0460501s  tasks=31872  us/pair=46.235  grid=12.8759MB  avg_rad=4.11397  max_rad=5.38456  avg_bbox=63049.9  est_gpts=1.05299e+09  ns/gpt=1.39944
+  [bwd] fft=0.0361509s  integ=0.210523s  reduce=0.0122411s
+[LSDF] xchg phases: A=0.031 s, B(K_W)=0.328 s, C(K_V)=7.032 s, E(reduce)=0.046 s
+[NELEC] step = 2  nelec = 512  neInt = 512.000000  dnelc = -7.9637629824e-11
+[ENERG] step = 2  eTotl = -503.66733483  eCore = 153.87616592  eCoul = 34.01787183  eExcl = -154.09415456  eNucl = -537.46721802  eDisp = 0.00000000
+[ERROR] step = 2  engy error = -5.4153244488e-02  grad error =  0.0000000000e+00  dmat error =  1.7175359374e-02
+Timer "SCF cycle: 2" used time: 8.269161 s.
+
+  [fwd-lev0] colloc=0.0470371s  tasks=87168  us/pair=17.2677  grid=0.52343MB
+  [fwd-lev1] colloc=0.0320699s  tasks=59136  us/pair=17.3539  grid=2.5156MB
+  [fwd-lev2] colloc=0.0241971s  tasks=31872  us/pair=24.2943  grid=12.8759MB
+  [fwd] colloc=0.103304s  reduce=0.00219893s  fft=0.0202081s
+  [bwd-lev0] integ=0.0998762s  tasks=87168  us/pair=36.6653  grid=0.52343MB  avg_rad=9.78615  max_rad=15.7373  avg_bbox=38709.8  est_gpts=1.76811e+09  ns/gpt=1.8076
+  [bwd-lev1] integ=0.0647008s  tasks=59136  us/pair=35.0113  grid=2.5156MB  avg_rad=5.89813  max_rad=9.28036  avg_bbox=38836.8  est_gpts=1.20345e+09  ns/gpt=1.72042
+  [bwd-lev2] integ=0.0460329s  tasks=31872  us/pair=46.2178  grid=12.8759MB  avg_rad=4.11397  max_rad=5.38456  avg_bbox=63049.9  est_gpts=1.05299e+09  ns/gpt=1.39892
+  [bwd] fft=0.041203s  integ=0.21061s  reduce=0.0113761s
+[LSDF] xchg phases: A=0.031 s, B(K_W)=0.325 s, C(K_V)=7.108 s, E(reduce)=0.044 s
+[NELEC] step = 3  nelec = 512  neInt = 512.000000  dnelc = -7.5033312896e-11
+[ENERG] step = 3  eTotl = -503.72045230  eCore = 153.33410139  eCoul = 35.00195578  eExcl = -154.58929144  eNucl = -537.46721802  eDisp = 0.00000000
+[ERROR] step = 3  engy error = -5.3117468150e-02  grad error =  0.0000000000e+00  dmat error =  4.1583869710e-02
+Timer "SCF cycle: 3" used time: 8.361952 s.
+
+  [fwd-lev0] colloc=0.0470631s  tasks=87168  us/pair=17.2772  grid=0.52343MB
+  [fwd-lev1] colloc=0.0320408s  tasks=59136  us/pair=17.3381  grid=2.5156MB
+  [fwd-lev2] colloc=0.024219s  tasks=31872  us/pair=24.3163  grid=12.8759MB
+  [fwd] colloc=0.103323s  reduce=0.00222397s  fft=0.020256s
+  [bwd-lev0] integ=0.0999908s  tasks=87168  us/pair=36.7074  grid=0.52343MB  avg_rad=9.78615  max_rad=15.7373  avg_bbox=38709.8  est_gpts=1.76811e+09  ns/gpt=1.80967
+  [bwd-lev1] integ=0.064518s  tasks=59136  us/pair=34.9123  grid=2.5156MB  avg_rad=5.89813  max_rad=9.28036  avg_bbox=38836.8  est_gpts=1.20345e+09  ns/gpt=1.71555
+  [bwd-lev2] integ=0.0460639s  tasks=31872  us/pair=46.2489  grid=12.8759MB  avg_rad=4.11397  max_rad=5.38456  avg_bbox=63049.9  est_gpts=1.05299e+09  ns/gpt=1.39986
+  [bwd] fft=0.0354831s  integ=0.210573s  reduce=0.012013s
+[LSDF] xchg phases: A=0.031 s, B(K_W)=0.324 s, C(K_V)=7.132 s, E(reduce)=0.050 s
+[NELEC] step = 4  nelec = 512  neInt = 512.000000  dnelc = -7.6113337855e-11
+[ENERG] step = 4  eTotl = -503.72100285  eCore = 153.36264630  eCoul = 34.96215574  eExcl = -154.57858686  eNucl = -537.46721802  eDisp = 0.00000000
+[ERROR] step = 4  engy error = -5.5054950559e-04  grad error =  0.0000000000e+00  dmat error =  5.2674107099e-03
+Timer "SCF cycle: 4" used time: 8.452914 s.
+
+  [fwd-lev0] colloc=0.047045s  tasks=87168  us/pair=17.2706  grid=0.52343MB
+  [fwd-lev1] colloc=0.0320492s  tasks=59136  us/pair=17.3426  grid=2.5156MB
+  [fwd-lev2] colloc=0.0243399s  tasks=31872  us/pair=24.4377  grid=12.8759MB
+  [fwd] colloc=0.103434s  reduce=0.00220919s  fft=0.0211818s
+  [bwd-lev0] integ=0.094995s  tasks=87168  us/pair=34.8734  grid=0.52343MB  avg_rad=9.78615  max_rad=15.7373  avg_bbox=38709.8  est_gpts=1.76811e+09  ns/gpt=1.71926
+  [bwd-lev1] integ=0.064786s  tasks=59136  us/pair=35.0573  grid=2.5156MB  avg_rad=5.89813  max_rad=9.28036  avg_bbox=38836.8  est_gpts=1.20345e+09  ns/gpt=1.72268
+  [bwd-lev2] integ=0.0460742s  tasks=31872  us/pair=46.2592  grid=12.8759MB  avg_rad=4.11397  max_rad=5.38456  avg_bbox=63049.9  est_gpts=1.05299e+09  ns/gpt=1.40017
+  [bwd] fft=0.0409858s  integ=0.205855s  reduce=0.0120242s
+[LSDF] xchg phases: A=0.031 s, B(K_W)=0.329 s, C(K_V)=6.976 s, E(reduce)=0.049 s
+[NELEC] step = 5  nelec = 512  neInt = 512.000000  dnelc = -7.7363893070e-11
+[ENERG] step = 5  eTotl = -503.72123679  eCore = 153.39141934  eCoul = 34.92151100  eExcl = -154.56694911  eNucl = -537.46721802  eDisp = 0.00000000
+[ERROR] step = 5  engy error = -2.3394351365e-04  grad error =  0.0000000000e+00  dmat error =  4.7618245902e-03
+Timer "SCF cycle: 5" used time: 8.350894 s.
+
+  [fwd-lev0] colloc=0.0470159s  tasks=87168  us/pair=17.2599  grid=0.52343MB
+  [fwd-lev1] colloc=0.0320389s  tasks=59136  us/pair=17.3371  grid=2.5156MB
+  [fwd-lev2] colloc=0.0243709s  tasks=31872  us/pair=24.4688  grid=12.8759MB
+  [fwd] colloc=0.103426s  reduce=0.00219417s  fft=0.0200627s
+  [bwd-lev0] integ=0.0998271s  tasks=87168  us/pair=36.6472  grid=0.52343MB  avg_rad=9.78615  max_rad=15.7373  avg_bbox=38709.8  est_gpts=1.76811e+09  ns/gpt=1.80671
+  [bwd-lev1] integ=0.0647831s  tasks=59136  us/pair=35.0558  grid=2.5156MB  avg_rad=5.89813  max_rad=9.28036  avg_bbox=38836.8  est_gpts=1.20345e+09  ns/gpt=1.7226
+  [bwd-lev2] integ=0.0460489s  tasks=31872  us/pair=46.2338  grid=12.8759MB  avg_rad=4.11397  max_rad=5.38456  avg_bbox=63049.9  est_gpts=1.05299e+09  ns/gpt=1.39941
+  [bwd] fft=0.0409358s  integ=0.210659s  reduce=0.0122979s
+[LSDF] xchg phases: A=0.031 s, B(K_W)=0.334 s, C(K_V)=7.049 s, E(reduce)=0.049 s
+[NELEC] step = 6  nelec = 512  neInt = 512.000000  dnelc = -7.7022832556e-11
+[ENERG] step = 6  eTotl = -503.72124317  eCore = 153.39315930  eCoul = 34.91937999  eExcl = -154.56656444  eNucl = -537.46721802  eDisp = 0.00000000
+[ERROR] step = 6  engy error = -6.3811348809e-06  grad error =  0.0000000000e+00  dmat error =  4.6241554423e-04
+Timer "SCF cycle: 6" used time: 8.494058 s.
+
+  [fwd-lev0] colloc=0.0471621s  tasks=87168  us/pair=17.3135  grid=0.52343MB
+  [fwd-lev1] colloc=0.032146s  tasks=59136  us/pair=17.395  grid=2.5156MB
+  [fwd-lev2] colloc=0.024395s  tasks=31872  us/pair=24.493  grid=12.8759MB
+  [fwd] colloc=0.103703s  reduce=0.00222397s  fft=0.0226882s
+  [bwd-lev0] integ=0.0998349s  tasks=87168  us/pair=36.6501  grid=0.52343MB  avg_rad=9.78615  max_rad=15.7373  avg_bbox=38709.8  est_gpts=1.76811e+09  ns/gpt=1.80685
+  [bwd-lev1] integ=0.064672s  tasks=59136  us/pair=34.9957  grid=2.5156MB  avg_rad=5.89813  max_rad=9.28036  avg_bbox=38836.8  est_gpts=1.20345e+09  ns/gpt=1.71965
+  [bwd-lev2] integ=0.0463619s  tasks=31872  us/pair=46.5481  grid=12.8759MB  avg_rad=4.11397  max_rad=5.38456  avg_bbox=63049.9  est_gpts=1.05299e+09  ns/gpt=1.40892
+  [bwd] fft=0.0398469s  integ=0.210869s  reduce=0.0119851s
+[LSDF] xchg phases: A=0.031 s, B(K_W)=0.324 s, C(K_V)=6.797 s, E(reduce)=0.049 s
+[NELEC] step = 7  nelec = 512  neInt = 512.000000  dnelc = -7.7079675975e-11
+[ENERG] step = 7  eTotl = -503.72124683  eCore = 153.39348438  eCoul = 34.91973019  eExcl = -154.56724337  eNucl = -537.46721802  eDisp = 0.00000000
+[ERROR] step = 7  engy error = -3.6563519643e-06  grad error =  0.0000000000e+00  dmat error =  3.7938872476e-04
+Timer "SCF cycle: 7" used time: 8.371067 s.
+
+  [fwd-lev0] colloc=0.0470481s  tasks=87168  us/pair=17.2717  grid=0.52343MB
+  [fwd-lev1] colloc=0.0320461s  tasks=59136  us/pair=17.341  grid=2.5156MB
+  [fwd-lev2] colloc=0.024323s  tasks=31872  us/pair=24.4207  grid=12.8759MB
+  [fwd] colloc=0.103417s  reduce=0.00219965s  fft=0.0196071s
+  [bwd-lev0] integ=0.0997469s  tasks=87168  us/pair=36.6178  grid=0.52343MB  avg_rad=9.78615  max_rad=15.7373  avg_bbox=38709.8  est_gpts=1.76811e+09  ns/gpt=1.80526
+  [bwd-lev1] integ=0.0649159s  tasks=59136  us/pair=35.1276  grid=2.5156MB  avg_rad=5.89813  max_rad=9.28036  avg_bbox=38836.8  est_gpts=1.20345e+09  ns/gpt=1.72613
+  [bwd-lev2] integ=0.0462461s  tasks=31872  us/pair=46.4318  grid=12.8759MB  avg_rad=4.11397  max_rad=5.38456  avg_bbox=63049.9  est_gpts=1.05299e+09  ns/gpt=1.4054
+  [bwd] fft=0.041306s  integ=0.210909s  reduce=0.0120182s
+[NELEC] step = 8  nelec = 512  neInt = 512.000000  dnelc = -7.7648110164e-11
+[ENERG] step = 8  eTotl = -503.72124822  eCore = 153.39326389  eCoul = 34.92096647  eExcl = -154.56826056  eNucl = -537.46721802  eDisp = 0.00000000
+[ERROR] step = 8  engy error = -1.3943824797e-06  grad error =  0.0000000000e+00  dmat error =  3.2965326389e-04
+Timer "SCF cycle: 8" used time: 8.433371 s.
+
+  [fwd-lev0] colloc=0.0470779s  tasks=87168  us/pair=17.2826  grid=0.52343MB
+  [fwd-lev1] colloc=0.0320399s  tasks=59136  us/pair=17.3376  grid=2.5156MB
+  [fwd-lev2] colloc=0.024343s  tasks=31872  us/pair=24.4408  grid=12.8759MB
+  [fwd] colloc=0.103461s  reduce=0.00218534s  fft=0.0198998s
+  [bwd-lev0] integ=0.0949969s  tasks=87168  us/pair=34.8741  grid=0.52343MB  avg_rad=9.78615  max_rad=15.7373  avg_bbox=38709.8  est_gpts=1.76811e+09  ns/gpt=1.71929
+  [bwd-lev1] integ=0.0646241s  tasks=59136  us/pair=34.9697  grid=2.5156MB  avg_rad=5.89813  max_rad=9.28036  avg_bbox=38836.8  est_gpts=1.20345e+09  ns/gpt=1.71837
+  [bwd-lev2] integ=0.0462101s  tasks=31872  us/pair=46.3956  grid=12.8759MB  avg_rad=4.11397  max_rad=5.38456  avg_bbox=63049.9  est_gpts=1.05299e+09  ns/gpt=1.4043
+  [bwd] fft=0.0351019s  integ=0.205831s  reduce=0.0126202s
+[NELEC] step = 9  nelec = 512  neInt = 512.000000  dnelc = -7.7420736488e-11
+[ENERG] step = 9  eTotl = -503.72124826  eCore = 153.39307903  eCoul = 34.92142525  eExcl = -154.56853452  eNucl = -537.46721802  eDisp = 0.00000000
+[ERROR] step = 9  engy error = -3.7331346903e-08  grad error =  0.0000000000e+00  dmat error =  5.2032341726e-05
+SCF converged in 9 steps.
+
+  Band Gap Analysis (per k-point)
+  k-pt    spin         HOMO (eV)       LUMO (eV)        Gap (eV)
+  -----------------------------------------------------------
+  0       0             5.875222        7.190046        1.314825
+  -----------------------------------------------------------
+  VBM =       5.875222 eV    CBM =       7.190046 eV    Band Gap =       1.314825 eV
+
+[SCF-RESULT] functional=HSE06 guess=ATOM converged=YES steps=9 energy=-503.72124825917012 workflow_seconds=94.770348
+Kylin-PBC Done.
+Timer "Kylin-PBC main" used time: 95.12772 s.

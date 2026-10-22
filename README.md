@@ -19,6 +19,9 @@ VASP license), large restart binaries (`WAVECAR`, `CHG`, `CHGCAR`), scheduler
 and helper scripts (`slurm-*`, `submit*`, `run*.slurm`, `*.sh`, generators), and
 intermediate/backup variants (`*.pre-scaling`, `*.g05orig`, `*.prev`, `*.bak`,
 `kylin-pbc-fix.*`, `*.ewald-nogap`).
+The `revision/cp2k-4c-hfx/pbe-restart-eps8/` dataset additionally retains
+submission scripts, job records, and collection/plotting scripts so that the
+replacement timing curve and its hardware provenance can be checked.
 
 ## Directory to paper mapping
 
@@ -86,7 +89,8 @@ convergence settings of the corresponding calculations above.
 - `peak-memory/Si{16,32,64,128,256}-HSE06`: the same benchmarks run under
   the memory monitor; source of the resident-set-size rows of SI Table S3
   (`peakrss.tsv`).  `Si256-HSE06-current-version/` is the Si256 run
-  repeated with the current code version (quoted in the response letter).
+  repeated with an intermediate build (see *Program builds* below); it is
+  not used for any number in the manuscript or in the response letter.
 - `kpoint-series/Si-HSE06-k{111,222,333,444,555}-{LSDF,FTDF}`: 2-atom Si
   cell, c_IP = 60, as a function of the k-mesh; SI Table S4.  The 1x1x1
   runs are dispatched to the Gamma-point engine and are not part of the
@@ -106,14 +110,60 @@ convergence settings of the corresponding calculations above.
   He test cases for the robust versus non-robust gradient (response letter,
   Reviewer 2, major point 4).
 - `cp2k-4c-hfx/`: CP2K four-center HFX runs for the Si supercells of the
-  scaling figure (SI Table S9).  `atomic-guess/` = ADMM, atomic guess
-  (row a; Si256 on the 2 TB node); `pbe-restart/` = PBE run (`pbe.inp`,
-  `pbe.log`) followed by the HSE06 restart with density-matrix screening
-  (`cp2k.inp`, `cp2k.log`; row b) -- for Si16 the screened run
-  (`Si16-HSE06-screened-unstable/`) did not converge and the entry of the
-  table is the unscreened restart in `Si16-HSE06/`; `no-admm/` = the same
-  restart protocol without ADMM, i.e. exact exchange in the primary basis
-  (row c).  PBE restart wavefunctions are not included.
+  scaling figure (SI Table S9 and response Table R5). `atomic-guess/` =
+  ADMM, atomic guess, `EPS_SCHWARZ=1e-6` (row a; Si256 on the 2 TB node).
+  **`pbe-restart-eps8/` supplies the current PBE-restart curve and row b:**
+  all five Si16--Si256 HSE06 runs use `EPS_SCHWARZ=1e-8`,
+  `SCREEN_ON_INITIAL_P TRUE`, and ADMMS/cpFIT3, on the cpu32 partition
+  (32 MPI ranks x 1 OpenMP thread, nominal 512 GB nodes). Every case
+  includes the raw `cp2k.inp`/`cp2k.log` and the historical
+  `pbe.inp`/`pbe.log`; total times include both stages, although the PBE
+  stage was not rerun for the tighter screening. The dataset also includes
+  `results_eps8.csv`, `summary_eps8.json`, a collector reading only the
+  archive, source hashes, job records, and the figure script; see its
+  `README.txt`. `pbe-restart/` supplies the additional `EPS_SCHWARZ=1e-6`
+  PBE-restart results in row d of SI Table S9 and response Table R5;
+  Fig. 6 continues to use row b. Row d uses ADMMS/cpFIT3 and includes
+  the PBE-stage time. Density-matrix screening is enabled for Si32--Si256;
+  Si16 uses the stable `SCREEN_ON_INITIAL_P FALSE` result in `Si16-HSE06/`.
+  The excluded screened Si16 HSE06 run is retained in
+  `Si16-HSE06-screened-unstable/`, together with the valid PBE input and
+  output used for the Si16 restart timing. All row-d runs used 32 MPI
+  ranks x 1 OpenMP thread on nominal 512 GB Xeon Gold 6544Y nodes and
+  retained their integrals in memory (`MAX_MEMORY=12000` MiB/rank for
+  Si16--Si128 and 5000 MiB/rank for Si256).
+  `no-admm/` retains the comparison
+  without ADMM, i.e. exchange in the primary basis (row c, original
+  `EPS_SCHWARZ=1e-6`). PBE restart wavefunctions are not included;
+  regenerate them from the archived PBE inputs.
+
+#### Program builds
+
+All Kylin-PBC logs print the version string `Kylin-PBC: v1.0.0`; the builds
+are therefore identified by the SHA-256 checksum of the executable.
+
+- *Submitted build* (original submission, June 2026): every Kylin-PBC
+  calculation outside `revision/`. The reruns in `revision/` other than
+  those listed below were performed with the 2 July 2026 build of the same
+  code (sha256
+  `523c941a0bcd53a19b027de8e7a25df7d642e8f52b88fd13cca0d546bc1aac67`),
+  which uses the same LISDF build-phase code path and reproduces the June
+  energies at every SCF step (compare `revision/peak-memory/Si{N}-HSE06/`
+  and `revision/timing-decomposition/Si{N}-HSE06/` with
+  `scaling/Si{N}-HSE06/`).
+- *Current build* (17 October 2026, sha256
+  `14bc8db355154879b8dd83c8b3480fa725d9a3e8be9a54cb24784d6c41b243f9`, also
+  recorded in `revision/kylin-cip6-scaling/source-records/manifest.json`):
+  `revision/kylin-cip6-scaling/` only (c_IP = 6 production series, Si64
+  c_IP = 30 control, Si64 FFTDF control). It differs from the submitted
+  build only in the memory management of the one-time LISDF build phase;
+  algorithm, interpolation points, grids and energies are unchanged
+  (`controls/Si64_c30/` reproduces `scaling/Si64-HSE06/` to 1e-8 Ha).
+- `revision/peak-memory/Si256-HSE06-current-version/` was run with an
+  intermediate build (13 July 2026, sha256
+  `643bdf76ac5bc3b8a4cc4ed2e41720efe768faad4f56956abaf148fc54b11c03`) whose
+  energies differ from both builds above by about 1 microHa/atom; it is not
+  used for any number in the manuscript or the response letter.
 
 ## Notes
 

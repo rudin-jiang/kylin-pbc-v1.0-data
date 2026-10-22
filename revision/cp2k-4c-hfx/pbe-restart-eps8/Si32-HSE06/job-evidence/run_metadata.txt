@@ -1,0 +1,10 @@
+started_utc=2026-10-19T03:43:45Z
+job_id=262936
+node=cu04
+mpi_ranks=32
+omp_threads=1
+cp2k_executable=/software/Applications/cp2k/cp2k-2024.3-oneapi-2024.2.1/exe/local/cp2k.popt
+Model name:                              INTEL(R) XEON(R) GOLD 6544Y
+2df14ef8e48eefd5410287f577035fe882795d3c80f11b71c92b9ac98199aba0  cp2k.inp
+9dff8765d8a7da3341d21297234b4d93940f5eebee24edf1f21c51d71b67693e  Si32-PBE-RESTART.wfn
+finished_utc=2026-10-19T03:47:48Z
